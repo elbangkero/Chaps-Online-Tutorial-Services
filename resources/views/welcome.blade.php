@@ -9,7 +9,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('storage/img/image0.jpeg')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/storage/img/image0.jpeg')}}" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,11 +18,11 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet --> 
+    <!-- Libraries Stylesheet -->
     <link href="{{asset('storage/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-    
+
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{asset('storage/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('public/storage/css/style.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -40,7 +40,7 @@
                 <div class="d-inline-flex align-items-center">
                     <a class="text-white px-2" href="">
                         <i class="fab fa-facebook-f"></i>
-                    </a>  
+                    </a>
                     <a class="text-white pl-2" href="">
                         <i class="fab fa-youtube"></i>
                     </a>
@@ -56,7 +56,7 @@
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
             <a href="index.html" class="navbar-brand ml-lg-3">
                 <h1 class="m-0 display-5 text-uppercase text-primary"><u> Chaps Online Tutorial Services </u></h1>
-            </a>  
+            </a>
         </nav>
     </div>
     <!-- Navbar End -->
@@ -64,7 +64,7 @@
 
     <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid mb-5">
-        
+
     </div>
     <!-- Header End -->
 
@@ -74,16 +74,16 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid w-100" src="{{asset('storage/img/about.jpg')}}" alt="">
+                    <img class="img-fluid w-100" src="{{asset('public/storage/img/500x600.jpg')}}" alt="">
                     <div class="bg-primary text-dark text-center p-4">
-                        <h3 class="m-0">25+ Years Experience</h3>
+                        <h3 class="m-0">Lorem ipsum dolor sit</h3>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <h6 class="text-primary text-uppercase font-weight-bold">About Us</h6>
-                    <h1 class="mb-4">Trusted & Faster Logistic Service Provider</h1>
+                    <h1 class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
                     <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
-               
+
                 </div>
             </div>
         </div>
@@ -94,10 +94,10 @@
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button>        
+                        </button>
                         <!-- 16:9 aspect ratio -->
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                            <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
                         </div>
                     </div>
                 </div>
@@ -113,20 +113,20 @@
             <div class="row align-items-center">
                 <div class="col-lg-7 py-5 py-lg-0">
                     <h6 class="text-primary text-uppercase font-weight-bold">Get A Quote</h6>
-                    <h1 class="mb-4">Request A Free Quote</h1>
+                    <h1 class="mb-4">Dolores lorem lorem</h1>
                     <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
                     <div class="row">
                         <div class="col-sm-4">
-                            <h1 class="text-primary mb-2" data-toggle="counter-up">225</h1>
-                            <h6 class="font-weight-bold mb-4">SKilled Experts</h6>
+                            <h1 class="text-primary mb-2" data-toggle="counter-up">9999</h1>
+                            <h6 class="font-weight-bold mb-4">Our Passers</h6>
                         </div>
                         <div class="col-sm-4">
-                            <h1 class="text-primary mb-2" data-toggle="counter-up">1050</h1>
-                            <h6 class="font-weight-bold mb-4">Happy Clients</h6>
+                            <h1 class="text-primary mb-2" data-toggle="counter-up">9999</h1>
+                            <h6 class="font-weight-bold mb-4">Positive feedback</h6>
                         </div>
                         <div class="col-sm-4">
-                            <h1 class="text-primary mb-2" data-toggle="counter-up">2500</h1>
-                            <h6 class="font-weight-bold mb-4">Complete Projects</h6>
+                            <h1 class="text-primary mb-2" data-toggle="counter-up">9999</h1>
+                            <h6 class="font-weight-bold mb-4">Top Notcher</h6>
                         </div>
                     </div>
                 </div>
@@ -134,21 +134,17 @@
                     <div class="bg-primary py-5 px-4 px-sm-5">
                         <form class="py-5">
                             <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
+                                <input type="text" class="form-control border-0 p-4" placeholder="Email" required="required" />
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <select class="custom-select border-0 px-4" style="height: 47px;">
-                                    <option selected>Select A Service</option>
-                                    <option value="1">Service 1</option>
-                                    <option value="2">Service 1</option>
-                                    <option value="3">Service 1</option>
-                                </select>
+                                <input type="email" class="form-control border-0 p-4" placeholder="Password" required="required" />
                             </div>
                             <div>
-                                <button class="btn btn-dark btn-block border-0 py-3" type="submit">Get A Quote</button>
+                                <button class="btn btn-dark btn-block border-0 py-3" type="submit">Register Here!</button>
+                                <div class="d-flex justify-content-start mt-4">
+                                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -158,84 +154,72 @@
     </div>
     <!-- Quote Request Start -->
 
- 
 
- 
- 
+
+
+
 
     <!-- Team Start -->
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
                 <h6 class="text-primary text-uppercase font-weight-bold">Delivery Team</h6>
-                <h1 class="mb-4">Meet Our Delivery Team</h1>
+                <h1 class="mb-4">Meet Our Newly Passer</h1>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="team card position-relative overflow-hidden border-0 mb-5">
-                        <img class="card-img-top" src="{{asset('storage/img/team-1.jpg')}}" alt="">
-                        
+                        <img class="card-img-top" src="{{asset('public/storage/img/300x300.jpg')}}" alt="">
+
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
                                 <h5 class="font-weight-bold">Full Name</h5>
-                                <span>Designation</span>
+                                <span>Top 2</span>
                             </div>
                             <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                                <h5 class="font-weight-bold">Rate 98.5%</h5>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team card position-relative overflow-hidden border-0 mb-5">
-                        <img class="card-img-top" src="{{asset('storage/img/team-2.jpg')}}" alt="">
+                        <img class="card-img-top" src="{{asset('public/storage/img/300x300.jpg')}}" alt="">
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
                                 <h5 class="font-weight-bold">Full Name</h5>
-                                <span>Designation</span>
+                                <span>Top 1</span>
                             </div>
                             <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                                <h5 class="font-weight-bold">Rate 98.5%</h5>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team card position-relative overflow-hidden border-0 mb-5">
-                        <img class="card-img-top" src="{{asset('storage/img/team-3.jpg')}}" alt="">
+                        <img class="card-img-top" src="{{asset('public/storage/img/300x300.jpg')}}" alt="">
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
                                 <h5 class="font-weight-bold">Full Name</h5>
-                                <span>Designation</span>
+                                <span>Top 6</span>
                             </div>
                             <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                                <h5 class="font-weight-bold">Rate 98.5%</h5>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team card position-relative overflow-hidden border-0 mb-5">
-                        <img class="card-img-top" src="{{asset('storage/img/team-4.jpg')}}" alt="">
+                        <img class="card-img-top" src="{{asset('public/storage/img/300x300.jpg')}}" alt="">
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
                                 <h5 class="font-weight-bold">Full Name</h5>
-                                <span>Designation</span>
+                                <span>Top 10</span>
                             </div>
                             <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                                <h5 class="font-weight-bold">Rate 98.5%</h5>
                             </div>
                         </div>
                     </div>
@@ -245,7 +229,7 @@
     </div>
     <!-- Team End -->
 
-  
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
@@ -254,14 +238,12 @@
                 <div class="row">
                     <div class="col-md-6 mb-5">
                         <h3 class="text-primary mb-4">Get In Touch</h3>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
+                        <p><i class="fa fa-map-marker-alt mr-2"></i>123 Pandacan,Manila, Philippines</p>
                         <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                        <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                        <p><i class="fa fa-envelope mr-2"></i>chapsonlinets2021@gmail.com</p>
                         <div class="d-flex justify-content-start mt-4">
-                            <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                     <div class="col-md-6 mb-5">
@@ -293,10 +275,10 @@
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: #3E3E4E !important;">
         <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a href="#">Your Site Name</a>. All Rights Reserved. 
-				
-				<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-				Designed by <a href="https://htmlcodex.com">HTML Codex</a>
+                <p class="m-0 text-white">&copy; <a href="#">Chaps Online Tutorial Servicese</a>. All Rights Reserved.
+
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    Designed by <a href="https://htmlcodex.com">https://github.com/elbangkero</a>
                 </p>
             </div>
             <div class="col-lg-6 text-center text-md-right">
