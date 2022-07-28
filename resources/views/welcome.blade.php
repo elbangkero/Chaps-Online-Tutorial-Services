@@ -9,7 +9,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('storage/img/image0.jpeg')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/image0.jpeg')}}" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,7 +22,7 @@
     <link href="{{asset('storage/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
     
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{asset('storage/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -74,7 +74,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid w-100" src="{{asset('storage/img/about.jpg')}}" alt="">
+                    <img class="img-fluid w-100" src="{{asset('img/about.jpg')}}" alt="">
                     <div class="bg-primary text-dark text-center p-4">
                         <h3 class="m-0">25+ Years Experience</h3>
                     </div>
@@ -173,7 +173,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="team card position-relative overflow-hidden border-0 mb-5">
-                        <img class="card-img-top" src="{{asset('storage/img/team-1.jpg')}}" alt="">
+                        <img class="card-img-top" src="{{asset('img/team-1.jpg')}}" alt="">
                         
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
@@ -191,7 +191,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team card position-relative overflow-hidden border-0 mb-5">
-                        <img class="card-img-top" src="{{asset('storage/img/team-2.jpg')}}" alt="">
+                        <img class="card-img-top" src="{{asset('img/team-2.jpg')}}" alt="">
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
                                 <h5 class="font-weight-bold">Full Name</h5>
@@ -208,7 +208,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team card position-relative overflow-hidden border-0 mb-5">
-                        <img class="card-img-top" src="{{asset('storage/img/team-3.jpg')}}" alt="">
+                        <img class="card-img-top" src="{{asset('img/team-3.jpg')}}" alt="">
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
                                 <h5 class="font-weight-bold">Full Name</h5>
@@ -225,7 +225,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team card position-relative overflow-hidden border-0 mb-5">
-                        <img class="card-img-top" src="{{asset('storage/img/team-4.jpg')}}" alt="">
+                        <img class="card-img-top" src="{{asset('img/team-4.jpg')}}" alt="">
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
                                 <h5 class="font-weight-bold">Full Name</h5>
