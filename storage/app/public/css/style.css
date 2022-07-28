@@ -4786,8 +4786,7 @@ a.badge-dark:hover, a.badge-dark:focus {
 a.badge-dark:focus, a.badge-dark.focus {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(31, 31, 46, 0.5);
-}
-
+} 
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
