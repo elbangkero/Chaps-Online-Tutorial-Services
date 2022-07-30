@@ -11,7 +11,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/storage/img/image0.jpeg')}}" />
 
-    <!-- Google Web Fonts --> 
+    <!-- Google Web Fonts -->
     <link href="{{asset('public/storage/css/fonts.googleapis.css')}}" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -19,7 +19,7 @@
 
     <!-- Libraries Stylesheet -->
     <link href="{{asset('storage/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
- 
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('public/storage/css/style.css')}}" rel="stylesheet">
 </head>
@@ -40,7 +40,7 @@
                     <a class="text-white px-2" href="">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a class="text-white pl-2" href="">
+                    <a class="text-white pl-2" target=”_blank” href="https://www.youtube.com/c/ACLEMentoringbyChapsBLEC">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
@@ -54,7 +54,7 @@
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
             <a href="index.html" class="navbar-brand ml-lg-3">
-                <h5 class="m-0 display-10 text-uppercase text-primary"><u>Chaps Online Tutorial Services </u> </h5>
+                <h6 class="m-0 display-10 text-uppercase text-primary"><i><img src="{{asset('public/storage/img/image0.jpeg')}}" alt="" id="IdTitle"></i> <u><b> Chaps Online Tutorial Services </b></u> </h6>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -64,7 +64,7 @@
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Service</a>
-                    <a href="price.html" class="nav-item nav-link">Price</a> 
+                    <a href="price.html" class="nav-item nav-link">Price</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
                 <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Register Here!</a>
@@ -144,19 +144,47 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="bg-primary py-5 px-4 px-sm-5">
-                        <form class="py-5">
+                        <form class="py-5" method="POST" action="{{ route('login') }}">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Email" required="required" />
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
+
                             <div class="form-group">
-                                <input type="email" class="form-control border-0 p-4" placeholder="Password" required="required" />
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="current-password">
+
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
-                            <div>
-                                <button class="btn btn-dark btn-block border-0 py-3" type="submit">Register Here!</button>
-                                <div class="d-flex justify-content-start mt-4">
-                                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                        <label class="form-check-label" for="remember">
+                                            {{ __('Remember Me') }}
+                                        </label>
+                                    </div>
                                 </div>
+                            </div>
+                            <button class="btn btn-dark btn-block border-0 py-3" type="submit"> Login</button>
+                            @if (Route::has('password.request'))
+                            <a class="btn btn-link" style="color:white" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
+                            @endif
+                            <div class="d-flex justify-content-start mt-4">
+                                <a class="btn btn-outline-light btn-social mr-2" target=”_blank” href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-light btn-social" target=”_blank” href="https://www.youtube.com/c/ACLEMentoringbyChapsBLEC"><i class="fab fa-youtube"></i></a>
                             </div>
                         </form>
                     </div>
@@ -175,7 +203,6 @@
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
-                <h6 class="text-primary text-uppercase font-weight-bold">Delivery Team</h6>
                 <h1 class="mb-4">Meet Our Newly Passer</h1>
             </div>
             <div class="row">
@@ -255,7 +282,7 @@
                         <p><i class="fa fa-envelope mr-2"></i>chapsonlinets2021@gmail.com</p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" target=”_blank” href="https://www.youtube.com/c/ACLEMentoringbyChapsBLEC"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                     <div class="col-md-6 mb-5">
