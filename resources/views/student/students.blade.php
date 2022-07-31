@@ -11,12 +11,12 @@
     <link href="{{asset('public/storage/css/fonts.googleapis.css')}}" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link href="{{asset('public/storage/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('public/storage/css/templatemo-xtra-blog.css')}}" rel="stylesheet">
-    <!--
-     
--->
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
+
     <header class="tm-header" id="tm-header">
         <div class="tm-header-wrapper">
             <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
                     <li class="tm-nav-item"><a href="post.html" class="tm-nav-link">
                             <i class="fas fa-video"></i>
                             Videos
-                        </a></li>  
+                        </a></li>
                 </ul>
             </nav>
             <div class="tm-mb-65">
@@ -49,6 +49,22 @@
             </div>
         </div>
     </header>
+    <!-- Header Logout-->
+    <div class="container-fluid" id="nav-header">
+        <div class="dropdown">
+            <button class="dropbtn"> <span class="fa fa-user" style="color:white"></span> Gajelomo <span style="color:white" class="fa fa-caret-down"></span></button>
+            <div class="dropdown-content">
+                <a href="#"> <span class="fas fa-cogs"></span> Profile</a>
+                <a href="#"> <span class="fas fa-question-circle"></span> Help</a>
+                <a href="#" id='logout_link'> <span class="fas fa-sign-out-alt"></span> Log out </a>
+                <form action="{{route('student_logout')}}" name="logout_header" method="POST">
+                    @csrf
+                    <button id="logout_btn" type="submit"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Header Logout-->
     <div class="container-fluid">
         <main class="tm-main">
             <!-- Search form -->
@@ -244,6 +260,14 @@
             </div>
         </main>
     </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('public/storage/js/jquery.min.js')}}"></script>
+    <script src="{{asset('public/storage/js/templatemo-script.js')}}"></script>
+    <script>
+        $('#logout_link').click(function(e) {
+            $("#logout_btn").trigger("click");
+        });
+    </script>
 </body>
 
 </html>

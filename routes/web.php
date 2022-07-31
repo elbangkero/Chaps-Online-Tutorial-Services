@@ -17,10 +17,11 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/home', 'Student\StudentController@index')->name('home');
 
-
+  
 });
 
 Route::get('/', 'GlobalController@login_page')->name('login_page');
 
+Route::post('/students/logout', 'Student\StudentAuthController@student_logout')->name('student_logout');
 Auth::routes();
  

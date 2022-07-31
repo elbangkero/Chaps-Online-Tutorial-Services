@@ -26,7 +26,7 @@
 
 <body>
     <!-- Topbar Start -->
-    <div class="container-fluid bg-dark">
+    <div class="container-fluid" style="background-color: #060c35;">
         <div class="row py-2 px-lg-5">
             <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center text-white">
@@ -147,7 +147,7 @@
                         <form class="py-5" method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" >
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
