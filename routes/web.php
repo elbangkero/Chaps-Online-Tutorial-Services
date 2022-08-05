@@ -15,13 +15,15 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['auth']], function () {
 
 
-    Route::get('/home', 'Student\StudentController@index')->name('home');
-
+    Route::get('/students/student_login', 'Student\StudentAuthController@student_login')->name('student_login');
+    Route::post('/students/logout', 'Student\StudentAuthController@student_logout')->name('student_logout');
   
 });
 
-Route::get('/', 'GlobalController@login_page')->name('login_page');
+Route::post('/students/store', 'Student\StudentController@store_students')->name('store_students');
 
-Route::post('/students/logout', 'Student\StudentAuthController@student_logout')->name('student_logout');
+
+Route::get('/students/registration', 'GlobalController@student_registration')->name('registration');
+Route::get('/', 'GlobalController@login_page')->name('login_page');
 Auth::routes();
  

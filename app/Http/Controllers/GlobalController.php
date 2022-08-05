@@ -10,4 +10,8 @@ class GlobalController extends Controller
     {
         return view('login_page');
     }
+    public function student_registration()
+    {
+        return view('student.registration');
+    }
 }

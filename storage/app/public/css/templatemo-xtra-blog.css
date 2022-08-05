@@ -87,6 +87,10 @@ hr {
 .tm-site-logo i {
     color: #f88c20;
 }
+.tm-main {
+    margin-left: 400px;
+    padding: 80px 100px 25px;
+}
 
 
 .tm-post {

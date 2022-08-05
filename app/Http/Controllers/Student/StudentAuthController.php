@@ -40,6 +40,7 @@ class StudentAuthController extends Controller
     {
         $this->middleware('auth')->except('logout');
     }
+
     public function student_logout(Request $request)
     {  Session::flush();
         
@@ -47,5 +48,9 @@ class StudentAuthController extends Controller
 
         return redirect('/');
 
+    }
+    public function student_login()
+    {
+        return view('student.students');
     }
 }

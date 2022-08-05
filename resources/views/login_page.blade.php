@@ -22,6 +22,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('public/storage/css/style.css')}}" rel="stylesheet">
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 
 <body>
@@ -67,7 +70,7 @@
                     <a href="price.html" class="nav-item nav-link">Price</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Register Here!</a>
+                <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Register Now!</a>
             </div>
         </nav>
     </div>
@@ -147,7 +150,7 @@
                         <form class="py-5" method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" >
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email">
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -175,12 +178,16 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <a href="{{route('registration')}}" style="color:white">Register Now!</a>
+                                </div>
                             </div>
                             <button class="btn btn-dark btn-block border-0 py-3" type="submit"> Login</button>
                             @if (Route::has('password.request'))
                             <a class="btn btn-link" style="color:white" href="{{ route('password.request') }}">
                                 {{ __('Forgot Your Password?') }}
                             </a>
+
                             @endif
                             <div class="d-flex justify-content-start mt-4">
                                 <a class="btn btn-outline-light btn-social mr-2" target=”_blank” href=""><i class="fab fa-facebook-f"></i></a>
@@ -346,14 +353,13 @@
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="{{asset('public/storage/lib/easing/easing.min.js')}}"></script>
     <script src="{{asset('public/storage/lib/waypoints/waypoints.min.js')}}"></script>
     <script src="{{asset('public/storage/lib/counterup/counterup.min.js')}}"></script>
     <script src="{{asset('public/storage/lib/owlcarousel/owl.carousel.min.js')}}"></script>
 
-  
+
 </body>
 
 </html>
