@@ -51,6 +51,6 @@ class StudentAuthController extends Controller
     }
     public function student_login()
     {
-        return view('student.students');
+        return view('student.reviewers');
     }
 }

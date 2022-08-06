@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['auth']], function () {
 
 
-    Route::get('/students/student_login', 'Student\StudentAuthController@student_login')->name('student_login');
+    Route::get('/students', 'Student\StudentAuthController@student_login')->name('student_login');
     Route::post('/students/logout', 'Student\StudentAuthController@student_logout')->name('student_logout');
   
 });
