@@ -10,9 +10,22 @@
                     <li class="nav-divider">
                         Menu
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-fw fa-file"></i>Reviewers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-fw fa-video"></i>Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-fw fa-tasks"></i>Manage Reviewers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-file-video"></i>Manage Video</a>
+                    </li>
+
                     <li class="nav-item ">
-                        <a class="nav-link " href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Users <span class="badge badge-success">6</span></a>
-                        <div id="submenu-1" class="collapse submenu" style="">
+                        <a class="nav-link " href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i> Manage Users <span class="badge badge-success">6</span></a>
+                        <div id="submenu-1" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link active" href="#">Students</a>
@@ -22,9 +35,6 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-fw fa-file"></i>Reviewers</a>
                     </li>
                 </ul>
             </div>

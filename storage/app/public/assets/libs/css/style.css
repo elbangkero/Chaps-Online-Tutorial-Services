@@ -933,23 +933,23 @@ Borders
 }
 
 .border {
-    border: 1px solid #e6e6f2 !important;
+    border: 1px solid #f88c20 !important;
 }
 
 .border-top {
-    border-top: 1px solid #e6e6f2 !important;
+    border-top: 1px solid #f88c20 !important;
 }
 
 .border-bottom {
-    border-bottom: 1px solid #e6e6f2 !important;
+    border-bottom: 1px solid #f88c20 !important;
 }
 
 .border-left {
-    border-left: 1px solid #e6e6f2 !important;
+    border-left: 1px solid #f88c20 !important;
 }
 
 .border-right {
-    border-right: 1px solid #e6e6f2 !important
+    border-right: 1px solid #f88c20 !important
 }
 
 
@@ -1223,11 +1223,13 @@ Top Header
 
 .dashboard-header .navbar {
     padding: 0px;
-    border-bottom: 1px solid #e6e6f2;
+    border-bottom: 1px solid #f88c20;
     -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     -webkit-transition: all 0.3s ease;
     min-height: 60px;
+    background-color: #060c35;
+    color:white;
 }
 
 
@@ -1238,18 +1240,18 @@ Top Header
     line-height: inherit;
     white-space: nowrap;
     padding: 11px 20px;
-    font-size: 30px;
+    font-size: 14px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #007bff;
+    color: #f88c20;
 }
 .navbar-brand:hover{
-    color: #007bff;
+    color: white;
 }
 .navbar-right-top {}
 
 .navbar-right-top .nav-item {
-    border-right: 1px solid #e6e6f2;
+    border-right: 1px solid #060c35;
 }
 
 .navbar-right-top .nav-item:last-child {
@@ -1445,7 +1447,7 @@ Top Header
 
 .connection-item:hover {
     background-color: #fff;
-    border: 1px solid #e6e6f2;
+    border: 1px solid #f88c20;
 }
 
 .connection-item span {
@@ -1766,7 +1768,7 @@ Leftsidebar - Primary
 }
 
 .sidebar-primary .nav-divider {
-    color: #ddddff;
+    color: white;
 }
 
 .sidebar-primary.nav-left-sidebar .nav-link i {
@@ -1805,26 +1807,27 @@ Leftsidebar - dark
 ------------------------- */
 
 .sidebar-dark {
-    background-color: #0e0c28;
+    background-color: #060c35;
     -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     -webkit-transition: all 0.3s ease;
+    color:white
 }
 
 .sidebar-dark .nav-divider {
-    color: #a4aadb;
+    color: white;
     font-size: 12px;
     letter-spacing: 1px;
 }
 
 .sidebar-dark.nav-left-sidebar .nav-link i {
-    color: #7a80b4;
+    color: white
 }
 
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-item {}
 
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-link {
-    color: #7a80b4;
+    color: white;
 }
 
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-link:focus,
@@ -1896,7 +1899,7 @@ Sidebar Page Navigations
     background: #fff;
     font-size: 14px;
     color: #3d405c;
-    border: 1px solid #e6e6f2;
+    border: 1px solid #f88c20;
 }
 
 .dropdown-item {
@@ -2086,7 +2089,7 @@ Pageheader
 }
 
 .chart-widget-list p {
-    border-bottom: 1px solid #e6e6f2;
+    border-bottom: 1px solid #f88c20;
     margin-bottom: 8px;
     padding-bottom: 8px;
 }
@@ -2144,7 +2147,7 @@ Pageheader
 .influencer-profile-data .user-social-media {
     padding: 16px 99px;
     text-align: center;
-    border-right: 1px solid #e6e6f2;
+    border-right: 1px solid #f88c20;
 }
 
 .influencer-profile-data .user-social-media:last-child {
@@ -2189,7 +2192,7 @@ Pageheader
 .influence-finder .user-social-media {
     padding: 16px 68px;
     text-align: center;
-    border-right: 1px solid #e6e6f2;
+    border-right: 1px solid #f88c20;
 }
 
 .influence-finder .user-social-media:last-child {
@@ -2321,7 +2324,7 @@ Pageheader
    Ecommerce Products
    ========================================================================== */
 
-.product-thumbnail{ border:1px solid #e6e6f2; background-color: #fff; margin-bottom: 30px; }
+.product-thumbnail{ border:1px solid #f88c20; background-color: #fff; margin-bottom: 30px; }
 .product-img{ text-align: center; padding: 35px 0px;  }
 .product-img-head{position: relative;}
 .ribbons{
@@ -2354,7 +2357,7 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
     top: 15px;}
     .product-wishlist-btn:hover{border-color: #ff3367; color: #ff3367;transition: 0.3s ease;}
     .product-wishlist-btn.active{border-color: #ff3367; color: #ff3367;transition: 0.3s ease;}
-.product-content{ border-top:1px solid #e6e6f2; padding: 23px;}
+.product-content{ border-top:1px solid #f88c20; padding: 23px;}
 .product-content-head{ position: relative; margin-bottom: 25px; }
 .product-title{font-size: 16px; margin-bottom: 5px;}
 .product-rating{font-size: 12px;
@@ -2363,8 +2366,8 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 .product-price{ position: absolute; top: 0; right: 0; font-size: 16px; color: #3d405c;font-family: 'Circular Std Medium'; line-height: 1;}
 .product-btn{}
 .product-del{font-size: 14px; color: #71748d;}
-.product-sidebar{ background-color: #fff; border:1px solid #e6e6f2;  }
-.product-sidebar-widget{border-bottom: 1px solid #e6e6f2; padding: 10px 20px; margin-bottom: 10px;}
+.product-sidebar{ background-color: #fff; border:1px solid #f88c20;  }
+.product-sidebar-widget{border-bottom: 1px solid #f88c20; padding: 10px 20px; margin-bottom: 10px;}
 .product-sidebar-widget:last-child{border:0px;}
 .product-sidebar-widget-title{font-size: 16px; margin-bottom: 10px;}
 
@@ -2547,7 +2550,7 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 .quantity-button {
   position: relative;
   cursor: pointer;
-  border-left: 1px solid #e6e6f2;
+  border-left: 1px solid #f88c20;
   width: 20px;
   text-align: center;
   color: #333;
@@ -2569,7 +2572,7 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
   position: absolute;
   height: 50%;
   top: 0;
-  border-bottom: 1px solid #e6e6f2;
+  border-bottom: 1px solid #f88c20;
 }
 
 .quantity-button.quantity-down {
@@ -3064,7 +3067,7 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 .btn-outline-light {
     color: #7171a6;
     background-color: transparent;
-    border-color: #e6e6f2;
+    border-color: #f88c20;
 }
 
 .btn-outline-light:hover {
@@ -3212,7 +3215,7 @@ btn-link
 
 .card-header {
     background-color: #fff;
-    border-bottom: 1px solid #e6e6f2;
+    border-bottom: 1px solid #f88c20;
 }
 
 .card-title {}
@@ -3226,7 +3229,7 @@ btn-link
 .card-text {}
 
 .card-footer {
-    border-top: 1px solid #e6e6f2;
+    border-top: 1px solid #f88c20;
     background: #f6f6ff;
 }
 
@@ -3572,14 +3575,14 @@ btn-link
 
 .tab-regular .nav-tabs .nav-link.active {
     background-color: #fff;
-    border-color: #e6e6f2 #e6e6f2 #fff;
+    border-color: #f88c20 #f88c20 #fff;
     color: #5969ff;
 }
 
 .tab-regular .tab-content {
     background-color: #fff;
     padding: 30px;
-    border: 1px solid #e6e6f2;
+    border: 1px solid #f88c20;
     border-radius: 4px;
     border-top-left-radius: 0px
 }
@@ -3739,7 +3742,7 @@ btn-link
 }
 
 .simple-card .nav.nav-tabs {
-    border-bottom: 1px solid #e6e6f2;
+    border-bottom: 1px solid #f88c20;
 }
 
 .simple-card .nav.nav-tabs .nav-item {}
@@ -3972,7 +3975,7 @@ Pills vertical
     display: block;
     padding: 16px 20px;
     margin-bottom: -1px;
-    border: 1px solid #e6e6f2;
+    border: 1px solid #f88c20;
 }
 
 
@@ -4147,7 +4150,7 @@ Pills vertical
     line-height: 1.25;
     color: #71748d;
     background-color: #fff;
-    border: 1px solid #e6e6f2;
+    border: 1px solid #f88c20;
     border-radius: 3px;
     line-height: 1;
 }
@@ -4501,13 +4504,13 @@ Pills vertical
 .table th {
     padding: 10px;
     vertical-align: middle;
-    border-top: 1px solid #e6e6f2;
+    border-top: 1px solid #f88c20;
     font-weight: normal;
 }
 
 .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #e6e6f2;
+    border-bottom: 2px solid #f88c20;
 }
 
 .table thead th,
@@ -4517,12 +4520,12 @@ Pills vertical
 }
 
 .table-bordered {
-    border: 1px solid #e6e6f2;
+    border: 1px solid #f88c20;
 }
 
 .table-bordered td,
 .table-bordered th {
-    border: 1px solid #e6e6f2;
+    border: 1px solid #f88c20;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
@@ -5786,7 +5789,7 @@ Vertical Timeline - by CodyHouse.co
     position: fixed;
     top: 0;
     left: 265px;
-    border-right: 1px solid #e6e6f2;
+    border-right: 1px solid #f88c20;
     margin-top: 61px;
     padding-bottom: 61px;
     color: #404040;
@@ -5971,11 +5974,11 @@ Vertical Timeline - by CodyHouse.co
 
 .email-filters {
     padding: 20px;
-    border-bottom: 1px solid #e6e6f2;
+    border-bottom: 1px solid #f88c20;
     background-color: #fff;
     display: table;
     width: 100%;
-    border-top: 1px solid #e6e6f2;
+    border-top: 1px solid #f88c20;
 }
 
 
@@ -6026,7 +6029,7 @@ Vertical Timeline - by CodyHouse.co
 }
 
 .email-list-item {
-    border-bottom: 1px solid #e6e6f2;
+    border-bottom: 1px solid #f88c20;
     padding: 10px 20px;
     display: table;
     width: 100%;
@@ -6106,7 +6109,7 @@ Vertical Timeline - by CodyHouse.co
 
 .email-head-subject {
     padding: 25px 25px;
-    border-bottom: 1px solid #e6e6f2;
+    border-bottom: 1px solid #f88c20;
 }
 
 .email-head-subject .title {
@@ -6179,14 +6182,14 @@ Vertical Timeline - by CodyHouse.co
 
 .email-body {
     background-color: #fff;
-    border-top: 1px solid #e6e6f2;
+    border-top: 1px solid #f88c20;
     padding: 30px 28px;
 }
 
 .email-attachments {
     background-color: #fff;
     padding: 25px 28px;
-    border-top: 1px solid #e6e6f2;
+    border-top: 1px solid #f88c20;
 }
 
 .email-attachments .title {
@@ -6230,7 +6233,7 @@ Vertical Timeline - by CodyHouse.co
 
 .email-head-title {
     padding: 25px 25px;
-    border-bottom: 1px solid #e6e6f2;
+    border-bottom: 1px solid #f88c20;
     display: block;
     font-weight: 400;
     color: #3d405c;
@@ -6250,7 +6253,7 @@ Vertical Timeline - by CodyHouse.co
 
 .email-compose-fields {
     background-color: #fff;
-    border-bottom: 1px solid #e6e6f2;
+    border-bottom: 1px solid #f88c20;
     padding: 30px 30px 20px;
 }
 
@@ -6390,7 +6393,7 @@ Vertical Timeline - by CodyHouse.co
 }
 
 .dashboard-main-wrapper .content-container>.chat-module .chat-item:not(:last-child) {
-    border-bottom: 1px solid #e6e6f2;
+    border-bottom: 1px solid #f88c20;
 }
 
 .dashboard-main-wrapper .content-container>.chat-module .chat-item .media-body {
@@ -6522,7 +6525,7 @@ Vertical Timeline - by CodyHouse.co
     height: 100%;
     overflow: hidden;
     width: 384px;
-    border-left: 1px solid #e6e6f2;
+    border-left: 1px solid #f88c20;
     display: flex;
     flex-direction: column;
     background: #fff;
@@ -6768,7 +6771,7 @@ Media Query
     .influencer-profile-data .user-social-media {
     padding: 16px 56px;
     text-align: center;
-    border-right: 1px solid #e6e6f2;
+    border-right: 1px solid #f88c20;
 }
 }
 @media only screen and (max-width:1200px) {.product-price{position: initial;}.product-slider{padding: 131px 30px;}
@@ -6848,7 +6851,7 @@ Media Query
         position: absolute;
         top: 0;
         left: 0;
-        border-right: 1px solid #e6e6f2;
+        border-right: 1px solid #f88c20;
         margin-top: 0;
         padding-bottom: 0px;
         color: #404040;
@@ -6913,7 +6916,7 @@ Media Query
         margin-top: 0px;
         padding-bottom: 0px;
         color: #404040;
-        border-bottom: 1px solid #e6e6f2;
+        border-bottom: 1px solid #f88c20;
     }
     .aside-nav.collapse {
         display: none;
