@@ -10,14 +10,15 @@
                     <li class="nav-divider">
                         Menu
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-fw fa-file"></i>Reviewers</a>
+                        <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'home') active @endif" href="{{route('reviewers')}}"><i class="fa fa-fw fa-file"></i>Reviewers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-fw fa-video"></i>Videos</a>
+                        <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'videos') active @endif" href="{{route('videos')}}"><i class="fa fa-fw fa-video"></i>Videos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-fw fa-tasks"></i>Manage Reviewers</a>
+                        <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'manage_reviewers') active @endif" href="{{route('manage_reviewers')}}"><i class="fa fa-fw fa-tasks"></i>Manage Reviewers</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fas fa-file-video"></i>Manage Video</a>
@@ -28,14 +29,18 @@
                         <div id="submenu-1" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#">Students</a>
+                                    <a class="nav-link active" href="{{route('student_index')}}">Students</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Admin</a>
+                                    <a class="nav-link" href="{{route('admin_index')}}">Admin</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-clipboard"></i>Manage Plan</a>
+                    </li>
+
                 </ul>
             </div>
         </nav>

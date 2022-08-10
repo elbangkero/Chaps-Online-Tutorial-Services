@@ -1,8 +1,8 @@
-@include('student.header')
+@include('home.header')
 
-<div class="dashboard-main-wrapper"> 
-    @include('student.navbar') 
-    @include('student.sidebar') 
+<div class="dashboard-main-wrapper">
+    @include('home.navbar')
+    @include('home.sidebar')
     <div class="dashboard-wrapper">
         <div class="container-fluid dashboard-content">
             <div class="row">
@@ -13,12 +13,11 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header" id="top">
-                                <h2 class="pageheader-title">Reviewers </h2>
-                                <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                                <h2 class="pageheader-title">Videos </h2>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Reviewers</a></li>
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Reviewers Videos</a></li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -35,9 +34,9 @@
                                     <div class="figure-img">
                                         <img class="img-fluid" src="{{asset('public/storage/assets/images/card-img.jpg')}}" alt="Card image cap">
                                         <div class="figure-action">
-                                            <a href="#" class="btn btn-block btn-sm btn-primary">View PDF</a>
+                                            <a href="{{route('view_reviewers')}}" class="btn btn-block btn-sm btn-primary">View PDF</a>
                                         </div>
-                                    </div>  
+                                    </div>
                                 </figure>
                                 <!-- /.card-figure -->
                             </div>
@@ -54,7 +53,7 @@
                                         <div class="figure-action">
                                             <a href="#" class="btn btn-block btn-sm btn-primary">View PDF</a>
                                         </div>
-                                    </div>  
+                                    </div>
                                 </figure>
                                 <!-- /.card-figure -->
                             </div>
@@ -71,7 +70,7 @@
                                         <div class="figure-action">
                                             <a href="#" class="btn btn-block btn-sm btn-primary">View PDF</a>
                                         </div>
-                                    </div>  
+                                    </div>
                                 </figure>
                                 <!-- /.card-figure -->
                             </div>
@@ -88,7 +87,7 @@
                                         <div class="figure-action">
                                             <a href="#" class="btn btn-block btn-sm btn-primary">View PDF</a>
                                         </div>
-                                    </div>  
+                                    </div>
                                 </figure>
                                 <!-- /.card-figure -->
                             </div>
@@ -105,7 +104,7 @@
                                         <div class="figure-action">
                                             <a href="#" class="btn btn-block btn-sm btn-primary">View PDF</a>
                                         </div>
-                                    </div>  
+                                    </div>
                                 </figure>
                                 <!-- /.card-figure -->
                             </div>
@@ -141,4 +140,4 @@
     <!-- end wrapper  -->
     <!-- ============================================================== -->
 </div>
-@include('student.footer')
+@include('home.footer')
