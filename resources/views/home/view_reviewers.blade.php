@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('public/storage/assets/vendor/bootstrap/css/bootstrap.min.css')}}">
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="{{asset('public/storage/fontawesome/css/all.min.css')}}" rel="stylesheet">
     <style>
         #canvas_container {
             height: 100vh;
@@ -48,15 +49,33 @@
             z-index: 50;
             text-decoration: none !important;
         }
+
+        .header-control {
+            background: #333;
+            float: right;
+            margin: 5px;
+          
+        }
+        a{
+            color:white !important;
+        }
+        body{
+            background: #333;
+        }
     </style>
 </head>
 
 <body>
     <input type="text" name="" id="pdf_id" value="{{$id}}" style="display: none;">
+
+    <div class="header-control">
+        <a href="{{asset($pdf_path)}}" class="fa fa-download" download></a>
+        <a href="{{route('reviewers')}}" style="margin-left:10px"><span class="fa fa-times"></span></a>
+    </div>
     <div id="my_pdf_viewer">
+
         <div id="canvas_container">
-            <a class="close-btn" href="{{route('reviewers')}}">&times;</a>
-            <canvas id="pdf_renderer"></canvas>
+            <canvas id="pdf_renderer" style="margin-top: 50px"></canvas><br>
         </div>
         <div id="navigation_controls">
             <button id="go_previous">Previous</button>

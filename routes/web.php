@@ -34,7 +34,13 @@ Route::group(['middleware' => ['auth']], function () {
     /* Manage Student */
 
     /* Manage Videos */
-    Route::get('/videos', 'HomeController@videos')->name('videos');
+    Route::get('/videos', 'VideoController@videos')->name('videos');
+    Route::get('/manage_videos', 'VideoController@manage_videos')->name('manage_videos');
+    Route::get('/view_video/{id}', 'VideoController@view_video')->name('view_video');
+    Route::post('/store_video', 'VideoController@store_video')->name('store_video');
+    Route::delete('/delete_video/{id}', 'VideoController@delete_video')->name('delete_video');
+    Route::get('/edit_video/{id}', 'VideoController@edit_video')->name('edit_video');
+    Route::put('/update_video/{id}', 'VideoController@update_video')->name('update_video');
     /* Manage Videos */
 
     /* Manage Reviewers */

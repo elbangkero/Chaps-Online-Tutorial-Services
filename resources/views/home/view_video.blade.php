@@ -1,5 +1,25 @@
 @include('home.header')
+<style>
+    .video-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
 
+    .video-container::after {
+        padding-top: 56.25%;
+        display: block;
+        content: '';
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
 <div class="dashboard-main-wrapper">
     @include('home.navbar')
     @include('home.sidebar')
@@ -25,17 +45,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        
-                        @foreach($videos as $data)
-                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6">
-                            <!-- .card -->
-                            <a href="{{route('view_video',$data->id)}}">
-                                <img class="img-fluid-card  " src="{{$data->thumbnail}}" alt="Card image cap">
-                            </a>
-                            <h2 class="card-title">{{$data->name}}</h2>
-                            <!-- /.card -->
+
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/{{$video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        @endforeach
+
                     </div>
 
 

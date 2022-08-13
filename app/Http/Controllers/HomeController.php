@@ -30,8 +30,8 @@ class HomeController extends Controller
     }
     public function reviewers()
     {
-        $pdf = DB::table('reviewers_pdf')->where('status','=',1)->get();
-        return view('home.reviewers',compact('pdf'));
+        $pdf = DB::table('reviewers_pdf')->where('status', '=', 1)->get();
+        return view('home.reviewers', compact('pdf'));
     }
     public function store_students(Request $request)
     {
@@ -124,6 +124,7 @@ class HomeController extends Controller
         Users::where('id', $id)->update(['status' => '0']);
         return back()->with('delete', 'Your Data has been Deleted');
     }
+
     public function delete_student($id)
     {
         Users::where('id', $id)->update(['status' => '0']);
@@ -131,12 +132,11 @@ class HomeController extends Controller
     }
     public function view_reviewers($id)
     {
-        return view('home.view_reviewers',compact('id'));
+        $pdf_path = DB::table('reviewers_pdf')->select('path')->where('id', '=', $id)->first()->path;
+        //dd($pdf_path);
+        return view('home.view_reviewers', compact('id', 'pdf_path'));
     }
-    public function videos()
-    { 
-        return view('home.videos');
-    }
+
     public function manage_reviewers()
     {
         $table = DB::table('reviewers_pdf')->where('status', '!=', 2)->get();
@@ -193,4 +193,5 @@ class HomeController extends Controller
             return "not existing";
         }
     }
+
 }
