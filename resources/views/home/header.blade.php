@@ -24,6 +24,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('public/storage/assets/vendor/datatables/css/buttons.bootstrap4.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('public/storage/assets/vendor/datatables/css/select.bootstrap4.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('public/storage/assets/vendor/datatables/css/fixedHeader.bootstrap4.css')}}">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
     <link rel="stylesheet" href="{{asset('public/storage/assets/vendor/datepicker/tempusdominus-bootstrap-4.css')}}" />
     <title>Chaps Online Tutorial Services</title>

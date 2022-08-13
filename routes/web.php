@@ -14,23 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware' => ['auth']], function () {
-
-    Route::get('/home', 'HomeController@reviewers')->name('reviewers');
     Route::post('/logout', 'HomeAuthController@logout')->name('logout');
 
 
     /* Manage Admin */
-    Route::post('/store_admin', 'HomeController@store_admin')->name('store_admin');
-    Route::get('/admin_index', 'HomeController@admin_index')->name('admin_index');
-    Route::delete('/delete_admin/{id}', 'HomeController@delete_admin')->name('delete_admin');
-    Route::get('/edit_admin/{id}', 'HomeController@edit_admin')->name('edit_admin');
-    Route::put('/update_admin/{id}', 'HomeController@update_admin')->name('update_admin');
+    Route::post('/store_admin', 'UserController@store_admin')->name('store_admin');
+    Route::get('/admin_index', 'UserController@admin_index')->name('admin_index');
+    Route::delete('/delete_admin/{id}', 'UserController@delete_admin')->name('delete_admin');
+    Route::get('/edit_admin/{id}', 'UserController@edit_admin')->name('edit_admin');
+    Route::put('/update_admin/{id}', 'UserController@update_admin')->name('update_admin');
     /* Manage Admin */
 
 
     /* Manage Student */
-    Route::get('/student_index', 'HomeController@student_index')->name('student_index');
-    Route::delete('/delete_student/{id}', 'HomeController@delete_student')->name('delete_student');
+    Route::get('/student_index', 'UserController@student_index')->name('student_index');
+    Route::post('/store', 'UserController@store_students')->name('store_students');
+    Route::delete('/delete_student/{id}', 'UserController@delete_student')->name('delete_student');
     /* Manage Student */
 
     /* Manage Videos */
@@ -44,15 +43,16 @@ Route::group(['middleware' => ['auth']], function () {
     /* Manage Videos */
 
     /* Manage Reviewers */
-    Route::get('/manage_reviewers', 'HomeController@manage_reviewers')->name('manage_reviewers');
-    Route::post('/store_reviewers', 'HomeController@store_reviewers')->name('store_reviewers');
+    Route::get('/reviewers', 'ReviewerController@reviewers')->name('reviewers');
+    Route::get('/manage_reviewers', 'ReviewerController@manage_reviewers')->name('manage_reviewers');
+    Route::post('/store_reviewers', 'ReviewerController@store_reviewers')->name('store_reviewers');
+    Route::get('/edit_reviewers/{id}', 'ReviewerController@edit_reviewers')->name('edit_reviewers');
+    Route::put('/update_reviewers/{id}', 'ReviewerController@update_reviewers')->name('update_reviewers');
+    Route::delete('/delete_reviewers/{id}', 'ReviewerController@delete_reviewers')->name('delete_reviewers');
+    Route::get('/view_reviewers/{id}', 'ReviewerController@view_reviewers')->name('view_reviewers');
+    Route::get('/display_pdf', 'ReviewerController@display_pdf')->name('display_pdf');
     /* Manage Reviewers */
 });
-
-Route::get('/display_pdf', 'HomeController@display_pdf')->name('display_pdf');
-
-Route::get('/view_reviewers/{id}', 'HomeController@view_reviewers')->name('view_reviewers');
-Route::post('/store', 'HomeController@store_students')->name('store_students');
 
 
 Route::get('/students/registration', 'GlobalController@student_registration')->name('registration');

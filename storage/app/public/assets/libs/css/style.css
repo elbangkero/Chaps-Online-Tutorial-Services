@@ -2057,7 +2057,7 @@ Pageheader
 }
 
 .card-title {
-    font-size: 15px; 
+    font-size: 15px;
     font-weight: 500;
     margin-bottom: 10px;
     text-align: center;
@@ -2577,14 +2577,17 @@ input[type=radio] {
 .product-colors .radio:checked+label {
     animation-play-state: paused;
 }
-.img-fluid-card{
+
+.img-fluid-card {
     margin-bottom: 20px;
     max-width: 100%;
     height: auto;
 }
-.img-fluid-card:hover{
-   cursor: pointer;
+
+.img-fluid-card:hover {
+    cursor: pointer;
 }
+
 .product-colors label:before {
     content: "\f00c";
     position: absolute;
@@ -3366,7 +3369,7 @@ btn-link
     background-color: #fff;
     border-bottom: 1px solid #f88c20;
 }
- 
+
 .card-subtitle {
     font-size: 14px;
 }
@@ -3419,6 +3422,7 @@ btn-link
     max-height: 100%;
     height: 300px;
 }
+
 .card-figure-videos {
     position: relative;
     padding: 1px !important;
@@ -3426,11 +3430,12 @@ btn-link
     max-width: 100%;
     max-height: 100%;
     height: 146px;
-    color:white !important;
+    color: white !important;
 
     border: 1px solid;
     border-color: black;
-} 
+}
+
 .card-figure .figure {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3475,6 +3480,12 @@ btn-link
 .figure-img {
     width: 100%;
     height: 100%;
+}
+
+.card-wrapper {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
 }
 
 .pdf-img {
@@ -7234,3 +7245,9 @@ Media Query
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width:320px) {}
+
+
+#custom-search input{ 
+   width: 100% !important;
+   margin-bottom: 10px;
+}

@@ -27,7 +27,7 @@
                     <div class="row">
                         
                         @foreach($videos as $data)
-                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6">
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6 card-wrapper">
                             <!-- .card -->
                             <a href="{{route('view_video',$data->id)}}">
                                 <img class="img-fluid-card  " src="{{$data->thumbnail}}" alt="Card image cap">

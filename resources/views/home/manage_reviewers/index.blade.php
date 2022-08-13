@@ -20,7 +20,7 @@
             </div>
 
             <div class="row">
-                @empty($edit_admin)
+                @empty($edit_pdf)
                 <div class="col-md-12">
                     @if(Session::has('success'))
                     <div class="alert alert-success">
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 @else
-                @foreach ($edit_admin as $admin)
+                @foreach ($edit_pdf as $pdf)
                 <div class="col-md-12">
                     @if(Session::has('success'))
                     <div class="alert alert-success">
@@ -111,33 +111,33 @@
                     <div class="card">
                         <h5 class="card-header">Edit Admin</h5>
                         <div class="card-body">
-                            <form id="validationform" data-parsley-validate="" novalidate="" action="{{ route('update_admin',$admin->id) }}" method="POST" enctype="multipart/form-data" class="form-horizontal form-label-left">
+                            <form id="validationform" data-parsley-validate="" novalidate="" action="{{ route('update_reviewers',$pdf->id) }}" method="POST" enctype="multipart/form-data" class="form-horizontal form-label-left">
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Full Name</label>
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Reviewer Name</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
-                                        <input type="text" required="" placeholder="Enter Name" name="full_name" value="{{$admin->full_name}}" class="form-control">
+                                        <input type="text" required="" placeholder="Enter Name" name="name" class="form-control" value="{{$pdf->name}}" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">E-Mail</label>
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">PDF File</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
-                                        <input type="email" required="" data-parsley-type="email" placeholder="Enter a valid e-mail" value="{{$admin->email}}" name="email" class="form-control">
+                                        <input type="file" name="path" id="PDFupload">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Password</label>
-                                    <div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
-                                        <input id="pass2" type="password" required="" placeholder="Password" name="password" class="form-control">
-                                    </div>
-                                    <div class="col-sm-4 col-lg-3">
-                                        <input type="password" required="" data-parsley-equalto="#pass2" name="password_confirmation" placeholder="Re-Type Password" class="form-control">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Status</label>
+                                    <div class="col-12 col-sm-8 col-lg-6 pt-1">
+                                        <div class="switch-button switch-button-yesno">
+                                            <input type="checkbox" @if ($pdf->status=='1') ? checked="" : ;  @endif name="status" id="switch19"><span>
+                                                <label for="switch19"></label></span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group row text-right">
                                     <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                        <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                        <button type="submit" onclick="return handleChangeEdit()" class="btn btn-space btn-primary">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -179,8 +179,8 @@
                                                 Active @else Inactive @endif</td>
                                             <td>{{ $table->created_at }}</td>
                                             <td>
-                                                <form action="{{ route('delete_admin',$table->id) }}" method="POST">
-                                                    <a class="btn btn-primary btn-xs" type="button" href="{{ route('edit_admin',$table->id) }}"> <i class="fa fa-edit"></i> Edit </a>
+                                                <form action="{{ route('delete_reviewers',$table->id) }}" method="POST">
+                                                    <a class="btn btn-primary btn-xs" type="button" href="{{ route('edit_reviewers',$table->id) }}"> <i class="fa fa-edit"></i> Edit </a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button onclick="return confirmSubmit()" class="btn btn-danger btn-xs" type="submit"><i class="fa fa-remove"></i> Delete </button>
@@ -249,12 +249,27 @@
     }
 
     function handleChange() {
+        
         myfile = $('#PDFupload').val();
         var ext = myfile.split('.').pop();
         if (ext != "pdf") {
             if (document.getElementById("PDFupload").files.length == 0) {
                 alert('Missing File');
                 return false;
+            } else {
+                alert('File Must be .pdf ');
+                return false;
+            }
+        }
+    }
+
+    function handleChangeEdit() {
+        
+        myfile = $('#PDFupload').val();
+        var ext = myfile.split('.').pop();
+        if (ext != "pdf") {
+            if (document.getElementById("PDFupload").files.length == 0) { 
+                return true;
             } else {
                 alert('File Must be .pdf ');
                 return false;

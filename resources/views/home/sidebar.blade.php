@@ -12,7 +12,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'home') active @endif" href="{{route('reviewers')}}"><i class="fa fa-fw fa-file"></i>Reviewers</a>
+                        <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'reviewers') active @endif" href="{{route('reviewers')}}?page=1"><i class="fa fa-fw fa-file"></i>Reviewers</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'videos' || \Route::getFacadeRoot()->current()->uri() == 'view_video') active @endif" href="{{route('videos')}}"><i class="fa fa-fw fa-video"></i>Videos</a>

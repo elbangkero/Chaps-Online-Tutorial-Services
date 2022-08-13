@@ -17,13 +17,13 @@ class VideoController extends Controller
     }
     public function edit_video($id)
     {
-        $table = DB::table('reviewers_video')->where('status', '=', 1)->get();
+        $table = DB::table('reviewers_video')->where('status', '!=', 2)->get();
         $edit_video = DB::table('reviewers_video')->where('id', '=', $id)->get();
         return view('home.manage_video.index', compact('table', 'edit_video'));
     }
     public function manage_videos()
     {
-        $table = DB::table('reviewers_video')->where('status', '=', 1)->get();
+        $table = DB::table('reviewers_video')->where('status', '!=', 2)->get();
         return view('home.manage_video.index', compact('table'));
     }
     public function view_video($id)
@@ -68,7 +68,7 @@ class VideoController extends Controller
     public function delete_video($id)
     {
 
-        Video::where('id', $id)->update(['status' => '0']);
+        Video::where('id', $id)->update(['status' => '2']);
         return back()->with('delete', 'Your Data has been Deleted');
     }
     public function update_video(Request $request, $id)

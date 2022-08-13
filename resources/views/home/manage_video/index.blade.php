@@ -123,14 +123,14 @@
                                 <div class="form-group row">
                                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Youtube Video Link</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
-                                        <input type="text" required="" placeholder="Enter Name" name="link" class="form-control"  value="https://www.youtube.com/watch?v={{$video->link}}" required>
+                                        <input type="text" required="" placeholder="Enter Name" name="link" class="form-control" value="https://www.youtube.com/watch?v={{$video->link}}" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Status</label>
                                     <div class="col-12 col-sm-8 col-lg-6 pt-1">
                                         <div class="switch-button switch-button-yesno">
-                                            <input type="checkbox"  @if ($video->status=='1') ? checked="" : ;  @endif name="status" id="switch19"><span>
+                                            <input type="checkbox" @if ($video->status=='1') ? checked="" : ; @endif name="status" id="switch19"><span>
                                                 <label for="switch19"></label></span>
                                         </div>
                                     </div>
@@ -175,7 +175,8 @@
                                             <td>{{ $table->id }}</td>
                                             <td>{{ $table->name }}</td>
                                             <td>{{ $table->created_by }}</td>
-                                            <td>{{ $table->status }}</td>
+                                            <td>@if ( $table->status == "1")
+                                                Active @else Inactive @endif</td>
                                             <td>{{ $table->created_at }}</td>
                                             <td>
                                                 <form action="{{ route('delete_video',$table->id) }}" method="POST">

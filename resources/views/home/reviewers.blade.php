@@ -11,9 +11,9 @@
                     <!-- pageheader  -->
                     <!-- ============================================================== -->
                     <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="col-md-6">
                             <div class="page-header" id="top">
-                                <h2 class="pageheader-title">Reviewers </h2>
+                                <h2 class="pageheader-title">Reviewers</h2>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
@@ -22,11 +22,24 @@
                                     </nav>
                                 </div>
                             </div>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <form action="{{route('reviewers')}}" method="GET">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" name="keyword" placeholder="Search PDF here....">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-primary"><span class="fa fa-search"></span></button>
+                                    </div>
+
+                                </div>
+                            </form> 
                         </div>
                     </div>
                     <div class="row">
                         @foreach($pdf as $data)
-                        <div class="col-xl-2 col-lg-4 col-md-4 col-sm-4 col-6">
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6 card-wrapper">
                             <!-- .card -->
                             <div class="card card-figure">
                                 <!-- .card-figure -->
@@ -50,7 +63,21 @@
 
                         @endforeach
                     </div>
-
+                    <div class="row" style="float: right;">
+                        <!-- ============================================================== -->
+                        <!-- paginations  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination"> 
+                                    {{$pdf->appends(['keyword' => $keyword] )->links()}}
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- pagination  -->
+                        <!-- ============================================================== -->
+                    </div>
 
                 </div>
             </div>
