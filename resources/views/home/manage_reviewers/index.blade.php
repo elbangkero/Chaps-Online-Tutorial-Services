@@ -154,7 +154,7 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Admin Accounts</h5>
+                            <h5 class="mb-0">Reviewer List</h5>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

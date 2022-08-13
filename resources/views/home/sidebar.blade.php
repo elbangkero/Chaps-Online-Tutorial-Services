@@ -15,7 +15,7 @@
                         <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'reviewers') active @endif" href="{{route('reviewers')}}?page=1"><i class="fa fa-fw fa-file"></i>Reviewers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'videos' || \Route::getFacadeRoot()->current()->uri() == 'view_video') active @endif" href="{{route('videos')}}"><i class="fa fa-fw fa-video"></i>Videos</a>
+                        <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'videos' || \Route::getFacadeRoot()->current()->uri() == 'view_video') active @endif" href="{{route('videos')}}?page=1"><i class="fa fa-fw fa-video"></i>Videos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'manage_reviewers') active @endif" href="{{route('manage_reviewers')}}"><i class="fa fa-fw fa-tasks"></i>Manage Reviewers</a>
@@ -38,7 +38,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-clipboard"></i>Manage Plan</a>
+                        <a class="nav-link" href="{{route('services_index')}}"><i class="fas fa-clipboard"></i>Manage Services</a>
                     </li>
 
                 </ul>

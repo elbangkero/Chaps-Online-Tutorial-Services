@@ -7,11 +7,11 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="page-header">
-                        <h2 class="pageheader-title">Manage Videos</h2>
+                        <h2 class="pageheader-title">Manage Services</h2>
                         <div class="page-breadcrumb">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Manage Videos</a></li>
+                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Manage Services</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -47,20 +47,26 @@
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
-                        <h5 class="card-header">Add New Video</h5>
+                        <h5 class="card-header">Add New Service</h5>
                         <div class="card-body">
-                            <form id="validationform" data-parsley-validate="" novalidate="" action="{{ route('store_video') }}" method="POST" enctype="multipart/form-data" class="form-horizontal form-label-left">
+                            <form id="validationform" data-parsley-validate="" novalidate="" action="{{ route('store_services') }}" method="POST" enctype="multipart/form-data" class="form-horizontal form-label-left">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Video Name</label>
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Service Name</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
-                                        <input type="text" required="" placeholder="Enter Name" name="name" class="form-control" required>
+                                        <input type="text" required="" placeholder="Enter Name" name="service_name" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Youtube Video Link</label>
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Price</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
-                                        <input type="text" required="" placeholder="Enter Name" name="link" class="form-control" required>
+                                        <input type="text" required="" placeholder="Enter Name" name="price" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Description</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" ></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -72,9 +78,32 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="card">
+                                            <h5 class="card-header">Reviewer List</h5>
+                                            <div class="card-body">
+                                                <select id='keep-order' name="reviewer_items[]" multiple='multiple'>
+                                                    <option value='1' selected>Elements 1</option>
+                                                    <option value='2'>Elements 2</option>
+                                                    <option value='3'>Elements 3</option>
+                                                    <option value='4'>Elements 4</option>
+                                                    <option value='5'>Elements 5</option>
+                                                    <option value='6'>Elements 6</option>
+                                                    <option value='7'>Elements 7</option>
+                                                    <option value='8'>Elements 8</option>
+                                                    <option value='9'>Elements 9</option>
+                                                    <option value='10'>Elements 10</option>
+                                                    <option value='11'>Elements 11</option>
+                                                    <option value='12'>Elements 12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group row text-right">
                                     <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                        <button type="submit" onclick="return handleChange()" class="btn btn-space btn-primary">Submit</button>
+                                        <button type="submit"  class="btn btn-space btn-primary">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -154,7 +183,7 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Video List</h5>
+                            <h5 class="mb-0">Admin Accounts</h5>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -170,25 +199,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($table as $table)
-                                        <tr>
-                                            <td>{{ $table->id }}</td>
-                                            <td>{{ $table->name }}</td>
-                                            <td>{{ $table->created_by }}</td>
-                                            <td>@if ( $table->status == "1")
-                                                Active @else Inactive @endif</td>
-                                            <td>{{ $table->created_at }}</td>
-                                            <td>
-                                                <form action="{{ route('delete_video',$table->id) }}" method="POST">
-                                                    <a class="btn btn-primary btn-xs" type="button" href="{{ route('edit_video',$table->id) }}"> <i class="fa fa-edit"></i> Edit </a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button onclick="return confirmSubmit()" class="btn btn-danger btn-xs" type="submit"><i class="fa fa-remove"></i> Delete </button>
 
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        @endforeach
                                     </tbody>
                                     <tfoot>
                                         <tr>

@@ -12,6 +12,6 @@ class GlobalController extends Controller
     }
     public function student_registration()
     {
-        return view('student.registration');
+        return view('home.registration');
     }
 }

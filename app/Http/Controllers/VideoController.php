@@ -10,10 +10,18 @@ use Illuminate\Support\Facades\Hash;
 
 class VideoController extends Controller
 {
-    public function videos()
+    public function videos(Request $request)
     {
-        $videos = DB::table('reviewers_video')->where('status', '=', 1)->get();
-        return view('home.videos', compact('videos'));
+        $keyword = $request->keyword;
+
+        if (!empty($keyword)) {
+            $videos = DB::table('reviewers_video')->where('name', 'LIKE', '%' . $keyword . '%')->paginate(12);
+        } else {
+
+            $videos = DB::table('reviewers_video')->where('status', '=', 1)->paginate(12);
+        }
+        $page = $request->page;
+        return view('home.videos', compact('videos', 'keyword', 'page'));
     }
     public function edit_video($id)
     {

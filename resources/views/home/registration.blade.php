@@ -67,7 +67,7 @@
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Basic Info</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Plan</a>
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Services</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -75,7 +75,7 @@
                         <h3 class="register-heading">Reviewer's Info</h3>
                         <form method="POST" action="{{ route('store_students') }}">
                             @csrf
-                            <div class="row register-form">
+                            <div class="row register-form" style="width: 100% !important; ">
 
                                 <div class="col-md-12">
                                     @if(Session::has('success'))
@@ -129,51 +129,60 @@
                                     <div class="form-group">
                                         <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password *" value="" required autocomplete="off" />
                                     </div>
-                                    <input type="submit" class="btnRegister" value="Register"  />
+                                    <input type="submit" class="btnRegister" value="Register" />
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <h3 class="register-heading">Apply as a Hirer</h3>
-                        <div class="row register-form">
+                        <h3 class="register-heading">Choose a service</h3>
+                        <div class="row register-form" style="width: 100% !important; ">
+
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                <div class="form-check" style="margin: 20px;">
+                                    <input style="cursor: pointer;" type="radio" class="form-check-input radio-size" id="radio2" name="optradio" value="option2">
+                                    <label class="form-check-label" for="radio2" style="cursor: pointer;margin-left:10px">
+                                        <h5> Selected Reviewers </h5>
+                                        <span>Price : ₱100</span>
+                                    </label>
+                                    <br>
+                                    <label for="radio2">
+                                        <div class="card" style="cursor: pointer;">
+                                            <div class="card-body">
+                                                <p class="card-text">Only selected reviewers can read</p>
+                                            </div>
+                                        </div>
+                                    </label>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                <div class="form-check" style="margin: 20px;">
+                                    <input style="cursor: pointer;" type="radio" class="form-check-input radio-size" id="radio3" name="optradio" value="option3">
+                                    <label class="form-check-label" for="radio2" style="cursor: pointer;margin-left:10px">
+                                        <h5> Package</h5>
+                                        <span>Price : ₱500</span>
+                                    </label>
+                                    <br>
+                                    <label for="radio3">
+                                        <div class="card" style="cursor: pointer;">
+                                            <div class="card-body">
+                                                <p class="card-text">All PDF is Accessible</p>
+                                            </div>
+                                        </div>
+                                    </label>
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
-                                </div>
-
-
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password *" value="" />
+                                <img style="max-width:100%;
+                                max-height:100%;
+                                height: auto;
+                                width:auto;" src="{{asset('public/storage/img/293465589_828160171890357_5435663303333464587_n.jpg')}}" alt="">
+                                <div style="text-align: center;">
+                                    <h5>Pay on Gcash</h5>
+                                    <span>and send it to our facebook page</span>
                                 </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option class="hidden" selected disabled>Please select your Sequrity Question</option>
-                                        <option>What is your Birthdate?</option>
-                                        <option>What is Your old Phone Number</option>
-                                        <option>What is your Pet Name?</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="`Answer *" value="" />
-                                </div>
-                                <input type="submit" class="btnRegister" value="Register" />
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>

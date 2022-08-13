@@ -149,13 +149,13 @@ class ReviewerController extends Controller
         $keyword = $request->keyword;
 
         if (!empty($keyword)) {
-            $pdf = DB::table('reviewers_pdf')->where('name', 'LIKE', '%'.$keyword.'%')->paginate(12);
+            $pdf = DB::table('reviewers_pdf')->where('name', 'LIKE', '%' . $keyword . '%')->paginate(12);
         } else {
 
             $pdf = DB::table('reviewers_pdf')->where('status', '=', 1)->paginate(12);
         }
         $page = $request->page;
-        return view('home.reviewers', compact('pdf', 'page','keyword'));
+        return view('home.reviewers', compact('pdf', 'page', 'keyword'));
 
         //dd($keyword);
     }

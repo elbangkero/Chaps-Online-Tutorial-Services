@@ -3,8 +3,15 @@
 <script src="{{asset('public/storage/assets/vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
 <!-- slimscroll js -->
 <script src="{{asset('public/storage/assets/vendor/slimscroll/jquery.slimscroll.js')}}"></script>
+<!-- Multi select js -->
+<script src="{{asset('public/storage/assets/vendor/multi-select/js/jquery.multi-select.js')}}"></script>
 <!-- main js -->
 <script src="{{asset('public/storage/assets/libs/js/main-js.js')}}"></script>
+<script>
+    $('#keep-order').multiSelect({
+        keepOrder: true
+    });
+</script>
 <!-- chart chartist js -->
 <script src="{{asset('public/storage/assets/vendor/charts/chartist-bundle/chartist.min.js')}}"></script>
 <!-- sparkline js -->
@@ -37,6 +44,7 @@
 <script src="{{asset('public/storage/assets/vendor/datepicker/moment.js')}}"></script>
 <script src="{{asset('public/storage/assets/vendor/datepicker/tempusdominus-bootstrap-4.js')}}"></script>
 <script src="{{asset('public/storage/assets/vendor/datepicker/datepicker.js')}}"></script>
+
 </body>
 
 </html>

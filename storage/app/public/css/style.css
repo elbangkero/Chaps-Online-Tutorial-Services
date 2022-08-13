@@ -11038,3 +11038,7 @@ p,
   margin-bottom: -15%;
   color: #495057;
 }
+.radio-size  {
+  width: 1em;
+  height: 1em;
+}
