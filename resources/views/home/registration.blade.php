@@ -98,77 +98,62 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="full_name" placeholder="Full Name" value="" required autocomplete="off" />
+                                        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full Name" value="" required autocomplete="off" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="address" placeholder="Home Address" value="" required autocomplete="off" />
+                                        <input type="text" class="form-control" id="address" name="address" placeholder="Home Address" value="" required autocomplete="off" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="date_of_birth" placeholder="Date of birth" value="" id="date_of_birth" required autocomplete="off" />
+                                        <input type="text" class="form-control" id="date_of_birth" name="date_of_birth" placeholder="Date of birth" value="" id="date_of_birth" required autocomplete="off" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="contact_number" placeholder="Contact Number" value="" required autocomplete="off" />
+                                        <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Contact Number" value="" required autocomplete="off" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="school_graduated" placeholder="School Graduated" value="" autocomplete="off" />
+                                        <input type="text" class="form-control" id="school_graduated" name="school_graduated" placeholder="School Graduated" value="" autocomplete="off" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="date_graduated" placeholder="Date Graduated" id="date_graduated" value="" autocomplete="off" />
+                                        <input type="text" class="form-control" id="date_graduated" name="date_graduated" placeholder="Date Graduated" id="date_graduated" value="" autocomplete="off" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="exam_takes" placeholder="Number of exam taken" value="" autocomplete="off" />
+                                        <input type="text" class="form-control" id="exam_takes" name="exam_takes" placeholder="Number of exam taken" value="" autocomplete="off" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" name="email" placeholder="Your Email *" value="" required autocomplete="off" />
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email *" value="" required autocomplete="off" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" name="password" placeholder="Password *" value="" required autocomplete="off" />
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password *" value="" required autocomplete="off" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password *" value="" required autocomplete="off" />
+                                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password *" value="" required autocomplete="off" />
                                     </div>
-                                    <input type="submit" class="btnRegister" value="Register" />
                                 </div>
                             </div>
-                        </form>
+
                     </div>
                     <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <h3 class="register-heading">Choose a service</h3>
                         <div class="row register-form" style="width: 100% !important; ">
-
                             <div class="col-md-6">
+                                @foreach($services as $data)
                                 <div class="form-check" style="margin: 20px;">
-                                    <input style="cursor: pointer;" type="radio" class="form-check-input radio-size" id="radio2" name="optradio" value="option2">
-                                    <label class="form-check-label" for="radio2" style="cursor: pointer;margin-left:10px">
-                                        <h5> Selected Reviewers </h5>
-                                        <span>Price : ₱100</span>
+                                    <input style="cursor: pointer;" type="radio" class="form-check-input radio-size" id="radio-{{$data->id}}" name="service_id" value="{{$data->id}}" checked>
+                                    <label class="form-check-label" for="radio-{{$data->id}}" style="cursor: pointer;margin-left:10px">
+                                        <h5> {{$data->service_name}} </h5>
+                                        <span>Price : ₱ {{$data->price}}</span>
                                     </label>
                                     <br>
-                                    <label for="radio2">
+                                    <label for="radio-{{$data->id}}">
                                         <div class="card" style="cursor: pointer;">
                                             <div class="card-body">
-                                                <p class="card-text">Only selected reviewers can read</p>
+                                                <p class="card-text">{{$data->description}} </p>
                                             </div>
                                         </div>
                                     </label>
                                 </div>
-                                <div class="form-check" style="margin: 20px;">
-                                    <input style="cursor: pointer;" type="radio" class="form-check-input radio-size" id="radio3" name="optradio" value="option3">
-                                    <label class="form-check-label" for="radio2" style="cursor: pointer;margin-left:10px">
-                                        <h5> Package</h5>
-                                        <span>Price : ₱500</span>
-                                    </label>
-                                    <br>
-                                    <label for="radio3">
-                                        <div class="card" style="cursor: pointer;">
-                                            <div class="card-body">
-                                                <p class="card-text">All PDF is Accessible</p>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
+                                @endforeach
                             </div>
                             <div class="col-md-6">
                                 <img style="max-width:100%;
@@ -177,13 +162,15 @@
                                 width:auto;" src="{{asset('public/storage/img/293465589_828160171890357_5435663303333464587_n.jpg')}}" alt="">
                                 <div style="text-align: center;">
                                     <h5>Pay on Gcash</h5>
-                                    <span>and send it to our facebook page</span>
+                                    <span>And send the receipt to our facebook page for your account activation : <a href="https://www.facebook.com/CHAPOPOYCRIMINOLOGY" target="_blank">https://www.facebook.com/CHAPOPOYCRIMINOLOGY</a></span>
                                 </div>
+
+                                <input type="submit" class="btnRegister" onclick="return handleChange()" value="Register" />
                             </div>
                         </div>
-
-
                     </div>
+
+                    </form>
                 </div>
             </div>
         </div>
@@ -280,6 +267,52 @@
         $(function() {
             $("#date_graduated").datepicker();
         });
+    </script>
+
+    <script>
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+        function handleChange() {
+
+            if (document.getElementById("full_name").value == "") {
+                alert('Please Enter Full Name');
+                return false;
+            } else if (document.getElementById("address").value == "") {
+                alert('Please Enter Address');
+                return false;
+            } else if (document.getElementById("date_of_birth").value == "") {
+                alert('Please Enter Date of birth');
+                return false;
+            } else if (document.getElementById("contact_number").value == "") {
+                alert('Please Enter Contact number');
+                return false;
+            } else if (document.getElementById("school_graduated").value == "") {
+                alert('Please Enter School graduated');
+                return false;
+            } else if (document.getElementById("date_graduated").value == "") {
+                alert('Please Enter Date graduated');
+                return false;
+            } else if (document.getElementById("exam_takes").value == "") {
+                alert('Please Enter Exam takes');
+                return false;
+            } else if (document.getElementById("email").value == "") {
+
+                alert('Please Enter Email');
+                return false;
+            } else if (document.getElementById("password").value == "") {
+                alert('Please Enter Password');
+                return false;
+            } else if (document.getElementById("password_confirmation").value == "") {
+                alert('Please Enter Confirm Password');
+                return false;
+            }
+            if (document.getElementById("email").value.match(validRegex)) {
+                return true;
+            } else {
+                alert('Please Enter valid email');
+                return false;
+            } 
+        }
     </script>
 </body>
 

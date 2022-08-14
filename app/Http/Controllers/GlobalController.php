@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GlobalController extends Controller
 {
@@ -12,6 +13,7 @@ class GlobalController extends Controller
     }
     public function student_registration()
     {
-        return view('home.registration');
+        $services = DB::table('services')->where('status','=',1)->get();
+        return view('home.registration',compact('services'));
     }
 }

@@ -88,6 +88,7 @@ class UserController extends Controller
             'date_of_birth' => 'required',
             'contact_number' => 'required',
             'exam_takes' => 'required',
+            'service_id' => 'required',
             'email' => 'required|unique:users,email',
             'password' => 'required|min:3|confirmed',
         ]);
@@ -104,6 +105,7 @@ class UserController extends Controller
         $students->address = $request->address;
         $students->user_type = 2;
         $students->status = 1;
+        $students->service_id = $request->service_id;
         $students->date_of_birth = date('Y-m-d', $date_of_birth);
         $students->contact_number = $request->contact_number;
         $students->school_graduated = $request->school_graduated;

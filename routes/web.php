@@ -28,7 +28,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     /* Student */
     Route::get('/student_index', 'UserController@student_index')->name('student_index');
-    Route::post('/store', 'UserController@store_students')->name('store_students');
     Route::delete('/delete_student/{id}', 'UserController@delete_student')->name('delete_student');
     /* Student */
 
@@ -43,7 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
     /* Videos */
 
     /* Reviewers */
-    Route::get('/reviewers', 'ReviewerController@reviewers')->name('reviewers');
+
     Route::get('/manage_reviewers', 'ReviewerController@manage_reviewers')->name('manage_reviewers');
     Route::post('/store_reviewers', 'ReviewerController@store_reviewers')->name('store_reviewers');
     Route::get('/edit_reviewers/{id}', 'ReviewerController@edit_reviewers')->name('edit_reviewers');
@@ -54,12 +53,17 @@ Route::group(['middleware' => ['auth']], function () {
     /* Reviewers */
 
     /* Services */
-    Route::get('/services_index', 'ServicesController@services_index')->name('services_index'); 
-    Route::post('/store_services', 'ServicesController@store_services')->name('store_services'); 
+    Route::get('/services_index', 'ServicesController@services_index')->name('services_index');
+    Route::post('/store_services', 'ServicesController@store_services')->name('store_services');
+    Route::get('/edit_services/{id}', 'ServicesController@edit_services')->name('edit_services');
+    Route::put('/update_services/{id}', 'ServicesController@update_services')->name('update_services');
     /* Services */
 });
 
-
+Route::get('/reviewers', 'ReviewerController@reviewers')->name('reviewers');
+Route::post('/store', 'UserController@store_students')->name('store_students');
 Route::get('/students/registration', 'GlobalController@student_registration')->name('registration');
 Route::get('/', 'GlobalController@login_page')->name('login_page');
+
+Route::post('/gcash/payment', 'ServicesController@gcash')->name('gcash');
 Auth::routes();
