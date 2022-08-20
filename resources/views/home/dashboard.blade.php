@@ -1,62 +1,76 @@
 @include('home.header')
-<style>
-    .video-container {
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-    }
 
-    .video-container::after {
-        padding-top: 56.25%;
-        display: block;
-        content: '';
-    }
-
-    .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-</style>
 <div class="dashboard-main-wrapper">
     @include('home.navbar')
-    @include('home.sidebars.student_sidebar')
-    <div class="dashboard-wrapper">
+ 
+
+    <div class="home-dashboard">
         <div class="container-fluid dashboard-content">
             <div class="row">
                 <div class="col-xl-12">
                     <!-- ============================================================== -->
                     <!-- pageheader  -->
                     <!-- ============================================================== -->
-                    <div class="row"> 
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="row">
+                        <div class="col-md-12">
                             <div class="page-header" id="top">
-                                <h2 class="pageheader-title">Videos </h2>
+                                <h2 class="pageheader-title">Dashboard</h2>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Reviewers Videos</a></li>
                                         </ol>
                                     </nav>
                                 </div>
                             </div>
+
                         </div>
                     </div>
-                    <div class="row">
-
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/{{$video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-
-                    </div>
-
-
                 </div>
             </div>
+
+            <div class="row">
+
+                @if(auth()->user()->user_type =='1')
+                <div class="col-lg-6">
+                    <a class="card-cta" href="{{route('manage_reviewers')}}">
+                        <div class="card card-large-icons  card-left ">
+                            <div class="row">
+                                <div class="col-xs-6 col-lg-3 col-4">
+                                    <i class="fas fa-users icon-dashboard"></i>
+                                </div>
+                                <div class="col-xs-6 ol-lg-9 col-8">
+                                    <div class="card-body">
+                                        <h4>Admin</h4>
+                                        <p>Administration Panel</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                 @endif
+                <div class="col-lg-6">
+                    <a class="card-cta" href="{{route('reviewers')}}">
+                        <div class="card card-large-icons  card-left ">
+                            <div class="row">
+                            <div class="col-xs-6 col-lg-3 col-4">
+                                    <i class="fab fa-readme icon-dashboard"></i>
+                                </div>
+                                <div class="col-xs-6 ol-lg-9 col-8">
+                                    <div class="card-body">
+                                        <h4>Student</h4>
+                                        <p>Collection of reviewer and videos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
         </div>
-        <div class="footer">
+        <div class="footer" style="   position: fixed;bottom: 0;width: 100%;">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">

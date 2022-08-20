@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request;
+
 class LoginController extends Controller
 {
     /*
@@ -40,6 +41,18 @@ class LoginController extends Controller
     }
     protected function credentials(Request $request)
     {
-        return ['email' => $request->{$this->username()}, 'password' => $request->password, 'status' => 1];
+        return ['email' => $request->{$this->username()}, 'password' => $request->password, 'is_active' => 1,'status' => 1];
+    }
+    protected function validateLogin(Request $request)
+    {
+        $fb_link = "<?php echo <a href='facebook.com'>Link</a> ?>";
+        $this->validate($request, [
+            $this->username() => 'exists:users,' . $this->username() . ',is_active,1,status,1',
+            'password' => 'required|string',
+        ], [
+            $this->username() . '.exists' => 'Please verify your account on this email : "'. $request->{$this->username()}.'" and settle your payment on "facebook.com/CHAPOPOYCRIMINOLOGY" to active your account.'
+        ]);
+
+
     }
 }

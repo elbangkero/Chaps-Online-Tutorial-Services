@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/storage/img/image0.jpeg')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/storage/img/image0.png')}}" />
 
     <!-- Google Web Fonts -->
     <link href="{{asset('public/storage/css/fonts.googleapis.css')}}" rel="stylesheet">
@@ -31,7 +31,7 @@
         <div class="row py-2 px-lg-5">
             <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center text-white">
-                    <small><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</small>
+                    <small><i class="fa fa-phone-alt mr-2"></i>0926-056-8167</small>
                     <small class="px-3">|</small>
                     <small><i class="fa fa-envelope mr-2"></i>chapsonlinets2021@gmail.com</small>
                 </div>
@@ -55,7 +55,7 @@
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
             <a href="index.html" class="navbar-brand ml-lg-3">
-                <h6 class="m-0 display-10 text-uppercase text-primary"><i><img src="{{asset('public/storage/img/image0.jpeg')}}" alt="" id="IdTitle"></i> <u><b> Chaps Online Tutorial Services </b></u> </h6>
+                <h6 class="m-0 display-10 text-uppercase text-primary"><i><img src="{{asset('public/storage/img/image0.png')}}" alt="" id="IdTitle"></i> <u><b> Chaps Online Tutorial Services </b></u> </h6>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" style="display:none">
                 <span class="navbar-toggler-icon"></span>
@@ -233,7 +233,7 @@
 
             <div class="row">
 
-                <div class="col-lg-3 col-md-6  center-team-img">
+                <div class="col-lg-4 col-md-6  offset-md-4">
                     <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
                         <img class="card-img-top" src="{{asset('public/storage/img/team/nolie-team.jpg')}}" alt="">
 
@@ -400,7 +400,7 @@
                     <div class="col-md-6 mb-5">
                         <h3 class="text-primary mb-4">Get In Touch</h3>
                         <p><i class="fa fa-map-marker-alt mr-2"></i>123 Pandacan,Manila, Philippines</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>0926-056-8167</p>
                         <p><i class="fa fa-envelope mr-2"></i>chapsonlinets2021@gmail.com</p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>

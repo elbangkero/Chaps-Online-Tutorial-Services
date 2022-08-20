@@ -6,19 +6,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav flex-column">
-                    <li class="nav-divider">
-                        Student Menu
-                    </li>
-                    <hr>
-                    <li class="nav-item">
-                        <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'reviewers') active @endif" href="{{route('reviewers')}}?page=1"><i class="fa fa-fw fa-file"></i>Reviewers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'videos' || \Route::getFacadeRoot()->current()->uri() == 'view_video') active @endif" href="{{route('videos')}}?page=1"><i class="fa fa-fw fa-video"></i>Videos</a>
-                    </li>
-                    @if(auth()->user()->user_type =='1')
-                    <div> 
+                <ul class="navbar-nav flex-column">  
+                    <div>
                         <li class="nav-divider">
                             Admin Menu
                         </li>
@@ -45,10 +34,9 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('services_index')}}"><i class="fas fa-clipboard"></i>Manage Services</a>
+                            <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'services_index') active @endif" href="{{route('services_index')}}"><i class="fas fa-clipboard"></i>Manage Services</a>
                         </li>
-                    </div>
-                    @endif
+                    </div> 
                 </ul>
             </div>
         </nav>

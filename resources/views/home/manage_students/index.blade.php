@@ -1,7 +1,7 @@
 @include('home.header')
 <div class="dashboard-main-wrapper">
     @include('home.navbar')
-    @include('home.sidebar')
+    @include('home.sidebars.admin_sidebar')
     <div class="dashboard-wrapper">
         <div class="container-fluid  dashboard-content">
             <div class="row">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
-                        <h5 class="card-header">Add New Admin</h5>
+                        <h5 class="card-header">Add New Student</h5>
                         <div class="card-body">
                             <form method="POST" action="{{ route('store_students') }}">
                                 @csrf
@@ -68,9 +68,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <div class="input-group date col-12 col-sm-8 col-lg-10" id="datetimepicker2" data-target-input="nearest">
-                                                <input type="text" class="form-control datetimepicker-input" placeholder="Date of birth" name="date_of_birth" data-target="#datetimepicker2" />
-                                                <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                                            <div class="input-group date col-12 col-sm-8 col-lg-10" id="date_of_birth_picker" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input" placeholder="Date of birth" name="date_of_birth" data-target="#date_of_birth_picker" />
+                                                <div class="input-group-append" data-target="#date_of_birth_picker" data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                                 </div>
                                             </div>
@@ -86,9 +86,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <div class="input-group date col-12 col-sm-8 col-lg-10" id="datetimepicker2" data-target-input="nearest">
-                                                <input type="text" class="form-control datetimepicker-input" placeholder="Date graduated" name="date_graduated" data-target="#datetimepicker2" />
-                                                <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                                            <div class="input-group date col-12 col-sm-8 col-lg-10" id="date_graduated_picker" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input" placeholder="Date graduated" name="date_graduated" data-target="#date_graduated_picker" />
+                                                <div class="input-group-append" data-target="#date_graduated_picker" data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                                 </div>
                                             </div>
@@ -127,9 +127,9 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-12 col-sm-8 col-lg-6 pt-1">
-                                                <label>Status</label>
+                                                <label>Activate</label>
                                                 <div class="switch-button switch-button-yesno">
-                                                    <input type="checkbox" checked="" name="status" id="switch19"><span>
+                                                    <input type="checkbox" checked="" name="is_active" id="switch19"><span>
                                                         <label for="switch19"></label></span>
                                                 </div>
                                             </div>
@@ -191,9 +191,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <div class="input-group date col-12 col-sm-8 col-lg-10" id="datetimepicker2" data-target-input="nearest">
-                                                <input type="text" class="form-control datetimepicker-input" placeholder="Date of birth" name="date_of_birth" value={{$student->date_of_birth}} data-target="#datetimepicker2" />
-                                                <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                                            <div class="input-group date col-12 col-sm-8 col-lg-10" id="date_of_birth_picker" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input" placeholder="Date of birth" name="date_of_birth" value={{$student->date_of_birth}} data-target="#date_of_birth_picker" />
+                                                <div class="input-group-append" data-target="#date_of_birth_picker" data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                                 </div>
                                             </div>
@@ -209,9 +209,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <div class="input-group date col-12 col-sm-8 col-lg-10" id="datetimepicker2" data-target-input="nearest">
-                                                <input type="text" class="form-control datetimepicker-input" placeholder="Date graduated" name="date_graduated" value={{$student->date_graduated}} data-target="#datetimepicker2" />
-                                                <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                                            <div class="input-group date col-12 col-sm-8 col-lg-10" id="date_graduated_picker" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input" placeholder="Date graduated" name="date_graduated" value={{$student->date_graduated}} data-target="#date_graduated_picker" />
+                                                <div class="input-group-append" data-target="#date_graduated_picker" data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                                 </div>
                                             </div>
@@ -250,9 +250,9 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-12 col-sm-8 col-lg-6 pt-1">
-                                                <label>Status</label>
+                                                <label>Activate</label>
                                                 <div class="switch-button switch-button-yesno">
-                                                    <input type="checkbox" @if ($student->status=='3') ? checked="" : ; @endif name="status" id="switch19"><span>
+                                                    <input type="checkbox" @if ($student->is_active=='1') ? checked="" : ; @endif name="is_active" id="switch19"><span>
                                                         <label for="switch19"></label></span>
                                                 </div>
                                             </div>

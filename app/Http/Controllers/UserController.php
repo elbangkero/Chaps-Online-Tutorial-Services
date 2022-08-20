@@ -23,6 +23,7 @@ class UserController extends Controller
         $admin->full_name = $request->full_name;
         $admin->user_type = 1;
         $admin->status = 1;
+        $admin->is_active = 1;
         $admin->email = $request->email;
         $admin->password = Hash::make($request['password']);
         $admin->save();
@@ -60,11 +61,19 @@ class UserController extends Controller
             'email' => 'unique:users,email,' . $id . '',
             'password' => 'confirmed',
         ]);
-        $update = [
-            'full_name' => $request->input('full_name'),
-            'email' => $request->input('email'),
-            'password' => Hash::make($request['password']),
-        ];
+        $pass = $request->input('password');
+        if (!empty($pass)) {
+            $update = [
+                'full_name' => $request->input('full_name'),
+                'email' => $request->input('email'),
+                'password' => Hash::make($request['password']),
+            ];
+        } else {
+            $update = [
+                'full_name' => $request->input('full_name'),
+                'email' => $request->input('email'),
+            ];
+        }
 
         DB::table('users')
             ->where('id', $id)
@@ -74,7 +83,7 @@ class UserController extends Controller
     }
     public function student_index()
     {
-        $table =  DB::table('users')->where([['user_type',2],['status','!=',2]])->get();
+        $table =  DB::table('users')->where([['user_type', 2], ['status', '!=', 2]])->get();
 
         $select_service = DB::table('services')->where('status', '=', 1)->get();
         return view('home.manage_students.index', compact('table', 'select_service'));
@@ -104,7 +113,8 @@ class UserController extends Controller
         $students->full_name = $request->full_name;
         $students->address = $request->address;
         $students->user_type = 2;
-        $students->status =  $request->status == null ? 1 : 3;
+        $students->status =  1;
+        $students->is_active = $request->is_active == null ? 0 : 1;
         $students->service_id = $request->service_id;
         $students->date_of_birth = date('Y-m-d', $date_of_birth);
         $students->contact_number = $request->contact_number;
@@ -134,7 +144,7 @@ class UserController extends Controller
 
 
         $table =  DB::table('users')
-            ->where([['user_type', 2], ['status','!=',2]])
+            ->where([['user_type', 2], ['status', '!=', 2]])
             ->orderBy('id', 'DESC')->get();
 
         $select_service = DB::table('services')->where('status', '=', 1)->get();
@@ -155,20 +165,41 @@ class UserController extends Controller
         $new_date_graduated = $request->date_graduated;
         $date_graduated = strtotime($new_date_graduated);
 
-        $update = [
-            'full_name' => $request->input('full_name'),
-            'address' => $request->input('address'),
-            'user_type' => 2,
-            'status' => $request->status == null ? 1 : 3,
-            'service_id' => $request->input('service_id'),
-            'date_of_birth' => date('Y-m-d', $date_of_birth),
-            'contact_number' => $request->input('contact_number'),
-            'school_graduated' => $request->input('school_graduated'),
-            'date_graduated' => date('Y-m-d', $date_graduated),
-            'exam_takes' => $request->input('exam_takes'),
-            'email' => $request->input('email'),
-            'password' => Hash::make($request['password']),
-        ];
+
+        $pass = $request->input('password');
+        if (!empty($pass)) {
+            $update = [
+                'full_name' => $request->input('full_name'),
+                'address' => $request->input('address'),
+                'user_type' => 2,
+                'status' => 1,
+                'is_active' => $request->is_active == null ? 0 : 1,
+                'service_id' => $request->input('service_id'),
+                'date_of_birth' => date('Y-m-d', $date_of_birth),
+                'contact_number' => $request->input('contact_number'),
+                'school_graduated' => $request->input('school_graduated'),
+                'date_graduated' => date('Y-m-d', $date_graduated),
+                'exam_takes' => $request->input('exam_takes'),
+                'email' => $request->input('email'),
+                'password' => Hash::make($request['password']),
+            ];
+        } else {
+            $update = [
+                'full_name' => $request->input('full_name'),
+                'address' => $request->input('address'),
+                'user_type' => 2,
+                'status' => 1,
+                'is_active' => $request->is_active == null ? 0 : 1,
+                'service_id' => $request->input('service_id'),
+                'date_of_birth' => date('Y-m-d', $date_of_birth),
+                'contact_number' => $request->input('contact_number'),
+                'school_graduated' => $request->input('school_graduated'),
+                'date_graduated' => date('Y-m-d', $date_graduated),
+                'exam_takes' => $request->input('exam_takes'),
+                'email' => $request->input('email'),
+            ];
+        }
+
 
 
         DB::table('users')

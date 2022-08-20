@@ -16,4 +16,9 @@ class GlobalController extends Controller
         $services = DB::table('services')->where('status','=',1)->get();
         return view('home.registration',compact('services'));
     }
+    public function dashboard()
+    {
+        
+        return view('home.dashboard');
+    }
 }

@@ -216,7 +216,7 @@ a {
 }
 
 a:hover {
-    color: #ff407b;
+    color: #f88c20;
     text-decoration: none;
 }
 
@@ -824,7 +824,7 @@ html body .display-7 {
     position: absolute;
     left: 0;
     font-size: 14px;
-    color: #ff407b;
+    color: #f88c20;
     content: '\f058';
     font-style: initial;
 }
@@ -865,7 +865,7 @@ Background Color / Color
 }
 
 .bg-secondary {
-    background-color: #ff407b !important;
+    background-color: #f88c20 !important;
     color: #fff !important;
 }
 
@@ -966,7 +966,7 @@ Borders
 }
 
 .text-secondary {
-    color: #ff407b !important;
+    color: #f88c20 !important;
 }
 
 .text-success {
@@ -1019,7 +1019,7 @@ Borders
 }
 
 .border-secondary {
-    border-color: #ff407b !important;
+    border-color: #f88c20 !important;
 }
 
 .border-brand {
@@ -1945,6 +1945,11 @@ Sidebar Page Navigations
 /*-----------------------
 Container / Wrapper
 -------------------------*/
+.home-dashboard {
+    position: relative;
+    left: 0; 
+    min-height: 870px !important;
+}
 
 .dashboard-main-wrapper {
     min-height: 100%;
@@ -2780,7 +2785,7 @@ input[type=radio] {
 }
 
 .btn-wishlist:hover {
-    background-color: #ff407b;
+    background-color: #f88c20;
     color: #fff;
 }
 
@@ -2849,8 +2854,8 @@ input[type=radio] {
 
 .btn-secondary {
     color: #fff;
-    background-color: #ff407b;
-    border-color: #ff407b;
+    background-color: #f88c20;
+    border-color: #f88c20;
 }
 
 .btn-secondary:hover {
@@ -3095,22 +3100,22 @@ input[type=radio] {
 /*--- btn outline secondary --*/
 
 .btn-outline-secondary {
-    color: #ff407b;
+    color: #f88c20;
     background-color: transparent;
-    border-color: #ff407b;
+    border-color: #f88c20;
 }
 
 .btn-outline-secondary:hover {
     color: #fff;
-    background-color: #ff407b;
-    border-color: #ff407b;
+    background-color: #f88c20;
+    border-color: #f88c20;
 }
 
 .btn-outline-secondary.focus,
 .btn-outline-secondary:focus {
     color: #fff;
-    background-color: #ff407b;
-    border-color: #ff407b;
+    background-color: #f88c20;
+    border-color: #f88c20;
     box-shadow: 0 0 0 1px rgb(227, 45, 201);
 }
 
@@ -3118,8 +3123,8 @@ input[type=radio] {
 .btn-outline-secondary:not(:disabled):not(.disabled):active,
 .show>.btn-outline-secondary.dropdown-toggle {
     color: #fff;
-    background-color: #ff407b;
-    border-color: #ff407b;
+    background-color: #f88c20;
+    border-color: #f88c20;
 }
 
 
@@ -3350,7 +3355,7 @@ btn-link
 }
 
 .btn-secondary-link {
-    color: #ff407b !important;
+    color: #f88c20 !important;
 }
 
 
@@ -4206,13 +4211,13 @@ Pills vertical
 }
 
 .badge-secondary {
-    background-color: #ff407b;
+    background-color: #f88c20;
 }
 
 .badge-secondary[href]:focus,
 .badge-secondary[href]:hover {
     color: #fff;
-    background-color: #ff407b;
+    background-color: #f88c20;
     text-decoration: none;
 }
 
@@ -7252,3 +7257,21 @@ Media Query
     width: 100% !important;
     margin-bottom: 10px;
 }
+
+.center-team-img {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+  }
+  .card-left{
+    border-left: solid 10px;
+    border-left-color: #060c35;
+    width: auto;
+    height: 125px;
+    padding:5px; 
+  }
+   .icon-dashboard{
+    font-size: 75px;
+    color:#060c35; 
+    padding:20px 35px 0;
+   }

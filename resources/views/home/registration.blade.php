@@ -9,7 +9,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/storage/img/image0.jpeg')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/storage/img/image0.png')}}" />
 
     <!-- Google Web Fonts -->
     <link href="{{asset('public/storage/css/fonts.googleapis.css')}}" rel="stylesheet">
@@ -55,7 +55,13 @@
     </div>
     <!-- Topbar End -->
 
+    <div class="row" style="margin: 10px;">
+        <div class="col-12 col-lg-12">
+            <a href="{{route('login_page')}}" style="float:right;" class="btn btn-primary ">Go Back!</a>
+        </div>
+    </div>
     <div class="register">
+
         <div class="row">
             <div class="col-md-3 register-left">
                 <span>Join Us Now!</span>
@@ -311,7 +317,7 @@
             } else {
                 alert('Please Enter valid email');
                 return false;
-            } 
+            }
         }
     </script>
 </body>

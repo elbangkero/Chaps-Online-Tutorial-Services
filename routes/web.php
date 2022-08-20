@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/logout', 'HomeAuthController@logout')->name('logout');
 
+    Route::get('/dashboard', 'GlobalController@dashboard')->name('dashboard');
+
 
     /* Admin */
     Route::post('/store_admin', 'UserController@store_admin')->name('store_admin');
@@ -44,7 +46,7 @@ Route::group(['middleware' => ['auth']], function () {
     /* Videos */
 
     /* Reviewers */
-
+    Route::get('/reviewers', 'ReviewerController@reviewers')->name('reviewers');
     Route::get('/manage_reviewers', 'ReviewerController@manage_reviewers')->name('manage_reviewers');
     Route::post('/store_reviewers', 'ReviewerController@store_reviewers')->name('store_reviewers');
     Route::get('/edit_reviewers/{id}', 'ReviewerController@edit_reviewers')->name('edit_reviewers');
@@ -63,7 +65,6 @@ Route::group(['middleware' => ['auth']], function () {
     /* Services */
 });
 
-Route::get('/reviewers', 'ReviewerController@reviewers')->name('reviewers');
 Route::post('/store', 'UserController@store_students')->name('store_students');
 Route::get('/students/registration', 'GlobalController@student_registration')->name('registration');
 Route::get('/', 'GlobalController@login_page')->name('login_page');

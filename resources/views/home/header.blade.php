@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/storage/img/image0.jpeg')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/storage/img/image0.png')}}" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('public/storage/assets/vendor/bootstrap/css/bootstrap.min.css')}}">
     <link href="{{asset('public/storage/assets/vendor/fonts/circular-std/style.css')}}" rel="stylesheet">

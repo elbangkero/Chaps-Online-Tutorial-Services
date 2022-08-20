@@ -1,7 +1,7 @@
 @include('home.header')
 <div class="dashboard-main-wrapper">
     @include('home.navbar')
-    @include('home.sidebar')
+    @include('home.sidebars.admin_sidebar')
     <div class="dashboard-wrapper">
         <div class="container-fluid  dashboard-content">
             <div class="row">
