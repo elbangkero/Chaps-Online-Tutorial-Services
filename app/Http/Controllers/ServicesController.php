@@ -81,7 +81,7 @@ class ServicesController extends Controller
         $selected = DB::table('services')->where('id', '=', $id)->first();
 
         $str_arr = preg_split("/\,/", $selected->reviewer_items);
-        $pdf_reviewer = DB::table('reviewers_pdf')->whereNotIn('id',$str_arr)->get();
+        $pdf_reviewer = DB::table('reviewers_pdf')->whereNotIn('id', $str_arr)->get();
         $table = DB::table('services')->where('status', '=', 1)->get();
         $edit_service = DB::table('services')->where('id', '=', $id)->get();
 
@@ -97,20 +97,26 @@ class ServicesController extends Controller
             'service_name' => 'required',
             'price' => 'required',
             'description' => 'required'
-        ]); 
+        ]);
 
         $update = [
             'service_name' => $request->input('service_name'),
             'price' =>  $request->input('price'),
             'description' => $request->input('description'),
             'status' => $request->status == null ? 0 : 1,
-            'reviewer_items' =>   $request->reviewer_items == null ? "" : implode(',', $request->reviewer_items), 
+            'reviewer_items' =>   $request->reviewer_items == null ? "" : implode(',', $request->reviewer_items),
         ];
 
         DB::table('services')
             ->where('id', $id)
             ->update($update);
 
-       return back()->with('success', 'Your Data has been Update');
+        return back()->with('success', 'Your Data has been Update');
+    }
+    public function delete_services($id)
+    {
+
+        Services::where('id', $id)->update(['status' => '2']);
+        return back()->with('delete', 'Your Data has been Deleted');
     }
 }

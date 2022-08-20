@@ -29,6 +29,8 @@ Route::group(['middleware' => ['auth']], function () {
     /* Student */
     Route::get('/student_index', 'UserController@student_index')->name('student_index');
     Route::delete('/delete_student/{id}', 'UserController@delete_student')->name('delete_student');
+    Route::put('/update_student/{id}', 'UserController@update_student')->name('update_student');
+    Route::get('/edit_student/{id}', 'UserController@edit_student')->name('edit_student');
     /* Student */
 
     /* Videos */
@@ -57,6 +59,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/store_services', 'ServicesController@store_services')->name('store_services');
     Route::get('/edit_services/{id}', 'ServicesController@edit_services')->name('edit_services');
     Route::put('/update_services/{id}', 'ServicesController@update_services')->name('update_services');
+    Route::delete('/delete_services/{id}', 'ServicesController@delete_services')->name('delete_services');
     /* Services */
 });
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Chaps Online Tutorial Services</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/storage/img/image0.jpeg')}}" />
@@ -61,7 +61,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
-                <div class="navbar-nav m-auto py-0">
+                <div class="navbar-nav m-auto py-0" style="visibility: hidden;">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Service</a>
@@ -208,17 +208,58 @@
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
-                <h1 class="mb-4">Meet Our Newly Passer</h1>
+                <h1 class="mb-4">MEET THE TEAM</h1>
             </div>
+
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5">
-                        <img class="card-img-top" src="{{asset('public/storage/img/300x300.jpg')}}" alt="">
+
+                <div class="col-lg-3 col-md-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
+                        <img class="card-img-top" src="{{asset('public/storage/img/team/nolie.jpg')}}" alt="">
 
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Full Name</h5>
-                                <span>Top 2</span>
+                                <h5 class="font-weight-bold">Nolie Z. Ingcad</h5>
+                                <span>Review Director</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/santos.jpg')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Allan Santos</h5>
+                                <span>Professor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/gumboc.jpg')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Stephen Gumboc</h5>
+                                <span>Attorney</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/cambel.jpg')}}" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Paola Cambel</h5>
+                                <span>Professor</span>
                             </div>
                             <div class="team-social d-flex align-items-center justify-content-center bg-primary">
                                 <h5 class="font-weight-bold">Rate 98.5%</h5>
@@ -226,41 +267,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5">
-                        <img class="card-img-top" src="{{asset('public/storage/img/300x300.jpg')}}" alt="">
+                <div class="col-lg-3 col-md-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/sumilang.jpg')}}" alt="">
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Full Name</h5>
-                                <span>Top 1</span>
-                            </div>
-                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <h5 class="font-weight-bold">Rate 98.5%</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5">
-                        <img class="card-img-top" src="{{asset('public/storage/img/300x300.jpg')}}" alt="">
-                        <div class="card-body text-center p-0">
-                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Full Name</h5>
-                                <span>Top 6</span>
-                            </div>
-                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <h5 class="font-weight-bold">Rate 98.5%</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5">
-                        <img class="card-img-top" src="{{asset('public/storage/img/300x300.jpg')}}" alt="">
-                        <div class="card-body text-center p-0">
-                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Full Name</h5>
-                                <span>Top 10</span>
+                                <h5 class="font-weight-bold">Centeniel Sumilang</h5>
+                                <span>Professor</span>
                             </div>
                             <div class="team-social d-flex align-items-center justify-content-center bg-primary">
                                 <h5 class="font-weight-bold">Rate 98.5%</h5>
@@ -269,6 +282,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
     <!-- Team End -->
@@ -288,16 +303,6 @@
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-outline-light btn-social" target=”_blank” href="https://www.youtube.com/c/ACLEMentoringbyChapsBLEC"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-5">
-                        <h3 class="text-primary mb-4">Quick Links</h3>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Pricing Plan</a>
-                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                         </div>
                     </div>
                 </div>

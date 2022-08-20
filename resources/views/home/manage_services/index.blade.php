@@ -226,7 +226,7 @@
                                                 Active @else Inactive @endif</td> 
                                             <td>{{ $table->created_at }}</td>
                                             <td>
-                                                <form action="{{ route('delete_reviewers',$table->id) }}" method="POST">
+                                                <form action="{{ route('delete_services',$table->id) }}" method="POST">
                                                     <a class="btn btn-primary btn-xs" type="button" href="{{ route('edit_services',$table->id) }}"> <i class="fa fa-edit"></i> Edit </a>
                                                     @csrf
                                                     @method('DELETE')

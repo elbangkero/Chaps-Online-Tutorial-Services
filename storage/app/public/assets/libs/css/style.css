@@ -1594,6 +1594,7 @@ Top Header
     font-weight: 600;
     text-transform: uppercase;
     font-size: 12px;
+    text-align: center;
 }
 
 .navigation-horizontal .submenu {
@@ -7247,7 +7248,7 @@ Media Query
 @media only screen and (max-width:320px) {}
 
 
-#custom-search input{ 
-   width: 100% !important;
-   margin-bottom: 10px;
+#custom-search input {
+    width: 100% !important;
+    margin-bottom: 10px;
 }

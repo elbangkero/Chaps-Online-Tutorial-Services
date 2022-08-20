@@ -146,17 +146,36 @@ class ReviewerController extends Controller
     }
     public function reviewers(Request $request)
     {
+        $user_id = Auth::user()->id;
+
+        $reviewer_items = DB::table(DB::raw('users a'))->select('a.id','a.email','a.full_name','s.service_name',DB::raw('(
+            CASE 
+                WHEN a.user_type =\'1\' THEN \'Admin\' 
+                WHEN a.user_type =\'2\' THEN \'Student\' 
+            END) AS user_type'),DB::raw('(
+            CASE 
+                WHEN a.user_type =\'1\' THEN (select GROUP_CONCAT(id) from reviewers_pdf where status = 1)
+                WHEN a.user_type =\'2\' THEN s.reviewer_items 
+            END) AS reviewer_items'))->leftJoin(DB::raw('services s'),'s.id','=','a.service_id')->where('a.id','=',$user_id)->first();
+
+        $str_arr = preg_split("/\,/", $reviewer_items->reviewer_items);
+
+
         $keyword = $request->keyword;
 
-        if (!empty($keyword)) {
-            $pdf = DB::table('reviewers_pdf')->where('name', 'LIKE', '%' . $keyword . '%')->paginate(12);
-        } else {
 
-            $pdf = DB::table('reviewers_pdf')->where('status', '=', 1)->paginate(12);
+        if (!empty($keyword)) {
+
+            //$pdf = DB::table('reviewers_pdf')->where('name', 'LIKE', '%' . $keyword . '%')->paginate(12);
+            $pdf = DB::table('reviewers_pdf')->whereIn('id', $str_arr)->where('name', 'LIKE', '%' . $keyword . '%')->paginate(12);
+        } else {
+            //$pdf = DB::table('reviewers_pdf')->where('status', '=', 1)->paginate(12);
+            $pdf = DB::table('reviewers_pdf')->whereIn('id', $str_arr)->paginate(12);
         }
         $page = $request->page;
         return view('home.reviewers', compact('pdf', 'page', 'keyword'));
 
-        //dd($keyword);
+
+        //dd($current_display_pdf);
     }
 }
