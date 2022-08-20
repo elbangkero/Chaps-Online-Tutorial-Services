@@ -57,7 +57,7 @@
             <a href="index.html" class="navbar-brand ml-lg-3">
                 <h6 class="m-0 display-10 text-uppercase text-primary"><i><img src="{{asset('public/storage/img/image0.jpeg')}}" alt="" id="IdTitle"></i> <u><b> Chaps Online Tutorial Services </b></u> </h6>
             </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" style="display:none">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
@@ -68,7 +68,7 @@
                     <a href="price.html" class="nav-item nav-link">Price</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Register Now!</a>
+                <a href="{{route('registration')}}" class="btn btn-primary py-2 px-4 d-none d-lg-block">Register Now!</a>
             </div>
         </nav>
     </div>
@@ -76,8 +76,27 @@
 
 
     <!-- Header Start -->
-    <div class="jumbotron jumbotron-fluid mb-5">
-
+    <div id='carousel-login'>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/carousel-2.png')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/carousel-1.png')}}" alt="Second slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span> </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span> </a>
+        </div>
     </div>
     <!-- Header End -->
 
@@ -87,9 +106,10 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid w-100" src="{{asset('public/storage/img/500x600.jpg')}}" alt="">
+                    <img class="card-img-top" src="{{asset('public/storage/img/team/nolie.jpg')}}" alt="">
                     <div class="bg-primary text-dark text-center p-4">
-                        <h3 class="m-0">Lorem ipsum dolor sit</h3>
+                        <h4 class="m-0">Nolie Z. Ingcad</h4>
+                        <span>Review Director</span>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -208,14 +228,14 @@
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
-                <h1 class="mb-4">MEET THE TEAM</h1>
+                <h1 class="mb-4">Meet our Lecturers</h1>
             </div>
 
             <div class="row">
 
-                <div class="col-lg-3 col-md-6 center-team-img">
+                <div class="col-lg-3 col-md-6  center-team-img">
                     <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top" src="{{asset('public/storage/img/team/nolie.jpg')}}" alt="">
+                        <img class="card-img-top" src="{{asset('public/storage/img/team/nolie-team.jpg')}}" alt="">
 
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
@@ -229,19 +249,19 @@
 
             <div class="row">
 
-                <div class="col-lg-3 col-md-6 center-team-img">
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
                     <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/santos.jpg')}}" alt="">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/fernandez.jpg')}}" alt="">
 
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Allan Santos</h5>
-                                <span>Professor</span>
+                                <h5 class="font-weight-bold">Jinggo Fernandez</h5>
+                                <span>Attorney</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 center-team-img">
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
                     <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
                         <img class="card-img-top team-img" src="{{asset('public/storage/img/team/gumboc.jpg')}}" alt="">
 
@@ -253,21 +273,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6  center-team-img">
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
                     <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/cambel.jpg')}}" alt="">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/rodriguez.jpg')}}" alt="">
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Paola Cambel</h5>
+                                <h5 class="font-weight-bold">Frederick Rodriguez</h5>
                                 <span>Professor</span>
-                            </div>
-                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <h5 class="font-weight-bold">Rate 98.5%</h5>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 center-team-img">
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
                     <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
                         <img class="card-img-top team-img" src="{{asset('public/storage/img/team/sumilang.jpg')}}" alt="">
                         <div class="card-body text-center p-0">
@@ -275,8 +292,93 @@
                                 <h5 class="font-weight-bold">Centeniel Sumilang</h5>
                                 <span>Professor</span>
                             </div>
-                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <h5 class="font-weight-bold">Rate 98.5%</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/cuartero.jpg')}}" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">JM Cuartero</h5>
+                                <span>Professor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/pontiveros.jpg')}}" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">John Michael Pontiveros</h5>
+                                <span>Professor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/de-mesa.jpg')}}" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Ryan De Mesa</h5>
+                                <span>Professor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/santos.jpg')}}" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Allan Santos</h5>
+                                <span>Professor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/buted.jpg')}}" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Karolima Eika A. Buted</h5>
+                                <span>Professor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/cambel.jpg')}}" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Paola Cambel</h5>
+                                <span>Professor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/nisola.png')}}" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Marephelle Nisola</h5>
+                                <span>Professor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/geogracias.jpg')}}" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Mary Ann Q. Deogracias</h5>
+                                <span>Professor</span>
                             </div>
                         </div>
                     </div>
