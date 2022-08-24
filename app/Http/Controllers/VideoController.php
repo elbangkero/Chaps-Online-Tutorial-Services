@@ -13,12 +13,26 @@ class VideoController extends Controller
     public function videos(Request $request)
     {
         $keyword = $request->keyword;
+        $user_id = Auth::user()->id;
+
+        $video_items = DB::table(DB::raw('users a'))->select('a.id', 'a.email', 'a.full_name', 's.service_name', DB::raw('(
+            CASE 
+                WHEN a.user_type =\'1\' THEN \'Admin\' 
+                WHEN a.user_type =\'2\' THEN \'Student\' 
+            END) AS user_type'), DB::raw('(
+            CASE 
+                WHEN a.user_type =\'1\' THEN (select GROUP_CONCAT(id) from reviewers_video where status = 1)
+                WHEN a.user_type =\'2\' THEN s.video_items 
+            END) AS video_items'))->leftJoin(DB::raw('services s'), 's.id', '=', 'a.service_id')->where('a.id', '=',    $user_id)->first();
+
+        $str_arr_video = preg_split("/\,/", $video_items->video_items);
+
 
         if (!empty($keyword)) {
-            $videos = DB::table('reviewers_video')->where('name', 'LIKE', '%' . $keyword . '%')->paginate(12);
+            $videos = DB::table('reviewers_video')->whereIn('id', $str_arr_video)->where('name', 'LIKE', '%' . $keyword . '%')->orderBy('id', 'DESC')->paginate(12);
         } else {
 
-            $videos = DB::table('reviewers_video')->where('status', '=', 1)->paginate(12);
+            $videos = DB::table('reviewers_video')->whereIn('id', $str_arr_video)->where('status', '=', 1)->orderBy('id', 'DESC')->paginate(12);
         }
         $page = $request->page;
         return view('home.videos', compact('videos', 'keyword', 'page'));

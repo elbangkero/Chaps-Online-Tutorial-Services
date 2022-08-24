@@ -12,12 +12,14 @@ class ServicesController extends Controller
 {
     protected $casts = [
         'reviewer_items' => 'array',
+        'video_items' => 'array',
     ];
     public function services_index()
     {
-        $pdf_reviewer = DB::table('reviewers_pdf')->where('status', '=', 1)->get();
-        $table = DB::table('services')->where('status', '=', 1)->get();
-        return view('home.manage_services.index', compact('pdf_reviewer', 'table'));
+        $pdf_reviewer = DB::table('reviewers_pdf')->where('status', '=', 1)->orderBy('id','DESC')->get();
+        $video_reviewer = DB::table('reviewers_video')->where('status', '=', 1)->orderBy('id','DESC')->get();
+        $table = DB::table('services')->where('status', '=', 1)->orderBy('id','DESC')->get();
+        return view('home.manage_services.index', compact('pdf_reviewer', 'table','video_reviewer'));
     }
     public function store_services(Request $request)
     {
@@ -34,6 +36,8 @@ class ServicesController extends Controller
         $service->created_by = Auth::user()->full_name;
         $service->status = $request->status == null ? 0 : 1;
         $service->reviewer_items = implode(',', $request->reviewer_items);
+        $service->video_items = implode(',', $request->video_items);
+
 
 
         $service->save();
@@ -81,15 +85,18 @@ class ServicesController extends Controller
         $selected = DB::table('services')->where('id', '=', $id)->first();
 
         $str_arr = preg_split("/\,/", $selected->reviewer_items);
-        $pdf_reviewer = DB::table('reviewers_pdf')->whereNotIn('id', $str_arr)->get();
-        $table = DB::table('services')->where('status', '=', 1)->get();
-        $edit_service = DB::table('services')->where('id', '=', $id)->get();
+        $str_arr_video = preg_split("/\,/", $selected->video_items);
+        $pdf_reviewer = DB::table('reviewers_pdf')->whereNotIn('id', $str_arr)->orderBy('id','DESC')->get();
+        $video_reviewer = DB::table('reviewers_video')->whereNotIn('id', $str_arr_video)->orderBy('id','DESC')->get();
+        $table = DB::table('services')->where('status', '=', 1)->orderBy('id','DESC')->get();
+        $edit_service = DB::table('services')->where('id', '=', $id)->orderBy('id','DESC')->get();
 
 
-        $selected_pdf = DB::table(DB::raw('reviewers_pdf'))->whereIn('id', $str_arr)->get();
+        $selected_pdf = DB::table(DB::raw('reviewers_pdf'))->whereIn('id', $str_arr)->orderBy('id','DESC')->get();
+        $selected_video = DB::table(DB::raw('reviewers_video'))->whereIn('id', $str_arr_video)->orderBy('id','DESC')->get();
 
         //dd($selected_pdf);
-        return view('home.manage_services.index', compact('pdf_reviewer', 'table', 'edit_service', 'selected_pdf'));
+        return view('home.manage_services.index', compact('pdf_reviewer', 'table', 'edit_service', 'selected_pdf','video_reviewer','selected_video'));
     }
     public function update_services(Request $request, $id)
     {
@@ -105,6 +112,7 @@ class ServicesController extends Controller
             'description' => $request->input('description'),
             'status' => $request->status == null ? 0 : 1,
             'reviewer_items' =>   $request->reviewer_items == null ? "" : implode(',', $request->reviewer_items),
+            'video_items' =>   $request->video_items == null ? "" : implode(',', $request->video_items),
         ];
 
         DB::table('services')

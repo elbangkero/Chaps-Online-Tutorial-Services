@@ -59,7 +59,7 @@
                     <p class="m-0 text-white">&copy; <a href="#">Chaps Online Tutorial Services</a>. All Rights Reserved.
 
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed by <a href="https://htmlcodex.com">https://github.com/elbangkero</a>
+                        Designed by <a href="https://github.com/elbangkero">https://github.com/elbangkero</a>
                     </p>
                 </div> 
             </div>

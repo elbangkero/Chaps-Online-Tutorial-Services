@@ -15,7 +15,7 @@ class ReviewerController extends Controller
 
     public function manage_reviewers()
     {
-        $table = DB::table('reviewers_pdf')->where('status', '!=', 2)->get();
+        $table = DB::table('reviewers_pdf')->where('status', '!=', 2)->orderBy('id','DESC')->get();
         return view('home.manage_reviewers.index', compact('table'));
     }
     public  function store_reviewers(Request $request)
@@ -167,10 +167,10 @@ class ReviewerController extends Controller
         if (!empty($keyword)) {
 
             //$pdf = DB::table('reviewers_pdf')->where('name', 'LIKE', '%' . $keyword . '%')->paginate(12);
-            $pdf = DB::table('reviewers_pdf')->whereIn('id', $str_arr)->where('name', 'LIKE', '%' . $keyword . '%')->paginate(12);
+            $pdf = DB::table('reviewers_pdf')->whereIn('id', $str_arr)->where('name', 'LIKE', '%' . $keyword . '%')->orderBy('id','DESC')->paginate(12);
         } else {
             //$pdf = DB::table('reviewers_pdf')->where('status', '=', 1)->paginate(12);
-            $pdf = DB::table('reviewers_pdf')->whereIn('id', $str_arr)->paginate(12);
+            $pdf = DB::table('reviewers_pdf')->whereIn('id', $str_arr)->orderBy('id','DESC')->paginate(12);
         }
         $page = $request->page;
         return view('home.reviewers', compact('pdf', 'page', 'keyword'));

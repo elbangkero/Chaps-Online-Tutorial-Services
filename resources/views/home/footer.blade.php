@@ -11,6 +11,9 @@
     $('#keep-order').multiSelect({
         keepOrder: true
     });
+    $('#video-service').multiSelect({
+        keepOrder: true
+    });
 </script>
 <!-- chart chartist js -->
 <script src="{{asset('public/storage/assets/vendor/charts/chartist-bundle/chartist.min.js')}}"></script>

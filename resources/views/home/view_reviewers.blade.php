@@ -27,7 +27,7 @@
         }
 
         #navigation_controls {
-            height: 85px;
+            height: 120px;
             position: fixed;
             bottom: 0%;
             width: 100%;
@@ -54,13 +54,30 @@
             background: #333;
             float: right;
             margin: 5px;
-          
+
         }
-        a{
-            color:white !important;
+
+        a {
+            color: white !important;
         }
-        body{
+
+        body {
             background: #333;
+        }
+
+        button {
+            background: rgba(0,0,0,0.5);
+            -webkit-appearance: none; 
+            /* Green */
+            border: none;
+            color: black;
+            padding: 2px 32px;
+            text-align: center;
+            border-color:black;
+            border-style:solid;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -78,9 +95,9 @@
             <canvas id="pdf_renderer" style="margin-top: 50px"></canvas><br>
         </div>
         <div id="navigation_controls">
-            <button id="go_previous">Previous</button>
+            <button id="go_previous"> <span class="fa fa-arrow-left"></span></button>
             <input id="current_page" value="1" type="number" />
-            <button id="go_next">Next</button>
+            <button id="go_next"> <span class="fa fa-arrow-right"></span></button>
             <div id="zoom_controls" style="margin-top: 5px;">
                 <button id="zoom_in">+</button>
                 <button id="zoom_out">-</button>

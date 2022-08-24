@@ -92,6 +92,20 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="card">
+                                            <h5 class="card-header">Video List</h5>
+                                            <div class="card-body">
+                                                <select id='video-service' name="video_items[]" multiple='multiple'>
+                                                    @foreach($video_reviewer as $data)
+                                                    <option value='{{$data->id}}'>{{$data->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group row text-right">
                                     <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
                                         <button type="submit" class="btn btn-space btn-primary">Submit</button>
@@ -171,6 +185,23 @@
                                                     <option value='{{$data->id}}'>{{$data->name}}</option>
                                                     @endforeach
                                                     @foreach($selected_pdf as $selected)
+                                                    <option value='{{$selected->id}}' selected>{{$selected->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="card">
+                                            <h5 class="card-header">Video List</h5>
+                                            <div class="card-body">
+                                                <select id='video-service' name="video_items[]" multiple='multiple'>
+                                                    @foreach($video_reviewer as $data)
+                                                    <option value='{{$data->id}}'>{{$data->name}}</option>
+                                                    @endforeach
+                                                    @foreach($selected_video as $selected)
                                                     <option value='{{$selected->id}}' selected>{{$selected->name}}</option>
                                                     @endforeach
                                                 </select>
@@ -274,7 +305,7 @@
                     <p class="m-0 text-white">&copy; <a href="#">Chaps Online Tutorial Services</a>. All Rights Reserved.
 
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed by <a href="https://htmlcodex.com">https://github.com/elbangkero</a>
+                        Designed by <a href="https://github.com/elbangkero">https://github.com/elbangkero</a>
                     </p>
                 </div>
             </div>
