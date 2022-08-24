@@ -130,7 +130,7 @@
                                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Status</label>
                                     <div class="col-12 col-sm-8 col-lg-6 pt-1">
                                         <div class="switch-button switch-button-yesno">
-                                            <input type="checkbox" @if ($pdf->status=='1') ? checked="" : ;  @endif name="status" id="switch19"><span>
+                                            <input type="checkbox" @if ($pdf->status=='1') ? checked="" : ; @endif name="status" id="switch19"><span>
                                                 <label for="switch19"></label></span>
                                         </div>
                                     </div>
@@ -218,22 +218,19 @@
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
-        <div class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                        Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                        <div class="text-md-right footer-links d-none d-sm-block">
-                            <a href="javascript: void(0);">About</a>
-                            <a href="javascript: void(0);">Support</a>
-                            <a href="javascript: void(0);">Contact Us</a>
-                        </div>
-                    </div>
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white mt-5 py-3 px-sm-3 px-md-5 footer-home">
+            <div class="row">
+                <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+                    <p class="m-0 text-white">&copy; <a href="#">Chaps Online Tutorial Services</a>. All Rights Reserved.
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed by <a href="https://htmlcodex.com">https://github.com/elbangkero</a>
+                    </p>
                 </div>
             </div>
         </div>
+        <!-- Footer End -->
         <!-- ============================================================== -->
         <!-- end footer -->
         <!-- ============================================================== -->
@@ -249,7 +246,7 @@
     }
 
     function handleChange() {
-        
+
         myfile = $('#PDFupload').val();
         var ext = myfile.split('.').pop();
         if (ext != "pdf") {
@@ -264,11 +261,11 @@
     }
 
     function handleChangeEdit() {
-        
+
         myfile = $('#PDFupload').val();
         var ext = myfile.split('.').pop();
         if (ext != "pdf") {
-            if (document.getElementById("PDFupload").files.length == 0) { 
+            if (document.getElementById("PDFupload").files.length == 0) {
                 return true;
             } else {
                 alert('File Must be .pdf ');

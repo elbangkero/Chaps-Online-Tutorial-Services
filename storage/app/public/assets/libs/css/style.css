@@ -1947,7 +1947,7 @@ Container / Wrapper
 -------------------------*/
 .home-dashboard {
     position: relative;
-    left: 0; 
+    left: 0;
     min-height: 870px !important;
 }
 
@@ -7262,16 +7262,27 @@ Media Query
     margin: auto;
     width: 100%;
     padding: 10px;
-  }
-  .card-left{
+}
+
+.card-left {
     border-left: solid 10px;
     border-left-color: #060c35;
     width: auto;
     height: 125px;
-    padding:5px; 
-  }
-   .icon-dashboard{
+    padding: 5px;
+}
+
+.icon-dashboard {
     font-size: 75px;
-    color:#060c35; 
-    padding:20px 35px 0;
-   }
+    color: #060c35;
+    padding: 20px 35px 0;
+}
+
+.footer-home {
+    background-color: #060c35 !important;
+    position: fixed;
+    bottom: 0;
+    width: 100%; 
+    border-top-style: solid;
+    border-top-color: coral; 
+}
