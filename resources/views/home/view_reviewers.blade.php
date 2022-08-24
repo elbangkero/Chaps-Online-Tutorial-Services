@@ -70,7 +70,7 @@
             -webkit-appearance: none; 
             /* Green */
             border: none;
-            color: black;
+            color: white;
             padding: 2px 15px;
             text-align: center;
             border-color:black;
@@ -78,6 +78,7 @@
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -99,8 +100,8 @@
             <input id="current_page" value="1" type="number" />
             <button id="go_next"> <span class="fa fa-arrow-right"></span></button>
             <div id="zoom_controls" style="margin-top: 5px;">
-                <button id="zoom_in">+</button>
-                <button id="zoom_out">-</button>
+                <button id="zoom_in"><i class="fa fa-plus"></i></button>
+                <button id="zoom_out"><i class="fa fa-minus"></i></button>
             </div>
         </div>
 
@@ -126,7 +127,7 @@
         var myState = {
             pdf: null,
             currentPage: 1,
-            zoom: 1
+            zoom: .7
         }
         $(document).ready(function() {
 
