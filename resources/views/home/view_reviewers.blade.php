@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <title>My PDF Viewer</title>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js">
     </script>
@@ -71,7 +71,7 @@
             /* Green */
             border: none;
             color: black;
-            padding: 2px 32px;
+            padding: 2px 15px;
             text-align: center;
             border-color:black;
             border-style:solid;
@@ -92,7 +92,7 @@
     <div id="my_pdf_viewer">
 
         <div id="canvas_container">
-            <canvas id="pdf_renderer" style="margin-top: 50px"></canvas><br>
+            <canvas id="pdf_renderer"></canvas><br>
         </div>
         <div id="navigation_controls">
             <button id="go_previous"> <span class="fa fa-arrow-left"></span></button>
