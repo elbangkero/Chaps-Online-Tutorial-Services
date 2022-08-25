@@ -50,7 +50,7 @@ class LoginController extends Controller
             $this->username() => 'exists:users,' . $this->username() . ',is_active,1,status,1',
             'password' => 'required|string',
         ], [
-            $this->username() . '.exists' => 'Please verify your account on this email : "'. $request->{$this->username()}.'" and settle your payment on "facebook.com/CHAPOPOYCRIMINOLOGY" to active your account.'
+            $this->username() . '.exists' => 'Please verify your account on this email : "'. $request->{$this->username()}.'" and settle your payment on "facebook.com/CHAPOPOYCRIMINOLOGY" to activate your account.'
         ]);
 
 

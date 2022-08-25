@@ -1,5 +1,13 @@
-@extends('errors::minimal')
-
-@section('title', __('Forbidden'))
-@section('code', '403')
-@section('message', __($exception->getMessage() ?: 'Forbidden'))
+<style> 
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20%;
+        height: auto;
+        width: auto;
+    } 
+</style>
+<div class="img-container">
+    <img src="{{asset('public/storage/img/access-denied.gif')}}">
+</div>

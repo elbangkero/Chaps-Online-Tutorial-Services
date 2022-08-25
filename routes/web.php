@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => 'AdminUser'], function () {
     Route::post('/logout', 'HomeAuthController@logout')->name('logout');
 
     Route::get('/dashboard', 'GlobalController@dashboard')->name('dashboard');
@@ -64,6 +64,25 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/delete_services/{id}', 'ServicesController@delete_services')->name('delete_services');
     /* Services */
 });
+
+
+Route::group(['middleware' => 'StudentUser'], function () {
+ 
+    Route::get('/dashboard', 'GlobalController@dashboard')->name('dashboard');
+ 
+    /* PDF Reviewers */
+    Route::get('/reviewers', 'ReviewerController@reviewers')->name('reviewers');
+    Route::get('/view_reviewers/{id}', 'ReviewerController@view_reviewers')->name('view_reviewers');
+    Route::get('/display_pdf', 'ReviewerController@display_pdf')->name('display_pdf');
+    /* PDF Reviewers */
+
+
+    /* Video Reviewers */
+    Route::get('/videos', 'VideoController@videos')->name('videos');
+    Route::get('/view_video/{id}', 'VideoController@view_video')->name('view_video');
+    /* Videos Reviewers */
+});
+
 
 Route::post('/store', 'UserController@store_students')->name('store_students');
 Route::get('/students/registration', 'GlobalController@student_registration')->name('registration');
