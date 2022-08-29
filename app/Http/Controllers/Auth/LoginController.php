@@ -43,7 +43,7 @@ class LoginController extends Controller
     {
         return ['email' => $request->{$this->username()}, 'password' => $request->password,'status' => 1];
     }
-    protected function validateLogin(Request $request)
+    /*protected function validateLogin(Request $request)
     {
         $fb_link = "<?php echo <a href='facebook.com'>Link</a> ?>";
         $this->validate($request, [
@@ -54,5 +54,5 @@ class LoginController extends Controller
         ]);
 
 
-    }
+    }*/
 }
