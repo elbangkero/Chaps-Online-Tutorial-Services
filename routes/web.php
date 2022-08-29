@@ -66,7 +66,7 @@ Route::group(['middleware' => 'AdminUser'], function () {
 });
 
 
-Route::group(['middleware' => 'StudentUser'], function () {
+Route::group(['middleware' => ['StudentUser','verified']], function () {
  
     Route::get('/dashboard', 'GlobalController@dashboard')->name('dashboard');
  
@@ -89,4 +89,4 @@ Route::get('/students/registration', 'GlobalController@student_registration')->n
 Route::get('/', 'GlobalController@login_page')->name('login_page');
 
 Route::post('/gcash/payment', 'ServicesController@gcash')->name('gcash');
-Auth::routes();
+Auth::routes(['verify' => true]);
