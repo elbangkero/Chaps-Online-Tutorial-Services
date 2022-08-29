@@ -66,10 +66,9 @@ Route::group(['middleware' => 'AdminUser'], function () {
 });
 
 
-Route::group(['middleware' => ['StudentUser','verified']], function () {
- 
-    Route::get('/dashboard', 'GlobalController@dashboard')->name('dashboard');
- 
+Route::group(['middleware' => ['StudentUser', 'verified']], function () {
+
+
     /* PDF Reviewers */
     Route::get('/reviewers', 'ReviewerController@reviewers')->name('reviewers');
     Route::get('/view_reviewers/{id}', 'ReviewerController@view_reviewers')->name('view_reviewers');
@@ -83,10 +82,23 @@ Route::group(['middleware' => ['StudentUser','verified']], function () {
     /* Videos Reviewers */
 });
 
+Route::group(['middleware' => ['auth','verified']], function () {
+
+    Route::get('/dashboard', 'GlobalController@dashboard')->name('dashboard');
+});
+
+
+
+Route::get('/dashboard/email', 'Auth\VerificationController@show')->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify')->middleware(['signed']);
+Route::post('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
 
 Route::post('/store', 'UserController@store_students')->name('store_students');
 Route::get('/students/registration', 'GlobalController@student_registration')->name('registration');
 Route::get('/', 'GlobalController@login_page')->name('login_page');
 
 Route::post('/gcash/payment', 'ServicesController@gcash')->name('gcash');
-Auth::routes(['verify' => true]);
+
+
+Auth::routes();

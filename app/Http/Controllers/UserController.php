@@ -25,6 +25,7 @@ class UserController extends Controller
         $admin->status = 1;
         $admin->is_active = 1;
         $admin->email = $request->email;
+        $admin->email_verified_at = '2022-08-29 04:45:47';
         $admin->password = Hash::make($request['password']);
         $admin->save();
         return back()->with('success', 'Registered Successfully');

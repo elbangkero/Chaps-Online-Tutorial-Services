@@ -28,12 +28,9 @@
                 </div>
             </div>
 
-
-            @if(Auth::user()->is_active!=1)
             <div class="row">
                 <div class="container">
                     <div class="row justify-content-center">
-                        @if(Auth::user()->email_verified_at =='')
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">{{ __('Verify Your Email Address') }} <i class="fas fa-exclamation-circle" style="color:red"></i> </div>
@@ -53,61 +50,24 @@
                                 </div>
                             </div>
                         </div>
-                        @endif
+
+                        @if(Auth::user()->is_active!=1)
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">Unsettled Payment <i class="fas fa-exclamation-circle" style="color:red"></i> </div>
 
-                                <div class="card-body">
+                                <div class="card-body"> 
                                     Before Accessing our services you need to settle the payment first. Please settle your payment here :
                                     <a href="https://www.facebook.com/CHAPOPOYCRIMINOLOGY" style="color:red">https://www.facebook.com/CHAPOPOYCRIMINOLOGY</a>
                                 </div>
                             </div>
                         </div>
+                        @endif
+
                     </div>
                 </div>
-            </div>
-            @else
-            <div class="row">
 
-                @if(auth()->user()->user_type =='1')
-                <div class="col-lg-6">
-                    <a class="card-cta" href="{{route('manage_reviewers')}}">
-                        <div class="card card-large-icons  card-left ">
-                            <div class="row">
-                                <div class="col-xs-6 col-lg-3 col-4">
-                                    <i class="fas fa-users icon-dashboard"></i>
-                                </div>
-                                <div class="col-xs-6 ol-lg-9 col-8">
-                                    <div class="card-body">
-                                        <h4>Admin</h4>
-                                        <p>Administration Panel</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @endif
-                <div class="col-lg-6">
-                    <a class="card-cta" href="{{route('reviewers')}}">
-                        <div class="card card-large-icons  card-left ">
-                            <div class="row">
-                                <div class="col-xs-6 col-lg-3 col-4">
-                                    <i class="fab fa-readme icon-dashboard"></i>
-                                </div>
-                                <div class="col-xs-6 ol-lg-9 col-8">
-                                    <div class="card-body">
-                                        <h4>Student</h4>
-                                        <p>Collection of reviewer and videos</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
             </div>
-            @endif
 
         </div>
         <!-- Footer Start -->
