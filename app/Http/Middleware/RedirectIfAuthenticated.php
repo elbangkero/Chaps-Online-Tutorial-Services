@@ -6,6 +6,7 @@ use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class RedirectIfAuthenticated
 {
@@ -26,7 +27,10 @@ class RedirectIfAuthenticated
                 return redirect(RouteServiceProvider::HOME);
             }
         }
-
+        $user_id =   DB::table('users')->select('id')->where('email', '=', $request->input('email'))->first();
+        DB::table('sessions')->where('user_id', $user_id->id)->delete();
         return $next($request);
+        //dd($request->input('email'));
+
     }
 }
