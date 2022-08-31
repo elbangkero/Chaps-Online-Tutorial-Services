@@ -33,15 +33,15 @@
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid" style="background-color: #060c35;">
-        <div class="row py-2 px-lg-5">
-            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center text-white">
-                    <small><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</small>
+        <div class="row py-3 px-lg-3">
+            <div class="col-lg-6 text-lg-left mb-2 mb-lg-0">
+                <div class="d-inline-flex  text-white">
+                    <small><i class="fa fa-phone-alt mr-2"></i>0926-056-8167</small>
                     <small class="px-3">|</small>
-                    <small><i class="fa fa-envelope mr-2"></i>chapsonlinets2021@gmail.com</small>
+                    <small>chapsonlinets2021@gmail.com</small>
                 </div>
             </div>
-            <div class="col-lg-6 text-center text-lg-right">
+            <div class="col-lg-6  text-lg-right">
                 <div class="d-inline-flex align-items-center">
                     <a class="text-white px-2" href="">
                         <i class="fab fa-facebook-f"></i>
@@ -78,7 +78,7 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="register-heading">Reviewer's Info</h3>
+                        <h3 class="register-heading">Reviewee's information</h3>
                         <form method="POST" action="{{ route('store_students') }}">
                             @csrf
                             <div class="row register-form" style="width: 100% !important; ">
@@ -168,7 +168,7 @@
                                 width:auto;" src="{{asset('public/storage/img/293465589_828160171890357_5435663303333464587_n.jpg')}}" alt="">
                                 <div style="text-align: center;">
                                     <h5>Pay on Gcash</h5>
-                                    <span>And send the receipt to our facebook page for your account activation : <a href="https://www.facebook.com/CHAPOPOYCRIMINOLOGY" target="_blank">https://www.facebook.com/CHAPOPOYCRIMINOLOGY</a></span>
+                                    <span>And send the receipt to our facebook page for your account activation : <small> <a href="https://www.facebook.com/CHAPOPOYCRIMINOLOGY" target="_blank">Facebook.com/CHAPOPOYCRIMINOLOGY</a></small></span>
                                 </div>
 
                                 <input type="submit" class="btnRegister" onclick="return handleChange()" value="Register" />
@@ -191,23 +191,11 @@
             <div class="col-lg-7 col-md-6">
                 <div class="row">
                     <div class="col-md-6 mb-5">
-                        <h3 class="text-primary mb-4">Get In Touch</h3>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>123 Pandacan,Manila, Philippines</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                        <h3 class="text-primary mb-4">Get In Touch</h3> 
                         <p><i class="fa fa-envelope mr-2"></i>chapsonlinets2021@gmail.com</p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-outline-light btn-social" target=”_blank” href="https://www.youtube.com/c/ACLEMentoringbyChapsBLEC"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-5">
-                        <h3 class="text-primary mb-4">Quick Links</h3>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Pricing Plan</a>
-                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -229,7 +217,7 @@
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: #3E3E4E !important;">
         <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a href="#">Chaps Online Tutorial Servicese</a>. All Rights Reserved.
+                <p class="m-0 text-white">&copy; <a href="#">Chaps Online Tutorial Services</a>. All Rights Reserved.
 
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     Designed by <a href="https://github.com/elbangkero">https://github.com/elbangkero</a>

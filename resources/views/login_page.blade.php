@@ -28,15 +28,15 @@
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid" style="background-color: #060c35;">
-        <div class="row py-2 px-lg-5">
-            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center text-white">
+        <div class="row py-3 px-lg-3">
+            <div class="col-lg-6 text-lg-left mb-2 mb-lg-0">
+                <div class="d-inline-flex  text-white">
                     <small><i class="fa fa-phone-alt mr-2"></i>0926-056-8167</small>
                     <small class="px-3">|</small>
-                    <small><i class="fa fa-envelope mr-2"></i>chapsonlinets2021@gmail.com</small>
+                    <small>chapsonlinets2021@gmail.com</small>
                 </div>
             </div>
-            <div class="col-lg-6 text-center text-lg-right">
+            <div class="col-lg-6  text-lg-right">
                 <div class="d-inline-flex align-items-center">
                     <a class="text-white px-2" href="">
                         <i class="fab fa-facebook-f"></i>
@@ -114,9 +114,9 @@
                 </div>
                 <div class="col-lg-7">
                     <h6 class="text-primary text-uppercase font-weight-bold">About Us</h6>
-                    <h1 class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
-                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
-
+                    <h4 class="mb-4">Chaps Online / Onsite Review Center (ACLE Mentoring by Chaps) is 100% <br> OWNED BY A REGISTERED CRIMINOLOGIST.
+                    </h4>
+                    <p class="mb-4"> ACHIEVE YOUR DREAMS WITH US!</p>
                 </div>
             </div>
         </div>
@@ -146,8 +146,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-7 py-5 py-lg-0">
                     <h6 class="text-primary text-uppercase font-weight-bold">Get A Quote</h6>
-                    <h1 class="mb-4">Dolores lorem lorem</h1>
-                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                    <h1 class="mb-4">Join us now!</h1>
+                    <p class="mb-4">The most reliable and effective review center today in the Philippines. <br> Chaps Online Tutorial services</p>
                     <div class="row">
                         <div class="col-sm-4">
                             <h1 class="text-primary mb-2" data-toggle="counter-up">9999</h1>
@@ -398,9 +398,7 @@
             <div class="col-lg-7 col-md-6">
                 <div class="row">
                     <div class="col-md-6 mb-5">
-                        <h3 class="text-primary mb-4">Get In Touch</h3>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>123 Pandacan,Manila, Philippines</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>0926-056-8167</p>
+                        <h3 class="text-primary mb-4">Get In Touch</h3> 
                         <p><i class="fa fa-envelope mr-2"></i>chapsonlinets2021@gmail.com</p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>

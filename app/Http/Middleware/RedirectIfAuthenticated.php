@@ -27,8 +27,13 @@ class RedirectIfAuthenticated
                 return redirect(RouteServiceProvider::HOME);
             }
         }
+
         $user_id =   DB::table('users')->select('id')->where('email', '=', $request->input('email'))->first();
-        DB::table('sessions')->where('user_id', $user_id->id)->delete();
+
+        if (!empty($user_id->id)) {
+
+            DB::table('sessions')->where('user_id', $user_id->id)->delete();
+        }
         return $next($request);
         //dd($request->input('email'));
 
