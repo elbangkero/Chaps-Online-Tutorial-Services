@@ -155,7 +155,7 @@ class ReviewerController extends Controller
             END) AS user_type'),DB::raw('(
             CASE 
                 WHEN a.user_type =\'1\' THEN (select GROUP_CONCAT(id) from reviewers_pdf where status = 1)
-                WHEN a.user_type =\'2\' THEN s.reviewer_items 
+                WHEN a.user_type =\'2\' THEN (select GROUP_CONCAT(id) from reviewers_pdf where status = 1)
             END) AS reviewer_items'))->leftJoin(DB::raw('services s'),'s.id','=','a.service_id')->where('a.id','=',$user_id)->first();
 
         $str_arr = preg_split("/\,/", $reviewer_items->reviewer_items);

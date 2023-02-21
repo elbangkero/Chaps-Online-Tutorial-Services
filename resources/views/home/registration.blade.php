@@ -140,8 +140,9 @@
 
                     </div>
                     <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <h3 class="register-heading">Choose a service</h3>
+                        <h3 class="register-heading">Payment</h3>
                         <div class="row register-form" style="width: 100% !important; ">
+                        <!--
                             <div class="col-md-6">
                                 @foreach($services as $data)
                                 <div class="form-check" style="margin: 20px;">
@@ -161,11 +162,13 @@
                                 </div>
                                 @endforeach
                             </div>
-                            <div class="col-md-6">
-                                <img style="max-width:100%;
+                            -->
+                            <div class="col-lg-12">
+                                <img style="max-width:50%;
                                 max-height:100%;
                                 height: auto;
-                                width:auto;" src="{{asset('public/storage/img/293465589_828160171890357_5435663303333464587_n.jpg')}}" alt="">
+                                width:auto;
+                                margin-left:25%" src="{{asset('public/storage/img/293465589_828160171890357_5435663303333464587_n.jpg')}}" alt="">
                                 <div style="text-align: center;">
                                     <h5>Pay on Gcash</h5>
                                     <span>And send the receipt to our facebook page for your account activation : <small> <a href="https://www.facebook.com/CHAPOPOYCRIMINOLOGY" target="_blank">Facebook.com/CHAPOPOYCRIMINOLOGY</a></small></span>

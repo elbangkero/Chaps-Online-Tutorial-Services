@@ -115,6 +115,7 @@
                                                 <input type="password" required="" placeholder="Confirm Password" name="password_confirmation" class="form-control">
                                             </div>
                                         </div>
+                                        <!--
                                         <div class="form-group row">
                                             <div class="col-12 col-sm-8 col-lg-10">
                                                 <select class="form-control" id="input-select" name='service_id' required>
@@ -125,6 +126,7 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        -->
                                         <div class="form-group row">
                                             <div class="col-12 col-sm-8 col-lg-6 pt-1">
                                                 <label>Activate</label>

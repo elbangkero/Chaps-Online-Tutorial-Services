@@ -82,11 +82,11 @@ Route::group(['middleware' => ['StudentUser', 'verified']], function () {
     /* Videos Reviewers */
 });
 
-Route::group(['middleware' => ['auth','verified']], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('/dashboard', 'GlobalController@dashboard')->name('dashboard');
+    Route::get('/search_engine', 'GlobalController@search_engine')->name('search_engine');
 });
-
 
 
 Route::get('/dashboard/email', 'Auth\VerificationController@show')->name('verification.notice');

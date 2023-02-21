@@ -7,6 +7,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class RedirectIfAuthenticated
 {
@@ -29,7 +30,7 @@ class RedirectIfAuthenticated
         }
 
         $user_id =   DB::table('users')->select('id')->where('email', '=', $request->input('email'))->first();
-
+        DB::table('users')->where('id',$user_id->id)->update(['updated_at'=>Carbon::now()->toDateTimeString()]);
         if (!empty($user_id->id)) {
 
             DB::table('sessions')->where('user_id', $user_id->id)->delete();

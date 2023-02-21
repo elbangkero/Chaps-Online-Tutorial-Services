@@ -28,7 +28,6 @@
                 </div>
             </div>
 
-
             @if(Auth::user()->is_active!=1)
             <div class="row">
                 <div class="container">
@@ -68,6 +67,20 @@
                 </div>
             </div>
             @else
+
+            <div class="row" style="margin-bottom:30px;">
+                <div class="col-lg-6 offset-lg-3">
+                    <form action="{{route('search_engine')}}" method="GET">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="keyword" placeholder="Search what you need here... ">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary"><span class="fa fa-search"></span></button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div class="row">
 
                 @if(auth()->user()->user_type =='1')
