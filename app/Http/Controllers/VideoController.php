@@ -14,7 +14,9 @@ class VideoController extends Controller
     {
         $keyword = $request->keyword;
         $user_id = Auth::user()->id;
-
+        $folder = $request->folder;
+        $folders_pdf = DB::table('folders')->where([['status', 1], ['folder_type', 'pdf'], ['parent_id', 0]])->get();
+        $folders_video = DB::table('folders')->where([['status', 1], ['parent_id', 0], ['folder_type', 'video']])->get();
         $video_items = DB::table(DB::raw('users a'))->select('a.id', 'a.email', 'a.full_name', 's.service_name', DB::raw('(
             CASE 
                 WHEN a.user_type =\'1\' THEN \'Admin\' 
@@ -30,28 +32,36 @@ class VideoController extends Controller
 
         if (!empty($keyword)) {
             $videos = DB::table('reviewers_video')->whereIn('id', $str_arr_video)->where('name', 'LIKE', '%' . $keyword . '%')->orderBy('id', 'DESC')->paginate(12);
+        } elseif (!empty($folder)) {
+            //$pdf = DB::table('reviewers_pdf')->where('status', '=', 1)->paginate(12);
+            $videos = DB::table('reviewers_video')->whereIn('id', $str_arr_video)->where('folder_id', $folder)->orderBy('id', 'DESC')->paginate(12);
         } else {
 
             $videos = DB::table('reviewers_video')->whereIn('id', $str_arr_video)->where('status', '=', 1)->orderBy('id', 'DESC')->paginate(12);
         }
         $page = $request->page;
-        return view('home.videos', compact('videos', 'keyword', 'page'));
+        return view('home.videos', compact('videos', 'keyword', 'page', 'folders_pdf', 'folders_video'));
     }
     public function edit_video($id)
     {
         $table = DB::table('reviewers_video')->where('status', '!=', 2)->get();
         $edit_video = DB::table('reviewers_video')->where('id', '=', $id)->get();
-        return view('home.manage_video.index', compact('table', 'edit_video'));
+        $selected_folder = DB::table(DB::raw('reviewers_video rp'))->select('f.id', 'f.name')->leftJoin(DB::raw('folders f'), 'f.id', '=', 'rp.folder_id')->where('rp.id', '=', $id)->first();
+        $parent  = DB::table('folders')->where([['status', 1], ['folder_type', 'video'], ['parent_id', 0]])->get();
+        return view('home.manage_video.index', compact('table', 'edit_video', 'selected_folder', 'parent'));
     }
     public function manage_videos()
     {
+        $parent  = DB::table('folders')->where([['status', 1], ['folder_type', 'video'], ['parent_id', 0]])->get();
         $table = DB::table('reviewers_video')->where('status', '!=', 2)->get();
-        return view('home.manage_video.index', compact('table'));
+        return view('home.manage_video.index', compact('table', 'parent'));
     }
     public function view_video($id)
     {
+        $folders_video = DB::table('folders')->where([['status',1],['parent_id',0],['folder_type','video']])->get();
+        $folders_pdf = DB::table('folders')->where([['status',1],['folder_type','pdf'],['parent_id',0]])->get();
         $video = DB::table('reviewers_video')->where('id', '=', $id)->first()->link;
-        return view('home.view_video', compact('video'));
+        return view('home.view_video', compact('video','folders_pdf','folders_video'));
     }
 
 
@@ -76,6 +86,7 @@ class VideoController extends Controller
             $video->created_by = Auth::user()->full_name;
             $video->status = $request->status == null ? 0 : 1;
             $video->link = $final_value;
+            $video->folder_id = $request->folder_id;
             $video->thumbnail = $thumbnail;
             $video->save();
         }
@@ -109,6 +120,7 @@ class VideoController extends Controller
                 'name' => $request->input('name'),
                 'link' => $final_value,
                 'status' => $request->status == null ? 0 : 1,
+                'folder_id' =>  $request->folder_id,
             ];
 
             DB::table('reviewers_video')

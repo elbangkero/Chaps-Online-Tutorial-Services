@@ -7,20 +7,20 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="page-header">
-                        <h2 class="pageheader-title">Manage Videos</h2>
+                        <h2 class="pageheader-title">Manage Admin Accounts </h2>
                         <div class="page-breadcrumb">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Manage Videos</a></li>
+                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Manage Users</a></li>
+                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Admin</a></li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="row">
-                @empty($edit_video)
+                @empty($edit_admin)
                 <div class="col-md-12">
                     @if(Session::has('success'))
                     <div class="alert alert-success">
@@ -47,54 +47,50 @@
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
-                        <h5 class="card-header">Add New Video</h5>
+                        <h5 class="card-header">Add New Admin</h5>
                         <div class="card-body">
-                            <form id="validationform" data-parsley-validate="" novalidate="" action="{{ route('store_video') }}" method="POST" enctype="multipart/form-data" class="form-horizontal form-label-left">
+                            <form id="validationform" data-parsley-validate="" novalidate="" action="{{ route('store_folders') }}" method="POST" enctype="multipart/form-data" class="form-horizontal form-label-left">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Video Name</label>
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Folder Name</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
-                                        <input type="text" required="" placeholder="Enter Name" name="name" class="form-control" required>
+                                        <input type="text" required="" placeholder="Enter Name" name="name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Youtube Video Link</label>
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Folder Type</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
-                                        <input type="text" required="" placeholder="Enter Name" name="link" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row" id="parent_folder">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Select Folder</label>
-                                    <div class="col-12 col-sm-8 col-lg-6">
-                                        <select name="folder_id" class="form-control">
-
-                                            @foreach($parent as $parent)
-                                            <option value="{{$parent->id}}" style="font-weight: bold; text-transform: uppercase;"> {{$parent->name}} </option>
-                                            @php
-                                            $id = $parent->id;
-                                            $child_folder = DB::select("select * from folders where parent_id = '".$id."' AND status = '1' ");
-                                            foreach($child_folder as $folder)
-                                            echo "<option value='$folder->id'>
-                                                &nbsp&nbsp&nbsp&nbsp
-                                                $parent->name : $folder->name
-                                            </option>";
-                                            @endphp
-                                            @endforeach
+                                        <select name="folder_type" class="form-control">
+                                            <option value="pdf">PDF</option>
+                                            <option value="video">Video</option>
                                         </select>
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Status</label>
-                                    <div class="col-12 col-sm-8 col-lg-6 pt-1">
-                                        <div class="switch-button switch-button-yesno">
-                                            <input type="checkbox" checked="" name="status" id="switch19"><span>
-                                                <label for="switch19"></label></span>
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Folder option</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <div class="offset-lg-1">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="folder_function()" name='parent_option'>
+                                            <label class="form-check-label" for="exampleCheck1">Root Folder</label>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row" id="parent_folder">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Select Parent Folder</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <select name="parent_id" class="form-control">
+
+                                            @foreach($parent as $parent)
+                                            <option value="{{$parent->id}}"> <b> {{$parent->folder_type}}</b> : {{$parent->name}}</option>
+                                            @endforeach
+
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row text-right">
                                     <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                        <button type="submit" onclick="return handleChange()" class="btn btn-space btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-space btn-primary">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -102,7 +98,7 @@
                     </div>
                 </div>
                 @else
-                @foreach ($edit_video as $video)
+                @foreach ($edit_admin as $admin)
                 <div class="col-md-12">
                     @if(Session::has('success'))
                     <div class="alert alert-success">
@@ -131,56 +127,7 @@
                     <div class="card">
                         <h5 class="card-header">Edit Admin</h5>
                         <div class="card-body">
-                            <form id="validationform" data-parsley-validate="" novalidate="" action="{{ route('update_video',$video->id) }}" method="POST" enctype="multipart/form-data" class="form-horizontal form-label-left">
-                                @csrf
-                                @method('PUT')
-                                <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Video Name</label>
-                                    <div class="col-12 col-sm-8 col-lg-6">
-                                        <input type="text" required="" placeholder="Enter Name" name="name" class="form-control" value="{{$video->name}}" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Youtube Video Link</label>
-                                    <div class="col-12 col-sm-8 col-lg-6">
-                                        <input type="text" required="" placeholder="Enter Name" name="link" class="form-control" value="https://www.youtube.com/watch?v={{$video->link}}" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row" id="parent_folder">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Select Folder</label>
-                                    <div class="col-12 col-sm-8 col-lg-6">
-                                        <select name="folder_id" class="form-control">
-                                            <option value="{{$selected_folder->id}}">{{$selected_folder->name}}</option>
-                                            @foreach($parent as $parent)
-                                            <option value="{{$parent->id}}" style="font-weight: bold; text-transform: uppercase;"> {{$parent->name}} </option>
-                                            @php
-                                            $id = $parent->id;
-                                            $child_folder = DB::select("select * from folders where parent_id = '".$id."' AND status = '1' ");
-                                            foreach($child_folder as $folder)
-                                            echo "<option value='$folder->id'>
-                                                &nbsp&nbsp&nbsp&nbsp
-                                                $parent->name : $folder->name
-                                            </option>";
-                                            @endphp
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Status</label>
-                                    <div class="col-12 col-sm-8 col-lg-6 pt-1">
-                                        <div class="switch-button switch-button-yesno">
-                                            <input type="checkbox" @if ($video->status=='1') ? checked="" : ; @endif name="status" id="switch19"><span>
-                                                <label for="switch19"></label></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row text-right">
-                                    <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                        <button type="submit" onclick="return handleChange()" class="btn btn-space btn-primary">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -194,7 +141,7 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Video List</h5>
+                            <h5 class="mb-0">Admin Accounts</h5>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -202,9 +149,10 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Video Name</th>
+                                            <th>Folder Name</th>
+                                            <th>Folder Type</th>
+                                            <th>Parent Folder</th>
                                             <th>Created By</th>
-                                            <th>Video Status</th>
                                             <th>Date Created </th>
                                             <th>Action</th>
                                         </tr>
@@ -214,13 +162,25 @@
                                         <tr>
                                             <td>{{ $table->id }}</td>
                                             <td>{{ $table->name }}</td>
+                                            <td>{{ $table->folder_type }}</td>
+                                            <td>
+                                                @if($table->parent_id==0)
+                                                Root Folder
+                                                @else
+                                                @php
+                                                $id = $table->parent_id;
+                                                $folder_name = DB::select("select * from folders where id = '".$id."' AND status = '1'");
+                                                foreach($folder_name as $name)
+                                                echo "$name->name";
+                                                @endphp
+                                                @endif
+
+                                            </td>
                                             <td>{{ $table->created_by }}</td>
-                                            <td>@if ( $table->status == "1")
-                                                Active @else Inactive @endif</td>
                                             <td>{{ $table->created_at }}</td>
                                             <td>
-                                                <form action="{{ route('delete_video',$table->id) }}" method="POST">
-                                                    <a class="btn btn-primary btn-xs" type="button" href="{{ route('edit_video',$table->id) }}"> <i class="fa fa-edit"></i> Edit </a>
+                                                <form action="{{ route('delete_folders',$table->id) }}" method="POST">
+                                                   <!--- <a class="btn btn-primary btn-xs" type="button" href="{{ route('edit_admin',$table->id) }}"> <i class="fa fa-edit"></i> Edit </a>-->
                                                     @csrf
                                                     @method('DELETE')
                                                     <button onclick="return confirmSubmit()" class="btn btn-danger btn-xs" type="submit"><i class="fa fa-remove"></i> Delete </button>
@@ -233,9 +193,10 @@
                                     <tfoot>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Video Name</th>
+                                            <th>Folder Name</th>
+                                            <th>Folder Type</th>
+                                            <th>Parent Folder</th>
                                             <th>Created By</th>
-                                            <th>Video Status</th>
                                             <th>Date Created </th>
                                             <th>Action</th>
                                         </tr>
@@ -249,11 +210,6 @@
                 <!-- end data table  -->
                 <!-- ============================================================== -->
             </div>
-
-
-
-
-
         </div>
         <!-- ============================================================== -->
         <!-- footer -->
@@ -285,17 +241,13 @@
             return false;
     }
 
-    function handleChange() {
-        myfile = $('#PDFupload').val();
-        var ext = myfile.split('.').pop();
-        if (ext != "pdf") {
-            if (document.getElementById("PDFupload").files.length == 0) {
-                alert('Missing File');
-                return false;
-            } else {
-                alert('File Must be .pdf ');
-                return false;
-            }
+    function folder_function() {
+        var checkBox = document.getElementById("exampleCheck1");
+        var content = document.getElementById("parent_folder");
+        if (checkBox.checked == true) {
+            content.style.visibility = "hidden";
+        } else {
+            content.style.visibility = "visible";
         }
     }
 </script>

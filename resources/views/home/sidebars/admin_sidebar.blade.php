@@ -6,7 +6,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav flex-column">  
+                <ul class="navbar-nav flex-column">
                     <div>
                         <li class="nav-divider">
                             Admin Menu
@@ -36,7 +36,10 @@
                         <li class="nav-item">
                             <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'services_index') active @endif" href="{{route('services_index')}}"><i class="fas fa-clipboard"></i>Manage Services</a>
                         </li>
-                    </div> 
+                        <li class="nav-item">
+                            <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'folders_index') active @endif" href="{{route('folders_index')}}"><i class="fas fa-folder"></i>Manage Folders</a>
+                        </li>
+                    </div>
                 </ul>
             </div>
         </nav>

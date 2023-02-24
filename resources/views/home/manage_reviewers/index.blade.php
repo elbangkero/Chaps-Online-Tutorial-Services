@@ -63,6 +63,26 @@
                                         <input type="file" name="path" id="PDFupload">
                                     </div>
                                 </div>
+                                <div class="form-group row" id="parent_folder">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Select Folder</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <select name="folder_id" class="form-control">
+
+                                            @foreach($parent as $parent)
+                                            <option value="{{$parent->id}}" style="font-weight: bold; text-transform: uppercase;"> {{$parent->name}} </option>
+                                            @php
+                                            $id = $parent->id;
+                                            $child_folder = DB::select("select * from folders where parent_id = '".$id."' AND status = '1' ");
+                                            foreach($child_folder as $folder)
+                                            echo "<option value='$folder->id'>
+                                                &nbsp&nbsp&nbsp&nbsp
+                                                $parent->name : $folder->name
+                                            </option>";
+                                            @endphp
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="form-group row">
                                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Status</label>
                                     <div class="col-12 col-sm-8 col-lg-6 pt-1">
@@ -124,6 +144,26 @@
                                     <label class="col-12 col-sm-3 col-form-label text-sm-right">PDF File</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
                                         <input type="file" name="path" id="PDFupload">
+                                    </div>
+                                </div>
+                                <div class="form-group row" id="parent_folder">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Select Folder</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <select name="folder_id" class="form-control">
+                                            <option value="{{$selected_folder->id}}">{{$selected_folder->name}}</option>
+                                            @foreach($parent as $parent)
+                                            <option value="{{$parent->id}}" style="font-weight: bold; text-transform: uppercase;"> {{$parent->name}} </option>
+                                            @php
+                                            $id = $parent->id;
+                                            $child_folder = DB::select("select * from folders where parent_id = '".$id."' AND status = '1' ");
+                                            foreach($child_folder as $folder)
+                                            echo "<option value='$folder->id'>
+                                                &nbsp&nbsp&nbsp&nbsp
+                                                $parent->name : $folder->name
+                                            </option>";
+                                            @endphp
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">

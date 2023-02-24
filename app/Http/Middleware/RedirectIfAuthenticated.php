@@ -30,9 +30,9 @@ class RedirectIfAuthenticated
         }
 
         $user_id =   DB::table('users')->select('id')->where('email', '=', $request->input('email'))->first();
-        DB::table('users')->where('id',$user_id->id)->update(['updated_at'=>Carbon::now()->toDateTimeString()]);
         if (!empty($user_id->id)) {
 
+            DB::table('users')->where('id',$user_id->id)->update(['updated_at'=>Carbon::now()->toDateTimeString()]);
             DB::table('sessions')->where('user_id', $user_id->id)->delete();
         }
         return $next($request);
