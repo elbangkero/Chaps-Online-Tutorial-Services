@@ -7,12 +7,12 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="page-header">
-                        <h2 class="pageheader-title">Manage Admin Accounts </h2>
+                        <h2 class="pageheader-title">Manage Folders </h2>
                         <div class="page-breadcrumb">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Manage Users</a></li>
-                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Admin</a></li>
+                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Manage Folders</a></li>
+                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Folders</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="row">
-                @empty($edit_admin)
+                @empty($edit_folder)
                 <div class="col-md-12">
                     @if(Session::has('success'))
                     <div class="alert alert-success">
@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
-                        <h5 class="card-header">Add New Admin</h5>
+                        <h5 class="card-header">Add New Folder</h5>
                         <div class="card-body">
                             <form id="validationform" data-parsley-validate="" novalidate="" action="{{ route('store_folders') }}" method="POST" enctype="multipart/form-data" class="form-horizontal form-label-left">
                                 @csrf
@@ -98,7 +98,7 @@
                     </div>
                 </div>
                 @else
-                @foreach ($edit_admin as $admin)
+                @foreach ($edit_folder as $folder)
                 <div class="col-md-12">
                     @if(Session::has('success'))
                     <div class="alert alert-success">
@@ -125,9 +125,61 @@
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
-                        <h5 class="card-header">Edit Admin</h5>
+                        <h5 class="card-header">Edit Folder</h5>
                         <div class="card-body">
+                            <form id="validationform" data-parsley-validate="" novalidate="" action="{{ route('update_folders',$folder->id) }}" method="POST" enctype="multipart/form-data" class="form-horizontal form-label-left">
+                                @csrf
+                                @method('PUT')
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Folder Name</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" required="" placeholder="Enter Name" name="name" value="{{$folder->name}}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Folder Type</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <select name="folder_type" class="form-control">
+                                            @if($folder->folder_type=='pdf')
+                                            <option value="pdf">PDF</option>
+                                            <option value="video">Video</option>
+                                            @elseif($folder->folder_type=='video')
+                                            <option value="video">Video</option>
+                                            <option value="pdf">PDF</option>
+                                            @endif
+                                        </select>
+                                    </div>
+                                </div>
 
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Folder option</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <div class="offset-lg-1">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="folder_function()" name='parent_option' @if($folder->parent_id=='0') checked @endif>
+                                            <label class="form-check-label" for="exampleCheck1">Root Folder</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row" id="parent_folder">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Select Parent Folder</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <select name="parent_id" class="form-control">
+                                            @if($selected_parent)
+                                            <option value="{{$selected_parent->id}}"><b> {{$selected_parent->folder_type}}</b> : {{$selected_parent->name}}</option>
+                                            @endif
+                                            @foreach($parent as $parent)
+                                            <option value="{{$parent->id}}"> <b> {{$parent->folder_type}}</b> : {{$parent->name}}</option>
+                                            @endforeach
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row text-right">
+                                    <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                        <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -141,7 +193,7 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Admin Accounts</h5>
+                            <h5 class="mb-0">Folder List</h5>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -180,11 +232,10 @@
                                             <td>{{ $table->created_at }}</td>
                                             <td>
                                                 <form action="{{ route('delete_folders',$table->id) }}" method="POST">
-                                                   <!--- <a class="btn btn-primary btn-xs" type="button" href="{{ route('edit_admin',$table->id) }}"> <i class="fa fa-edit"></i> Edit </a>-->
+                                                    <a class="btn btn-primary btn-xs" type="button" href="{{ route('edit_folders',$table->id) }}"> <i class="fa fa-edit"></i> Edit </a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button onclick="return confirmSubmit()" class="btn btn-danger btn-xs" type="submit"><i class="fa fa-remove"></i> Delete </button>
-
                                                 </form>
                                             </td>
                                         </tr>
@@ -250,5 +301,15 @@
             content.style.visibility = "visible";
         }
     }
+
+    $(document).ready(function() {
+        var checkBox = document.getElementById("exampleCheck1");
+        var content = document.getElementById("parent_folder");
+        if (checkBox.checked == true) {
+            content.style.visibility = "hidden";
+        } else {
+            content.style.visibility = "visible";
+        }
+    });
 </script>
 @include('home.footer')

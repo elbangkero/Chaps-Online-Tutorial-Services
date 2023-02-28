@@ -84,10 +84,28 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block carousel-img" src="{{asset('public/storage/img/carousel-2.png')}}" alt="First slide">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car1.jpg')}}" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block carousel-img" src="{{asset('public/storage/img/carousel-1.png')}}" alt="Second slide">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car2.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car3.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car4.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car5.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car6.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car7.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car8.jpg')}}" alt="First slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -114,7 +132,7 @@
                 </div>
                 <div class="col-lg-7">
                     <h6 class="text-primary text-uppercase font-weight-bold">About Us</h6>
-                    <h4 class="mb-4">Chaps Online / Onsite Review Center (ACLE Mentoring by Chaps) is 100% <br> OWNED BY A REGISTERED CRIMINOLOGIST.
+                    <h4 class="mb-4"> Chaps Online Tutorial Services (Chapopoy Criminology) <br> OWNED BY A REGISTERED CRIMINOLOGIST.
                     </h4>
                     <p class="mb-4"> ACHIEVE YOUR DREAMS WITH US!</p>
                 </div>
@@ -398,7 +416,7 @@
             <div class="col-lg-7 col-md-6">
                 <div class="row">
                     <div class="col-md-6 mb-5">
-                        <h3 class="text-primary mb-4">Get In Touch</h3> 
+                        <h3 class="text-primary mb-4">Get In Touch</h3>
                         <p><i class="fa fa-envelope mr-2"></i>chapsonlinets2021@gmail.com</p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
