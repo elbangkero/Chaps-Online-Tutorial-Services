@@ -27,6 +27,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('public/storage/assets/vendor/datatables/css/fixedHeader.bootstrap4.css')}}">
 
     <script src="https://cdn.jsdelivr.net/npm/@thelevicole/youtube-to-html5-loader@4.0.1/dist/YouTubeToHtml5.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

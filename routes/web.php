@@ -67,8 +67,10 @@ Route::group(['middleware' => 'AdminUser'], function () {
     /* Folders */
     Route::get('/folders_index', 'FoldersController@folders_index')->name('folders_index');
     Route::post('/store_folders', 'FoldersController@store_folders')->name('store_folders');
-    //Route::get('/edit_folders/{id}', 'FoldersController@edit_folders')->name('edit_folders');
+    Route::get('/edit_folders/{id}', 'FoldersController@edit_folders')->name('edit_folders');
     Route::delete('/delete_folders/{id}', 'FoldersController@delete_folders')->name('delete_folders');
+    Route::put('/update_folders/{id}', 'FoldersController@update_folders')->name('update_folders');
+    
     /* Folders */
 });
 

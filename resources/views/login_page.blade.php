@@ -83,11 +83,50 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block carousel-img" src="{{asset('public/storage/img/carousel-2.png')}}" alt="First slide">
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car1.jpg')}}" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block carousel-img" src="{{asset('public/storage/img/carousel-1.png')}}" alt="Second slide">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car2.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car3.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car4.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car5.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car6.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car7.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car8.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new1.png')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new2.png')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new3.png')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new4.png')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new5.png')}}" alt="First slide">
+                </div>
+                <div class="carousel-item active">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new6.png')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new7.png')}}" alt="First slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -114,7 +153,7 @@
                 </div>
                 <div class="col-lg-7">
                     <h6 class="text-primary text-uppercase font-weight-bold">About Us</h6>
-                    <h4 class="mb-4">Chaps Online / Onsite Review Center (ACLE Mentoring by Chaps) is 100% <br> OWNED BY A REGISTERED CRIMINOLOGIST.
+                    <h4 class="mb-4"> Chaps Online Tutorial Services (Chapopoy Criminology) <br> OWNED BY A REGISTERED CRIMINOLOGIST.
                     </h4>
                     <p class="mb-4"> ACHIEVE YOUR DREAMS WITH US!</p>
                 </div>
@@ -149,17 +188,25 @@
                     <h1 class="mb-4">Join us now!</h1>
                     <p class="mb-4">The most reliable and effective review center today in the Philippines. <br> Chaps Online Tutorial services</p>
                     <div class="row">
-                        <div class="col-sm-4">
-                            <h1 class="text-primary mb-2" data-toggle="counter-up">9999</h1>
-                            <h6 class="font-weight-bold mb-4">Our Passers</h6>
+                        <div class="col-sm-3">
+                            <h6 style="font-size: 13px;" class="font-weight-bold">323/330 PASSERS</h6>
+                            <h1 class="text-primary" data-toggle="counter-up">97.5%</h1>
+                            <h6 class="font-weight-bold">DECEMBER 2022</h6>
                         </div>
-                        <div class="col-sm-4">
-                            <h1 class="text-primary mb-2" data-toggle="counter-up">9999</h1>
-                            <h6 class="font-weight-bold mb-4">Positive feedback</h6>
+                        <div class="col-sm-3">
+                            <h6 style="font-size: 13px;" class="font-weight-bold">508/514 PASSERS</h6>
+                            <h1 class="text-primary" data-toggle="counter-up">98.83%</h1>
+                            <h6 class="font-weight-bold">JUNE 2022</h6>
                         </div>
-                        <div class="col-sm-4">
-                            <h1 class="text-primary mb-2" data-toggle="counter-up">9999</h1>
-                            <h6 class="font-weight-bold mb-4">Top Notcher</h6>
+                        <div class="col-sm-3">
+                            <h6 style="font-size: 13px;" class="font-weight-bold">257/261 PASSERS</h6>
+                            <h1 class="text-primary" data-toggle="counter-up">98.47%</h1>
+                            <h6 class="font-weight-bold">DECEMBER 2021</h6>
+                        </div>
+                        <div class="col-sm-3">
+                            <h6 style="font-size: 13px;" class="font-weight-bold">187/213 PASSERS</h6>
+                            <h1 class="text-primary" data-toggle="counter-up">87.79%</h1>
+                            <h6 class="font-weight-bold">APRIL 2023</h6>
                         </div>
                     </div>
                 </div>
@@ -251,134 +298,324 @@
 
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
                     <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/fernandez.jpg')}}" alt="">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/1.png')}}" alt="">
 
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Jinggo Fernandez</h5>
-                                <span>Attorney</span>
+                                <h6 class="font-weight-bold">JOHN MICHAEL PONTINVEROS</h6>
+                                <span>Lecturer</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
                     <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/gumboc.jpg')}}" alt="">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/2.png')}}" alt="">
 
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Stephen Gumboc</h5>
-                                <span>Attorney</span>
+                                <h6 class="font-weight-bold">ELLA KRISTINA INGCAD</h6>
+                                <span>Lecturer</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/rodriguez.jpg')}}" alt="">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/3.png')}}" alt="">
+
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Frederick Rodriguez</h5>
-                                <span>Professor</span>
+                                <h6 class="font-weight-bold">NOLIE Z. INGCAD</h6>
+                                <span>Lecturer</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/sumilang.jpg')}}" alt="">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/4.png')}}" alt="">
+
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Centeniel Sumilang</h5>
-                                <span>Professor</span>
+                                <h6 class="font-weight-bold">REXANN TARLE</h6>
+                                <span>Lecturer</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/cuartero.jpg')}}" alt="">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/5.png')}}" alt="">
+
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">JM Cuartero</h5>
-                                <span>Professor</span>
+                                <h6 class="font-weight-bold">MA. CHRISTINA MAE LAGUDA</h6>
+                                <span>Lecturer</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/pontiveros.jpg')}}" alt="">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/6.png')}}" alt="">
+
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">John Michael Pontiveros</h5>
-                                <span>Professor</span>
+                                <h6 class="font-weight-bold">PAOLA BLANCA CAMBEL</h6>
+                                <span>Lecturer</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/de-mesa.jpg')}}" alt="">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/7.png')}}" alt="">
+
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Ryan De Mesa</h5>
-                                <span>Professor</span>
+                                <h6 class="font-weight-bold">ATTY. ROMNICK ERICE</h6>
+                                <span>Lecturer</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/santos.jpg')}}" alt="">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/8.png')}}" alt="">
+
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Allan Santos</h5>
-                                <span>Professor</span>
+                                <h6 class="font-weight-bold">KAROLINA ERIKA BUTED</h6>
+                                <span>Lecturer</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/buted.jpg')}}" alt="">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/9.png')}}" alt="">
+
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Karolima Eika A. Buted</h5>
-                                <span>Professor</span>
+                                <h6 class="font-weight-bold">CENTENIEL SUMILANG</h6>
+                                <span>Lecturer</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/cambel.jpg')}}" alt="">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/10.png')}}" alt="">
+
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Paola Cambel</h5>
-                                <span>Professor</span>
+                                <h6 class="font-weight-bold">ATTY. JIMBOY FERNANDEZ</h6>
+                                <span>Lecturer</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/nisola.png')}}" alt="">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/11.png')}}" alt="">
+
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Marephelle Nisola</h5>
-                                <span>Professor</span>
+                                <h6 class="font-weight-bold">GLADYS OLIVERIO</h6>
+                                <span>Lecturer</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/team/geogracias.jpg')}}" alt="">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/12.png')}}" alt="">
+
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h5 class="font-weight-bold">Mary Ann Q. Deogracias</h5>
-                                <span>Professor</span>
+                                <h6 class="font-weight-bold">BRYAN S. RODADO</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/13.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">ALLAN SANTOS</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/14.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">PROF. RYAN DE MESA</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/15.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">JAYSON ESPEJO</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/16.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">JESSA SINGCOY</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/17.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">JANE BORJA</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/18.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">ORLANDO BADIANGO</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/19.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">PROF. MARIA TANGLAO</h6>-
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/20.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">PROF. JOHN MARK CUARTERO</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/22.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">MICHO MANALO</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/23.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">MARY ANN DEOGRACIA</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/24.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">ROZEANLYN GARCIA</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/25.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">FREDERICK RODRIGUEZ</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/26.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">ATTY. STEPHEN GUMBOC</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/27.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                               <h6 class="font-weight-bold">PROF. JAYSON TUPAZ</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/28.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">PROF. RENIEL CENTENO</h6>
+                                <span>Lecturer</span>
                             </div>
                         </div>
                     </div>
@@ -398,7 +635,7 @@
             <div class="col-lg-7 col-md-6">
                 <div class="row">
                     <div class="col-md-6 mb-5">
-                        <h3 class="text-primary mb-4">Get In Touch</h3> 
+                        <h3 class="text-primary mb-4">Get In Touch</h3>
                         <p><i class="fa fa-envelope mr-2"></i>chapsonlinets2021@gmail.com</p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
