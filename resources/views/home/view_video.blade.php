@@ -24,7 +24,7 @@
             </div>
           </div>
           @if($video_type=='2')
-          <video style="max-width: 100%;width:100%" controls autoplay>
+          <video style="max-width: 100%;width:100%;max-height:800px;" controls autoplay>
             <source src="{{$video}}" type="video/mp4">
             Your browser does not support HTML video.
           </video>
