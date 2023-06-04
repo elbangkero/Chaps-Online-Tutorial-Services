@@ -23,10 +23,14 @@
               </div>
             </div>
           </div>
-          <div class="container">
-            <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="{{$video}}"></div>
-          </div>
-
+          @if($video_type=='2')
+          <video style="max-width: 100%;width:100%" controls autoplay>
+            <source src="{{$video}}" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          @else
+          <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="{{$video}}"></div>
+          @endif
         </div>
       </div>
     </div>

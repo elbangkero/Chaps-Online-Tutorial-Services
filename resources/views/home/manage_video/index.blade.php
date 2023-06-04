@@ -57,12 +57,6 @@
                                         <input type="text" required="" placeholder="Enter Name" name="name" class="form-control" required>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Youtube Video Link</label>
-                                    <div class="col-12 col-sm-8 col-lg-6">
-                                        <input type="text" required="" placeholder="Enter Name" name="link" class="form-control" required>
-                                    </div>
-                                </div>
                                 <div class="form-group row" id="parent_folder">
                                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Select Folder</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
@@ -81,6 +75,27 @@
                                             @endphp
                                             @endforeach
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Video Type</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <div class="offset-lg-1">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="folder_function()" name='parent_option' checked>
+                                            <label class="form-check-label" for="exampleCheck1">Youtube Video</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row"  id="yt_link">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Youtube Video Link</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="text" required="" placeholder="Enter youtube link" name="link" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row" style="visibility:hidden"  id="local_link">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Video File</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <input type="file" name="video">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -206,6 +221,7 @@
                                             <th>Created By</th>
                                             <th>Video Status</th>
                                             <th>Date Created </th>
+                                            <th>Video Type </th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -218,6 +234,8 @@
                                             <td>@if ( $table->status == "1")
                                                 Active @else Inactive @endif</td>
                                             <td>{{ $table->created_at }}</td>
+                                            <td>@if ( $table->video_type == "1")
+                                                Youtube @else Local @endif</td>
                                             <td>
                                                 <form action="{{ route('delete_video',$table->id) }}" method="POST">
                                                     <a class="btn btn-primary btn-xs" type="button" href="{{ route('edit_video',$table->id) }}"> <i class="fa fa-edit"></i> Edit </a>
@@ -296,6 +314,19 @@
                 alert('File Must be .pdf ');
                 return false;
             }
+        }
+    }
+
+    function folder_function() {
+        var checkBox = document.getElementById("exampleCheck1");
+        var yt_link = document.getElementById("yt_link");
+        var local_link = document.getElementById("local_link");
+        if (checkBox.checked == true) {
+            yt_link.style.visibility = "visible";
+            local_link.style.visibility = "hidden";
+        } else {
+            yt_link.style.visibility = "hidden";
+            local_link.style.visibility = "visible";
         }
     }
 </script>

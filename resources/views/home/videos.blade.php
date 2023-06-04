@@ -42,7 +42,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6 card-wrapper">
                             <!-- .card -->
                             <a href="{{route('view_video',$data->id)}}">
-                                <img class="img-fluid-card  " src="{{$data->thumbnail}}" alt="Card image cap">
+                               <img class="img-fluid-card  " src="{{$data->thumbnail}}" alt="Card image cap">
                             </a>
                             <h2 class="card-title">{{$data->name}}</h2>
                             <!-- /.card -->
@@ -90,3 +90,40 @@
     <!-- ============================================================== -->
 </div>
 @include('home.footer')
+
+
+<script>
+    console.clear();
+
+    var videoAttr = {
+    };
+    var imgMP4s = Array.prototype.map.call(
+        document.querySelectorAll('img[src*=".mp4"]'),
+        function(img) {
+
+            var src = img.src;
+            img.src = null;
+
+            img.addEventListener('error', function(e) {
+                console.log('MP4 in image not supported. Replacing with video', e);
+                var video = document.createElement('video');
+
+                for (var key in videoAttr) {
+                    video.setAttribute(key, videoAttr[key]);
+                }
+
+                for (
+                    var imgAttr = img.attributes,
+                        len = imgAttr.length,
+                        i = 0; i < len; i++
+                ) {
+                    video.setAttribute(imgAttr[i].name, imgAttr[i].value);
+                }
+
+                img.parentNode.insertBefore(video, img);
+                img.parentNode.removeChild(img);
+            });
+
+            img.src = src;
+        });
+</script>

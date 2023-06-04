@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\ReviewersVideo as Video;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Imagick;
 
 class VideoController extends Controller
 {
@@ -58,45 +60,75 @@ class VideoController extends Controller
     }
     public function view_video($id)
     {
-        $folders_video = DB::table('folders')->where([['status',1],['parent_id',0],['folder_type','video']])->get();
-        $folders_pdf = DB::table('folders')->where([['status',1],['folder_type','pdf'],['parent_id',0]])->get();
+        $folders_video = DB::table('folders')->where([['status', 1], ['parent_id', 0], ['folder_type', 'video']])->get();
+        $folders_pdf = DB::table('folders')->where([['status', 1], ['folder_type', 'pdf'], ['parent_id', 0]])->get();
         $video = DB::table('reviewers_video')->where('id', '=', $id)->first()->link;
-        return view('home.view_video', compact('video','folders_pdf','folders_video'));
+        $video_type = DB::table('reviewers_video')->where('id', '=', $id)->first()->video_type;
+        return view('home.view_video', compact('video', 'folders_pdf', 'folders_video','video_type'));
     }
+
+
 
 
     public function store_video(Request $request)
     {
+        if ($request->parent_option==null) {
+            $request->validate([
+                'name' => 'required',
+                'video' => 'required|file|mimetypes:video/mp4',
+            ]);
 
-        $request->validate([
-            'name' => 'required',
-            'link' => 'required',
-        ]);
-        $myString = $request->link;
-        $result = strstr($myString, '?v', false);
+            $prefix = Str::random(10);
+            $file = $request->file('video');
 
-        $final_value = trim($result, '?v=');
+            if (!empty($file)) {
+                $extension = $file->getClientOriginalName();
+                $filename = $prefix . '_' . $extension;
+
+                $path = $file->move('public/storage/videos', $filename);
+
+                $video = new Video();
+                $video->name = $request->name;
+                $video->created_by = Auth::user()->full_name;
+                $video->status = $request->status == null ? 0 : 1;
+                $video->link = "/" . $path;
+                $video->folder_id = $request->folder_id;
+                $video->thumbnail = "/" . $path;
+                $video->video_type = 2;
+                $video->save();
+            }
+
+            $vid_link =  empty($file) ? back()->with('delete', 'File not working') :  back()->with('success', 'Registered Successfully');
+            return $vid_link;
+        } else {
+            $request->validate([
+                'name' => 'required',
+                'link' => 'required',
+            ]);
+            $myString = $request->link;
+            $result = strstr($myString, '?v', false);
+
+            $final_value = trim($result, '?v=');
 
 
-        if (!empty($final_value)) {
-            $thumbnail =   'https://img.youtube.com/vi/' . $final_value . '/mqdefault.jpg';
+            if (!empty($final_value)) {
+                $thumbnail =   'https://img.youtube.com/vi/' . $final_value . '/mqdefault.jpg';
 
-            $video = new Video();
-            $video->name = $request->name;
-            $video->created_by = Auth::user()->full_name;
-            $video->status = $request->status == null ? 0 : 1;
-            $video->link = $final_value;
-            $video->folder_id = $request->folder_id;
-            $video->thumbnail = $thumbnail;
-            $video->save();
+                $video = new Video();
+                $video->name = $request->name;
+                $video->created_by = Auth::user()->full_name;
+                $video->status = $request->status == null ? 0 : 1;
+                $video->link = $final_value;
+                $video->folder_id = $request->folder_id;
+                $video->thumbnail = $thumbnail;
+                $video->video_type = 1;
+                $video->save();
+            }
+
+            $vid_link =  empty($final_value) ? back()->with('delete', 'Link not working') :  back()->with('success', 'Registered Successfully');
+
+            return $vid_link;
         }
-
-        $vid_link =  empty($final_value) ? back()->with('delete', 'Link not working') :  back()->with('success', 'Registered Successfully');
-
-        return $vid_link;
-
-
-        //dd($final_value);
     }
     public function delete_video($id)
     {

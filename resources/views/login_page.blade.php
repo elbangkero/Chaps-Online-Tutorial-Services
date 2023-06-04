@@ -23,7 +23,145 @@
 
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+
 </head>
+<style>
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 9999;
+        /* Sit on top */
+        padding-top: 7px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        background-color: #f88c20;
+        margin: auto;
+        padding: 0;
+        border: 1px solid black;
+        max-width: 100%;
+        width: 400px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+    }
+
+    /* Add Animation */
+    @-webkit-keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0
+        }
+
+        to {
+            top: 0;
+            opacity: 1
+        }
+    }
+
+    @keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0
+        }
+
+        to {
+            top: 0;
+            opacity: 1
+        }
+    }
+
+    /* The Close Button */
+    .close {
+        color: black;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal-header {
+        padding: 2px 16px;
+        height: 30px;
+        background-color: white;
+        color: white;
+    }
+
+    .modal-body {
+        padding: 2px 16px;
+    }
+
+    .modal-footer {
+        padding: 2px 16px;
+        background-color: #004F9E;
+        color: white;
+    }
+
+    div.parent {
+        text-align: center;
+    }
+
+    ul {
+        display: inline-block;
+        text-align: left;
+    }
+
+    button {
+        background-color: #004F9E;
+        /* Green */
+        border: 2px solid #004F9E;
+        border-radius: 5px;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+    }
+
+    button {
+        transition-duration: 0.4s;
+    }
+
+    button:hover {
+        background-color: white;
+        color: black;
+        border: 2px solid #004F9E;
+    }
+
+    /* #myBtn {
+            display: flex;
+            justify-content: center;
+            border: none;
+        } */
+</style>
 
 <body>
     <!-- Topbar Start -->
@@ -49,7 +187,29 @@
         </div>
     </div>
     <!-- Topbar End -->
+    <!-- Trigger/Open The Modal -->
+    <div class="parent" style="display:none">
+        <button id="myBtn">Ver Video</button>
+    </div>
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-body">
+                <span class="close">&times;</span>
+                <div style='text-align:center'>
+                    <video id="myVideo" width="100%" height="95%" controls>
+                        <source src="/public/storage/videos/intro_vid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 
     <!-- Navbar Start -->
     <div class="container-fluid p-0">
@@ -602,7 +762,7 @@
 
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                               <h6 class="font-weight-bold">PROF. JAYSON TUPAZ</h6>
+                                <h6 class="font-weight-bold">PROF. JAYSON TUPAZ</h6>
                                 <span>Lecturer</span>
                             </div>
                         </div>
@@ -699,6 +859,48 @@
     <script src="{{asset('public/storage/lib/counterup/counterup.min.js')}}"></script>
     <script src="{{asset('public/storage/lib/owlcarousel/owl.carousel.min.js')}}"></script>
 
+<script>
+  var modal = document.getElementById("myModal");
+  var btn = document.getElementById("myBtn");
+  var span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = function() {
+    modal.style.display = "block";
+    playVideo();
+  };
+
+  span.onclick = function() {
+    modal.style.display = "none";
+    pauseVideo();
+  };
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      pauseVideo();
+    }
+  };
+
+  $(function() {
+    modal.style.display = "block";
+    playVideo();
+  });
+
+  function playVideo() {
+    var video = document.getElementById("myVideo");
+    video.muted = true;
+    video.play().catch(function(error) {
+      // Autoplay was prevented
+      // You can add fallback logic here
+      console.log("Autoplay prevented: " + error);
+    });
+  }
+
+  function pauseVideo() {
+    var video = document.getElementById("myVideo");
+    video.pause();
+  }
+</script>
 
 </body>
 
