@@ -42,7 +42,7 @@ class VideoController extends Controller
             $videos = DB::table('reviewers_video')->whereIn('id', $str_arr_video)->where('status', '=', 1)->orderBy('id', 'DESC')->paginate(12);
         }
         $page = $request->page;
-        return view('home.videos', compact('videos', 'keyword', 'page', 'folders_pdf', 'folders_video'));
+        return view('home.videos', compact('videos', 'keyword', 'page', 'folders_pdf', 'folders_video', 'folder'));
     }
     public function edit_video($id)
     {
@@ -64,7 +64,7 @@ class VideoController extends Controller
         $folders_pdf = DB::table('folders')->where([['status', 1], ['folder_type', 'pdf'], ['parent_id', 0]])->get();
         $video = DB::table('reviewers_video')->where('id', '=', $id)->first()->link;
         $video_type = DB::table('reviewers_video')->where('id', '=', $id)->first()->video_type;
-        return view('home.view_video', compact('video', 'folders_pdf', 'folders_video','video_type'));
+        return view('home.view_video', compact('video', 'folders_pdf', 'folders_video', 'video_type'));
     }
 
 
@@ -72,7 +72,7 @@ class VideoController extends Controller
 
     public function store_video(Request $request)
     {
-        if ($request->parent_option==null) {
+        if ($request->parent_option == null) {
             $request->validate([
                 'name' => 'required',
                 'video' => 'required|file|mimetypes:video/mp4',

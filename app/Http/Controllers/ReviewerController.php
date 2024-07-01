@@ -185,7 +185,7 @@ class ReviewerController extends Controller
             $pdf = DB::table('reviewers_pdf')->whereIn('id', $str_arr)->orderBy('id','DESC')->paginate(12);
         }
         $page = $request->page;
-        return view('home.reviewers', compact('pdf', 'page', 'keyword','folders_pdf','folders_video'));
+        return view('home.reviewers', compact('pdf', 'page', 'keyword','folders_pdf','folders_video','folder'));
 
 
         //dd($current_display_pdf);

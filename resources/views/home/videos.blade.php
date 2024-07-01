@@ -59,7 +59,7 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination">
-                                    {{$videos->appends(['keyword' => $keyword] )->links()}}
+                                    {{$videos->appends(['folder' => $folder,'keyword' => $keyword] )->links()}}
                                 </ul>
                             </nav>
                         </div>

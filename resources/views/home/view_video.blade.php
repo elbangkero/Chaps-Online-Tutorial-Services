@@ -24,12 +24,13 @@
             </div>
           </div>
           @if($video_type=='2')
-          <video style="max-width: 100%;width:100%;max-height:800px;" controls autoplay>
+          <video style="max-width: 100%; width: 100%; max-height: 800px;" controls autoplay controlsList="nodownload">
             <source src="{{$video}}" type="video/mp4">
             Your browser does not support HTML video.
           </video>
           @else
-          <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="{{$video}}"></div>
+          <!--- <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="{{$video}}"></div> --->
+          <iframe style="max-width: 100%;width:100%;max-height:800px;height:700px" src="https://www.youtube-nocookie.com/embed/{{$video}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           @endif
         </div>
       </div>

@@ -70,7 +70,7 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination">
-                                    {{$pdf->appends(['keyword' => $keyword] )->links()}}
+                                    {{$pdf->appends(['folder' => $folder,'keyword' => $keyword] )->links()}}
                                 </ul>
                             </nav>
                         </div>

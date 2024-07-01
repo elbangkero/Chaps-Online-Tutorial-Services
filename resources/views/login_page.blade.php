@@ -14,6 +14,7 @@
 
     <!-- Font Awesome -->
     <link href="{{asset('public/storage/fontawesome/css/all.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
     <!-- Libraries Stylesheet -->
     <link href="{{asset('storage/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
@@ -265,28 +266,47 @@
                     <img class="d-block carousel-img" src="{{asset('public/storage/img/car7.jpg')}}" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car8.jpg')}}" alt="First slide">
-                </div>
-                <div class="carousel-item">
                     <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new1.png')}}" alt="First slide">
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new2.png')}}" alt="First slide">
-                </div>
+
                 <div class="carousel-item">
                     <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new3.png')}}" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new4.png')}}" alt="First slide">
-                </div>
-                <div class="carousel-item">
                     <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new5.png')}}" alt="First slide">
-                </div>
-                <div class="carousel-item active">
-                    <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new6.png')}}" alt="First slide">
                 </div>
                 <div class="carousel-item">
                     <img class="d-block carousel-img" src="{{asset('public/storage/img/may_3_2023/new7.png')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car10.png')}}" alt="First slide">
+                </div>
+                                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car11.png')}}" alt="First slide">
+                </div>
+                                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car12.png')}}" alt="First slide">
+                </div>
+                                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car13.png')}}" alt="First slide">
+                </div>
+                <div class="carousel-item active">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car11.png')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/lecture1.jpg')}}" alt="First slide">
+                </div>
+                                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/lecture2.jpg')}}" alt="First slide">
+                </div>
+                                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/lecture3.jpg')}}" alt="First slide">
+                </div>
+                                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/lecture4.jpg')}}" alt="First slide">
+                </div>
+                                <div class="carousel-item">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/lecture5.jpg')}}" alt="First slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -347,28 +367,49 @@
                     <h6 class="text-primary text-uppercase font-weight-bold">Get A Quote</h6>
                     <h1 class="mb-4">Join us now!</h1>
                     <p class="mb-4">The most reliable and effective review center today in the Philippines. <br> Chaps Online Tutorial services</p>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <h6 style="font-size: 13px;" class="font-weight-bold">323/330 PASSERS</h6>
-                            <h1 class="text-primary" data-toggle="counter-up">97.5%</h1>
-                            <h6 class="font-weight-bold">DECEMBER 2022</h6>
+                    
+                    <div class="row mb-3">
+                        <div class="col-sm-4 d-flex flex-column justify-content-center align-items-center">
+                            <h6 style="font-size: 13px;" class="font-weight-bold">517/613 PASSERS</h6>
+                            <h1 class="text-primary" data-toggle="counter-up">84.34%</h1>
+                            <h6 class="font-weight-bold">FEBRUARY 2024</h6>
                         </div>
-                        <div class="col-sm-3">
-                            <h6 style="font-size: 13px;" class="font-weight-bold">508/514 PASSERS</h6>
-                            <h1 class="text-primary" data-toggle="counter-up">98.83%</h1>
-                            <h6 class="font-weight-bold">JUNE 2022</h6>
+                        
+                        <div class="col-sm-4 d-flex flex-column justify-content-center align-items-center">
+                            <h6 style="font-size: 13px;" class="font-weight-bold">242/257 PASSERS</h6>
+                            <h1 class="text-primary" data-toggle="counter-up">94.16%</h1>
+                            <h6 class="font-weight-bold">AUGUST 2023</h6>
                         </div>
-                        <div class="col-sm-3">
-                            <h6 style="font-size: 13px;" class="font-weight-bold">257/261 PASSERS</h6>
-                            <h1 class="text-primary" data-toggle="counter-up">98.47%</h1>
-                            <h6 class="font-weight-bold">DECEMBER 2021</h6>
-                        </div>
-                        <div class="col-sm-3">
+                        
+                        <div class="col-sm-4 d-flex flex-column justify-content-center align-items-center">
                             <h6 style="font-size: 13px;" class="font-weight-bold">187/213 PASSERS</h6>
                             <h1 class="text-primary" data-toggle="counter-up">87.79%</h1>
                             <h6 class="font-weight-bold">APRIL 2023</h6>
                         </div>
+                        
                     </div>
+                    <div class="row">
+                        <div class="col-sm-4 d-flex flex-column justify-content-center align-items-center">
+                            <h6 style="font-size: 13px;" class="font-weight-bold">323/330 PASSERS</h6>
+                            <h1 class="text-primary" data-toggle="counter-up">97.5%</h1>
+                            <h6 class="font-weight-bold">DECEMBER 2022</h6>
+                        </div>
+                        <div class="col-sm-4 d-flex flex-column justify-content-center align-items-center">
+                            <h6 style="font-size: 13px;" class="font-weight-bold">508/514 PASSERS</h6>
+                            <h1 class="text-primary" data-toggle="counter-up">98.83%</h1>
+                            <h6 class="font-weight-bold">JUNE 2022</h6>
+                        </div>
+                        <div class="col-sm-4 d-flex flex-column justify-content-center align-items-center">
+                            <h6 style="font-size: 13px;" class="font-weight-bold">257/261 PASSERS</h6>
+                            <h1 class="text-primary" data-toggle="counter-up">98.47%</h1>
+                            <h6 class="font-weight-bold">DECEMBER 2021</h6>
+                        </div>
+
+                        
+                    </div>
+                    
+                    
+                    
                 </div>
                 <div class="col-lg-5">
                     <div class="bg-primary py-5 px-4 px-sm-5">
@@ -468,18 +509,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
-                    <div class="team card position-relative overflow-hidden border-0 mb-5" style="pointer-events: none;">
-                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/2.png')}}" alt="">
-
-                        <div class="card-body text-center p-0">
-                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h6 class="font-weight-bold">ELLA KRISTINA INGCAD</h6>
-                                <span>Lecturer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
                     <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
                         <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/3.png')}}" alt="">
@@ -678,7 +708,7 @@
 
                         <div class="card-body text-center p-0">
                             <div class="team-text d-flex flex-column justify-content-center bg-secondary">
-                                <h6 class="font-weight-bold">PROF. MARIA TANGLAO</h6>-
+                                <h6 class="font-weight-bold">PROF. MARIA TANGLAO</h6>
                                 <span>Lecturer</span>
                             </div>
                         </div>
@@ -780,7 +810,166 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/29 Thirdy Rosalia.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">THIRDY ROSALIA</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/30 John Michael dionisio.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">JOHN MICHAEL DIONISIO</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/31 charlamagne james ramos.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">CHARLMAGNE JAMES RAMOS</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/32 renjomar almujela baltazar.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">RENJOMAR A. BALTAZAR</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/33 feliciano almajuela.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">FELICIANO ALMAJUELA</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/35 roy e estillero.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">ROY E. ESTILLERO</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/38  allan tilla-in.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">ALLAN TILLA-IN</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/39 sean francis san diego.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">SEAN FRANCIS SAN DIEGO</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/40 AttyRodolfo Castillo Jr.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">ATTY. RODOLFO CASTILLO Jr</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/41 Jaenard Gonzales.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">JAENARD GONZALES</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/42 chervin loewe navilla.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">CHERVIN LOEWE NAVILLA</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/43 germain rae surban.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">GERMAINE RAE SURBAN</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-xs-1 col-lg-2 col-md-3 col-6 center-team-img">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5 " style="pointer-events: none;">
+                        <img class="card-img-top team-img" src="{{asset('public/storage/img/lecturer/44 john mclaine tullao.png')}}" alt="">
+
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h6 class="font-weight-bold">JOHN MCLAINE TULLAO</h6>
+                                <span>Lecturer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+            </div>
+            
+            
 
 
         </div>
@@ -798,7 +987,8 @@
                         <h3 class="text-primary mb-4">Get In Touch</h3>
                         <p><i class="fa fa-envelope mr-2"></i>chapsonlinets2021@gmail.com</p>
                         <div class="d-flex justify-content-start mt-4">
-                            <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social mr-2"  href="https://www.facebook.com/chapsonlinets2021"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social mr-2"  href="https://www.tiktok.com/@chapsonlinets2021"><i class="fab fa-tiktok"></i>
                             <a class="btn btn-outline-light btn-social" target=”_blank” href="https://www.youtube.com/c/ACLEMentoringbyChapsBLEC"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
