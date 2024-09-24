@@ -79,8 +79,14 @@ class UserController extends Controller
         DB::table('users')
             ->where('id', $id)
             ->update($update);
-
-        return back()->with('success', 'Your Data has been Update');
+        
+        // Return a JSON response for the Ajax request
+        return response()->json([
+            'status' => 'success',
+            'message' => $id,
+            'heheh' => $pass,
+            'dsada' => $request->input('email'),
+        ]);
     }
     public function student_index()
     {
@@ -97,7 +103,7 @@ class UserController extends Controller
             'address' => 'required',
             'date_of_birth' => 'required',
             'contact_number' => 'required',
-            'exam_takes' => 'required', 
+            'exam_takes' => 'required',
             'email' => 'required|unique:users,email',
             'password' => 'required|min:3|confirmed',
         ]);
@@ -114,7 +120,7 @@ class UserController extends Controller
         $students->address = $request->address;
         $students->user_type = 2;
         $students->status =  1;
-        $students->is_active = $request->is_active == null ? 0 : 1; 
+        $students->is_active = $request->is_active == null ? 0 : 1;
         $students->date_of_birth = date('Y-m-d', $date_of_birth);
         $students->contact_number = $request->contact_number;
         $students->school_graduated = $request->school_graduated;

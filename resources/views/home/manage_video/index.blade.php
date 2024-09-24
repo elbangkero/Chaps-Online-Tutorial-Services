@@ -86,16 +86,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row"  id="yt_link">
+                                <div class="form-group row" id="yt_link">
                                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Youtube Video Link</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
                                         <input type="text" required="" placeholder="Enter youtube link" name="link" class="form-control" required>
                                     </div>
                                 </div>
-                                <div class="form-group row" style="visibility:hidden"  id="local_link">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Video File</label>
+                                <div class="form-group row" style="visibility:hidden" id="local_link">
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Video file name</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
-                                        <input type="file" name="video">
+                                        <input type="text" required="" placeholder="Please enter the file name" name="video" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">

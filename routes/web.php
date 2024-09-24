@@ -24,7 +24,7 @@ Route::group(['middleware' => 'AdminUser'], function () {
     Route::get('/admin_index', 'UserController@admin_index')->name('admin_index');
     Route::delete('/delete_admin/{id}', 'UserController@delete_admin')->name('delete_admin');
     Route::get('/edit_admin/{id}', 'UserController@edit_admin')->name('edit_admin');
-    Route::put('/update_admin/{id}', 'UserController@update_admin')->name('update_admin');
+    Route::post('/update_admin/{id}', 'UserController@update_admin')->name('update_admin');
     /* Admin */
 
 

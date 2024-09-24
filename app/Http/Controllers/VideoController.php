@@ -75,30 +75,23 @@ class VideoController extends Controller
         if ($request->parent_option == null) {
             $request->validate([
                 'name' => 'required',
-                'video' => 'required|file|mimetypes:video/mp4',
+                'video' => 'required',
             ]);
 
-            $prefix = Str::random(10);
-            $file = $request->file('video');
+            //$path = $file->move('public/storage/videos', $filename);
 
-            if (!empty($file)) {
-                $extension = $file->getClientOriginalName();
-                $filename = $prefix . '_' . $extension;
+            $video = new Video();
+            $video->name = $request->name;
+            $video->created_by = Auth::user()->full_name;
+            $video->status = $request->status == null ? 0 : 1;
+            $video->link = "/public/storage/videos/" . $request->video . ".mp4";
+            $video->folder_id = $request->folder_id;
+            $video->thumbnail = "/public/storage/videos/default-thumbnail.jpg";
+            $video->video_type = 2;
+            $video->save();
 
-                $path = $file->move('public/storage/videos', $filename);
 
-                $video = new Video();
-                $video->name = $request->name;
-                $video->created_by = Auth::user()->full_name;
-                $video->status = $request->status == null ? 0 : 1;
-                $video->link = "/" . $path;
-                $video->folder_id = $request->folder_id;
-                $video->thumbnail = "/" . $path;
-                $video->video_type = 2;
-                $video->save();
-            }
-
-            $vid_link =  empty($file) ? back()->with('delete', 'File not working') :  back()->with('success', 'Registered Successfully');
+            $vid_link =   back()->with('success', 'Registered Successfully');
             return $vid_link;
         } else {
             $request->validate([
