@@ -39,6 +39,9 @@
                         <li class="nav-item">
                             <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'folders_index') active @endif" href="{{route('folders_index')}}"><i class="fas fa-folder"></i>Manage Folders</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link @if (\Route::getFacadeRoot()->current()->uri() == 'meetings_index') active @endif" href="{{route('meetings_index')}}"><i class="fas fa-video"></i>Manage Meetings</a>
+                        </li>
                     </div>
                 </ul>
             </div>

@@ -119,6 +119,25 @@
                         </div>
                     </a>
                 </div>
+                  <!--
+                <div class="col-lg-6">
+                    <a class="card-cta" href="{{route('join_meeting')}}">
+                        <div class="card card-large-icons  card-left ">
+                            <div class="row">
+                                <div class="col-xs-6 col-lg-3 col-4">
+                                    <i class="fas fa-video icon-dashboard"></i>
+                                </div>
+                                <div class="col-xs-6 ol-lg-9 col-8">
+                                    <div class="card-body">
+                                        <h4>Zoom Meetings</h4>
+                                        <p>Exclusively Online Coaching</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                -->
             </div>
             @endif
 

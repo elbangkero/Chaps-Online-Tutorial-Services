@@ -282,7 +282,7 @@
                     <img class="d-block carousel-img" src="{{asset('public/storage/img/car10.png')}}" alt="First slide">
                 </div>
                                 <div class="carousel-item">
-                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car11.png')}}" alt="First slide">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/main.png')}}" alt="First slide">
                 </div>
                                 <div class="carousel-item">
                     <img class="d-block carousel-img" src="{{asset('public/storage/img/car12.png')}}" alt="First slide">
@@ -291,7 +291,7 @@
                     <img class="d-block carousel-img" src="{{asset('public/storage/img/car13.png')}}" alt="First slide">
                 </div>
                 <div class="carousel-item active">
-                    <img class="d-block carousel-img" src="{{asset('public/storage/img/car11.png')}}" alt="First slide">
+                    <img class="d-block carousel-img" src="{{asset('public/storage/img/main.png')}}" alt="First slide">
                 </div>
                 <div class="carousel-item">
                     <img class="d-block carousel-img" src="{{asset('public/storage/img/lecture1.jpg')}}" alt="First slide">
@@ -367,7 +367,17 @@
                     <h6 class="text-primary text-uppercase font-weight-bold">Get A Quote</h6>
                     <h1 class="mb-4">Join us now!</h1>
                     <p class="mb-4">The most reliable and effective review center today in the Philippines. <br> Chaps Online Tutorial services</p>
-                    
+                  
+                    <div class="row mb-3 d-flex flex-column justify-content-center align-items-center">
+
+                        
+                        <div class="col-sm-4 d-flex flex-column justify-content-center align-items-center">
+                            <h6 style="font-size: 13px;" class="font-weight-bold">842/1,038 PASSERS</h6>
+                            <h1 class="text-primary" data-toggle="counter-up">81.11%</h1>
+                            <h6 class="font-weight-bold">JULY - AUGUST 2024</h6>
+                        </div>
+
+                    </div>
                     <div class="row mb-3">
                         <div class="col-sm-4 d-flex flex-column justify-content-center align-items-center">
                             <h6 style="font-size: 13px;" class="font-weight-bold">517/613 PASSERS</h6>
@@ -407,6 +417,7 @@
 
                         
                     </div>
+                    
                     
                     
                     

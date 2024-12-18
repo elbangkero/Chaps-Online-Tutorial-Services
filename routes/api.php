@@ -18,3 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
  
+
+Route::get('/create_meeting', 'MeetingsController@curl_createMeeting')->name('curl_createMeeting');
+Route::get('/create_access_token', 'MeetingsController@curl_createAccessToken')->name('curl_createAccessToken');

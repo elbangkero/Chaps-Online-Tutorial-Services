@@ -70,8 +70,15 @@ Route::group(['middleware' => 'AdminUser'], function () {
     Route::get('/edit_folders/{id}', 'FoldersController@edit_folders')->name('edit_folders');
     Route::delete('/delete_folders/{id}', 'FoldersController@delete_folders')->name('delete_folders');
     Route::put('/update_folders/{id}', 'FoldersController@update_folders')->name('update_folders');
-    
     /* Folders */
+
+    /* Meetings */
+    Route::get('/meetings_index', 'MeetingsController@meetings_index')->name('meetings_index');
+    Route::get('/join_meeting', 'MeetingsController@join_meeting')->name('join_meeting');
+    Route::post('/create_meeting', 'MeetingsController@create_meeting')->name('create_meeting');
+    Route::post('/delete_meeting/{meeting_id}', 'MeetingsController@delete_meeting')->name('delete_meeting');
+    Route::post('/end_meeting/{meeting_id}', 'MeetingsController@end_meeting')->name('end_meeting');
+    /* Meetings */
 });
 
 

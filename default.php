@@ -125,7 +125,7 @@
         }
         .message::before {
             content: " ";
-            background: url(https://cdn.hostinger.com/hostinger_welcome/images/hostinger-dragon.png);
+            background: url(https://assets.hostinger.com/content/hostinger_welcome/images/hostinger-dragon.png);
             width: 141px;
             height: 175px;
             position: absolute;
@@ -210,7 +210,7 @@
                 <span class="icon-bar"></span> <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://www.hostinger.ph/" rel="nofollow"><img src="https://cdn.hostinger.com/hostinger_welcome/images/hostinger-logo.png" width="120" alt="Hostinger"></a>
+            <a class="navbar-brand" href="https://www.hostinger.ph/" rel="nofollow"><img src="https://assets.hostinger.com/content/hostinger_welcome/images/hostinger-logo.png" width="120" alt="Hostinger"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
